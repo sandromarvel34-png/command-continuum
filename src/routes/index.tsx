@@ -31,11 +31,11 @@ export const Route = createFileRoute("/")({
         content:
           "Você já garantiu o livro Comandos Elétricos. Agora adicione o Curso Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real.",
       },
-      { property: "og:title", content: "Pedido confirmado — Continue sua jornada prática" },
+      { property: "og:title", content: "Pedido confirmado — Complete sua formação em Comandos Elétricos" },
       {
         property: "og:description",
         content:
-          "Condição exclusiva desta etapa do pedido: adicione o Curso Comandos Elétricos Expert e aprenda a aplicar tudo na bancada.",
+          "Você já garantiu o livro Comandos Elétricos. Agora adicione o Curso Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
