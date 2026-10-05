@@ -240,7 +240,7 @@ function UpsellPage() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Complete sua formação com o Método Comandos Elétricos Expert ao mesmo pedido e avance da leitura para
+              Inclua o Método Comandos Elétricos Expert no mesmo pedido e avance da leitura para
               aulas em vídeo, aplicações, diagramas, dispositivos, motores, inversores, projetos e
               diagnóstico de falhas.
             </p>
