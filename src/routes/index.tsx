@@ -15,7 +15,6 @@ import {
   PlayCircle,
   RefreshCw,
   ShieldCheck,
-  Sparkles,
   Wrench,
   Zap,
 } from "lucide-react";
@@ -29,13 +28,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Você já garantiu o livro Comandos Elétricos. Agora adicione o Curso Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real.",
+          "Você já garantiu o livro Comandos Elétricos. Agora adicione o Método Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real.",
       },
       { property: "og:title", content: "Pedido confirmado — Complete sua formação em Comandos Elétricos" },
       {
         property: "og:description",
         content:
-          "Você já garantiu o livro Comandos Elétricos. Agora adicione o Curso Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real.",
+          "Você já garantiu o livro Comandos Elétricos. Agora adicione o Método Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -53,9 +52,9 @@ function CtaPrimary({ className = "" }: { className?: string }) {
       className={`cta-primary group inline-flex w-full items-center justify-center gap-3 rounded-2xl px-7 py-5 text-left text-base font-semibold leading-tight sm:text-lg ${className}`}
     >
       <span>
-        <span className="block text-xl font-extrabold sm:text-2xl">SIM! Quero adicionar</span>
+        <span className="block text-xl font-extrabold sm:text-2xl">SIM! Quero continuar</span>
         <span className="block text-sm font-medium opacity-80">
-          o Curso Comandos Elétricos Expert ao meu pedido
+          e adicionar o Método Comandos Elétricos Expert ao meu pedido
         </span>
       </span>
       <ArrowRight className="hidden size-6 shrink-0 transition-transform group-hover:translate-x-1 sm:block" />
@@ -87,8 +86,8 @@ const journey = [
   { icon: Lightbulb, label: "Conhecimento", note: "base formada" },
   { icon: PlayCircle, label: "Curso", note: "próximo passo" },
   { icon: Wrench, label: "Aplicação", note: "na bancada" },
-  { icon: BadgeCheck, label: "Confiança", note: "sem hesitar" },
-  { icon: GaugeCircle, label: "Domínio", note: "profissional" },
+  { icon: BadgeCheck, label: "Confiança", note: "mais repertório" },
+  { icon: GaugeCircle, label: "Domínio", note: "técnico" },
 ];
 
 function Journey({ highlight = 2 }: { highlight?: number }) {
@@ -123,69 +122,75 @@ function Journey({ highlight = 2 }: { highlight?: number }) {
 const learnings = [
   {
     icon: CircuitBoard,
-    title: "Interpretar comandos industriais em segundos",
-    text: "Você bate o olho no diagrama e já enxerga a lógica antes de encostar em um fio.",
+    title: "Ler diagramas com mais clareza",
+    text: "Entenda a lógica do comando, a função de cada elemento e a sequência de operação antes de partir para a montagem.",
   },
   {
     icon: Wrench,
-    title: "Montar circuitos passo a passo",
-    text: "Partida direta, reversão, estrela-triângulo e sequenciamento — montados junto com você.",
+    title: "Acompanhar montagens passo a passo",
+    text: "Veja aplicações de partida, reversão, estrela-triângulo, sequenciamento e outros circuitos estudados no método.",
   },
   {
     icon: Zap,
-    title: "Diagnosticar defeitos com método",
-    text: "Um roteiro claro para achar a falha sem tentativa e erro, mesmo sob pressão.",
+    title: "Estruturar o diagnóstico de falhas",
+    text: "Aprenda a investigar o circuito por etapas, usando medições e raciocínio técnico em vez de depender de tentativa e erro.",
   },
   {
     icon: Lightbulb,
-    title: "Aplicar lógica de comandos",
-    text: "Selo, intertravamento e temporização deixam de ser conceito e viram raciocínio automático.",
+    title: "Conectar lógica, componentes e aplicação",
+    text: "Relacione selo, intertravamento, temporização, proteção e acionamento com o comportamento real do circuito.",
   },
   {
     icon: FileText,
-    title: "Executar exercícios práticos",
-    text: "Cada aula termina com uma tarefa que você reproduz na bancada ou no painel.",
+    title: "Reforçar o conteúdo com exercícios",
+    text: "Use atividades e exemplos para revisar o raciocínio e consolidar os conceitos apresentados nas aulas.",
   },
   {
     icon: GaugeCircle,
-    title: "Desenvolver segurança técnica",
-    text: "Você passa a energizar sabendo exatamente o que vai acontecer — e por quê.",
+    title: "Ganhar repertório técnico para a prática",
+    text: "Amplie sua base para analisar montagens, parametrizações e falhas com mais critério técnico.",
   },
+];
+
+const courseModules = [
+  { step: "01", title: "A Base", text: "Fundamentos e lógica necessários para avançar com segurança pelos comandos elétricos." },
+  { step: "02", title: "Proteções Ativas", text: "Critérios e aplicações dos principais dispositivos de proteção usados nos circuitos." },
+  { step: "03", title: "Por Dentro dos Motores", text: "Motores mono e trifásicos, duas velocidades, rotor bobinado e corrente contínua." },
+  { step: "04", title: "Transformadores na Prática", text: "Transformadores mono e trifásicos, autotransformadores, TC, TP e cálculos aplicados." },
+  { step: "05", title: "Dispositivos Aplicados", text: "Contatores, relés, botoeiras, fins de curso, temporizadores e sinalização." },
+  { step: "06", title: "Diagramas e Chaves de Partida", text: "Partida direta, reversão, estrela-triângulo, Dahlander, sequenciais, intertravamentos e outras aplicações." },
+  { step: "07", title: "Inversores de Frequência", text: "Parametrização, rampas, torque e aplicação do inversor em situações práticas." },
+  { step: "08", title: "Projetos e Diagnóstico de Falhas", text: "Integração do conhecimento para analisar circuitos, projetos e defeitos de forma organizada." },
 ];
 
 const deliverables = [
-  { icon: PlayCircle, title: "Videoaulas em alta definição", text: "Aulas objetivas, gravadas em bancada real, com foco em execução." },
-  { icon: CircuitBoard, title: "Montagens comentadas", text: "Cada circuito montado do zero, componente por componente, ligação por ligação." },
-  { icon: FileText, title: "Exercícios e desafios práticos", text: "Atividades guiadas para fixar a lógica e treinar a leitura de diagramas." },
-  { icon: Download, title: "Materiais para download", text: "Diagramas, esquemas e apoio para consultar durante o serviço." },
-  { icon: RefreshCw, title: "Atualizações incluídas", text: "Novos conteúdos adicionados ao curso ficam disponíveis para você." },
-  { icon: Clock, title: "Acesso no seu ritmo", text: "Assista quando e quantas vezes quiser, do celular, tablet ou computador." },
-  { icon: GraduationCap, title: "Certificado de conclusão", text: "Comprove a formação prática ao final da sua jornada no curso." },
-  { icon: LifeBuoy, title: "Suporte às dúvidas", text: "Travou em uma montagem? Você tem canal direto para destravar." },
+  { icon: PlayCircle, title: "Aulas em vídeo", text: "Conteúdo organizado para acompanhar a explicação e a aplicação dos conceitos." },
+  { icon: CircuitBoard, title: "Aplicações comentadas", text: "Circuitos e dispositivos explicados relacionando diagrama, funcionamento e prática." },
+  { icon: FileText, title: "Exercícios práticos", text: "Atividades para revisar conceitos e treinar a interpretação de comandos." },
+  { icon: Download, title: "Materiais de apoio", text: "Diagramas, esquemas e arquivos complementares disponibilizados no treinamento." },
+  { icon: RefreshCw, title: "Conteúdo organizado por etapas", text: "Uma sequência que parte da base e avança até projetos e diagnóstico." },
+  { icon: Clock, title: "Estude no seu ritmo", text: "Acesse pelo celular, tablet ou computador dentro do período da sua oferta." },
+  { icon: GraduationCap, title: "Certificado de conclusão", text: "Certificado disponível conforme os critérios de conclusão do treinamento." },
+  { icon: LifeBuoy, title: "Canal de suporte", text: "Use o suporte disponibilizado ao aluno para dúvidas sobre acesso e conteúdo." },
 ];
 
-const testimonials = [
+const videoTestimonials = [
   {
-    name: "Anderson M.",
-    role: "Eletricista de manutenção",
-    text: "Eu já entendia os diagramas, mas travava na hora de montar. Depois das aulas de partida direta e reversão eu montei o painel da empresa sozinho, sem consultar ninguém.",
-  },
-  {
-    name: "Rafael S.",
-    role: "Técnico industrial",
-    text: "O que mudou foi a velocidade. Hoje eu leio um comando e já sei onde procurar a falha. Reduzi pela metade o tempo de diagnóstico nas paradas de máquina.",
-  },
-  {
-    name: "Jocimar P.",
-    role: "Autônomo",
-    text: "Fiz o curso, refiz cada montagem em casa e comecei a aceitar serviço de painel. Foi o primeiro tipo de trabalho que passei a cobrar melhor.",
-  },
-  {
-    name: "Diego A.",
-    role: "Estudante de elétrica",
-    text: "A sequência é muito bem pensada. Cada aula usa o que a anterior ensinou, então quando chega no intertravamento você já entende sem esforço.",
+    name: "Bras Junior",
+    title: "Depoimento de aluno sobre o Comandos Elétricos Expert",
+    embedUrl: "https://www.youtube-nocookie.com/embed/XFL2DMTHFvQ",
   },
 ];
+
+const additionalVideoProofs = [
+  "Aluno Roberto",
+  "Francisco Orestes",
+  "Fabiano Ferreira",
+  "Gilberto Oliveira",
+  "Daniel Paixão",
+];
+
+const TESTIMONIALS_CHANNEL_URL = "https://www.youtube.com/c/AcademiadoEletricista/videos";
 
 const faqs = [
   {
@@ -202,7 +207,7 @@ const faqs = [
   },
   {
     q: "Quanto tempo terei acesso?",
-    a: "O acesso é liberado imediatamente após a confirmação e permanece disponível para consulta sempre que você precisar revisar uma montagem antes de um serviço.",
+    a: "O acesso é liberado após a confirmação da compra e permanece disponível durante o período informado nas condições da sua oferta. Nesse período, você pode rever as aulas sempre que precisar.",
   },
   {
     q: "Existe certificado?",
@@ -229,21 +234,22 @@ function UpsellPage() {
         <div className="mt-8 grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
           <div>
             <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              Parabéns! Seu pedido foi confirmado.
+              Seu livro já está garantido.
               <span className="mt-3 block brand-gradient-text">
-                Agora transforme conhecimento em prática.
+                Agora veja o próximo passo da sua formação.
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Você já possui a base. Agora aprenda exatamente como aplicar tudo isso em situações
-              reais — montando, testando e diagnosticando com as próprias mãos.
+              Complete sua jornada com o Método Comandos Elétricos Expert ao mesmo pedido e avance da leitura para
+              aulas em vídeo, aplicações, diagramas, dispositivos, motores, inversores, projetos e
+              diagnóstico de falhas.
             </p>
 
             <div className="mt-9 max-w-xl space-y-4">
               <CtaPrimary />
               <CtaSecondary />
               <p className="text-center text-xs text-muted-foreground">
-                Adiciona ao pedido que você acabou de concluir · Sem novo cadastro
+                Condição exclusiva desta etapa do pedido · R$ 197,00 em pagamento único
               </p>
             </div>
           </div>
@@ -252,7 +258,7 @@ function UpsellPage() {
             <div className="surface-card overflow-hidden p-2">
               <img
                 src={mockupDevices}
-                alt="Área de membros do Curso Comandos Elétricos Expert em notebook, tablet e celular"
+                alt="Área de membros do Método Comandos Elétricos Expert em notebook, tablet e celular"
                 width={1600}
                 height={1008}
                 className="w-full rounded-xl"
@@ -271,9 +277,9 @@ function UpsellPage() {
 
       {/* PRIMEIRO BLOCO */}
       <section className="mx-auto mt-24 max-w-4xl px-5 text-center">
-        <SectionLabel>A distância que ainda existe</SectionLabel>
+        <SectionLabel>Livro e curso cumprem papéis diferentes</SectionLabel>
         <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl">
-          Existe uma enorme diferença entre entender um diagrama e montar um circuito com segurança.
+          O livro organiza o conhecimento. O método mostra como esse conhecimento se conecta à aplicação.
         </h2>
         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
           A teoria responde <em>o que</em> acontece. A bancada exige que você saiba <em>em que ordem</em>,{" "}
@@ -293,8 +299,8 @@ function UpsellPage() {
             <Journey highlight={2} />
           </div>
           <p className="mt-6 text-sm text-muted-foreground">
-            Você já concluiu as duas primeiras etapas há poucos minutos. O curso é simplesmente a
-            etapa seguinte da mesma jornada.
+            Você já garantiu a base de consulta. Agora pode acrescentar a etapa prática e guiada à
+            mesma jornada de formação.
           </p>
         </div>
       </section>
@@ -302,9 +308,9 @@ function UpsellPage() {
       {/* O QUE VOCÊ VAI APRENDER */}
       <section className="mx-auto mt-24 max-w-6xl px-5">
         <div className="max-w-2xl">
-          <SectionLabel>O que muda na sua prática</SectionLabel>
+          <SectionLabel>Da teoria para a aplicação</SectionLabel>
           <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl">
-            Não são módulos. São capacidades que você passa a ter.
+            O objetivo não é decorar circuitos. É entender o raciocínio por trás deles.
           </h2>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -315,6 +321,33 @@ function UpsellPage() {
               </div>
               <h3 className="mt-5 text-lg font-semibold leading-snug">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTEÚDO DO MÉTODO */}
+      <section className="mx-auto mt-24 max-w-6xl px-5">
+        <div className="max-w-2xl">
+          <SectionLabel>O caminho completo</SectionLabel>
+          <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl">
+            8 etapas para conectar fundamentos, componentes e diagnóstico
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            A sequência foi organizada para você avançar do fundamento até aplicações mais completas,
+            sem transformar o treinamento em uma coleção solta de aulas.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {courseModules.map((module) => (
+            <article key={module.step} className="surface-card flex gap-5 p-6">
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/12 text-sm font-extrabold text-primary">
+                {module.step}
+              </div>
+              <div>
+                <h3 className="text-base font-semibold">{module.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{module.text}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -345,9 +378,9 @@ function UpsellPage() {
 
           <div className="rounded-3xl border border-primary/50 bg-primary/8 p-7">
             <PlayCircle className="size-6 text-primary" />
-            <h3 className="mt-4 text-xl font-bold">O curso que completa</h3>
+            <h3 className="mt-4 text-xl font-bold">O método que leva à aplicação</h3>
             <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-              {["Mostra a montagem acontecendo na sua frente", "Demonstra a sequência correta de execução", "Converte conhecimento em aplicação real", "Treina o diagnóstico quando algo não funciona"].map((i) => (
+              {["Mostra a montagem acontecendo na sua frente", "Demonstra a sequência correta de execução", "Relaciona conhecimento com aplicações práticas", "Apresenta uma lógica organizada para diagnóstico"].map((i) => (
                 <li key={i} className="flex gap-3">
                   <Check className="mt-0.5 size-4 shrink-0 text-primary" />
                   {i}
@@ -360,9 +393,9 @@ function UpsellPage() {
         <div className="mt-10 rounded-3xl border border-border bg-surface-2 p-7 text-center">
           <h3 className="text-xl font-bold">Por que este curso existe</h3>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Muitos profissionais estudam a teoria a fundo e mesmo assim hesitam na hora de fechar um
-            painel. Não é falta de conhecimento — é falta de repetição guiada. O curso existe para
-            eliminar exatamente essa lacuna entre saber e executar.
+            Conhecer o símbolo, o componente e o diagrama é essencial. Mas a aplicação fica mais clara
+            quando você acompanha a sequência de funcionamento, observa as relações entre os elementos
+            e entende onde medir quando surge uma falha. É para organizar esse raciocínio que o método existe.
           </p>
         </div>
       </section>
@@ -401,11 +434,10 @@ function UpsellPage() {
               O mesmo autor do livro que você acabou de adquirir.
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Décadas dentro de laboratórios de comandos elétricos formando profissionais em
-              instituições técnicas de referência, como <strong className="text-foreground">SENAI</strong> e{" "}
-              <strong className="text-foreground">FAETEC</strong>. Foi na sala de aula, corrigindo as
-              mesmas dúvidas milhares de vezes, que nasceu o método: primeiro a lógica, depois a
-              montagem, sempre na mesma ordem.
+              Engenheiro eletricista, autor do livro e professor de Eletricidade Industrial há mais de
+              26 anos, com atuação em instituições como <strong className="text-foreground">SENAI</strong> e{" "}
+              <strong className="text-foreground">FAETEC</strong>. O método nasceu da experiência de ensino:
+              organizar primeiro o raciocínio técnico e depois avançar para a aplicação.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               O livro que você tem em mãos nasceu desse método. O curso é a versão em bancada dele —
@@ -431,27 +463,57 @@ function UpsellPage() {
       {/* PROVA SOCIAL */}
       <section className="mx-auto mt-24 max-w-6xl px-5">
         <div className="max-w-2xl">
-          <SectionLabel>Alunos na prática</SectionLabel>
+          <SectionLabel>Provas sociais reais</SectionLabel>
           <h2 className="mt-6 text-3xl font-bold sm:text-4xl">
-            O que muda quando a teoria encontra a bancada
+            Antes de decidir, ouça quem já estudou com a Academia do Eletricista
           </h2>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            Aqui não usamos depoimentos escritos criados para a página. A prova vem de relatos em vídeo
+            publicados no canal oficial da Academia do Eletricista.
+          </p>
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {testimonials.map((t) => (
-            <figure key={t.name} className="surface-card p-7">
-              <Sparkles className="size-5 text-primary" />
-              <blockquote className="mt-4 text-base leading-relaxed">“{t.text}”</blockquote>
-              <figcaption className="mt-5 flex items-center gap-3 border-t border-border pt-5">
-                <span className="flex size-10 items-center justify-center rounded-full bg-primary/15 text-sm font-bold text-primary">
-                  {t.name.charAt(0)}
-                </span>
-                <span>
-                  <span className="block text-sm font-semibold">{t.name}</span>
-                  <span className="block text-xs text-muted-foreground">{t.role}</span>
-                </span>
-              </figcaption>
-            </figure>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+          {videoTestimonials.map((video) => (
+            <article key={video.embedUrl} className="surface-card overflow-hidden">
+              <div className="aspect-video bg-black">
+                <iframe
+                  src={video.embedUrl}
+                  title={video.title}
+                  loading="lazy"
+                  className="h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+              <div className="p-5">
+                <p className="text-sm font-semibold">{video.name}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{video.title}</p>
+              </div>
+            </article>
           ))}
+
+          <aside className="surface-card p-6">
+            <p className="text-sm font-semibold">Mais depoimentos publicados no canal oficial</p>
+            <div className="mt-5 grid gap-3">
+              {additionalVideoProofs.map((name) => (
+                <a
+                  key={name}
+                  href={TESTIMONIALS_CHANNEL_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 rounded-xl border border-border bg-surface-2 p-4 text-sm font-medium transition-colors hover:border-primary/50"
+                >
+                  <PlayCircle className="size-5 shrink-0 text-primary" />
+                  <span>{name}</span>
+                </a>
+              ))}
+            </div>
+            <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
+              Os links abrem o canal oficial para você conferir os relatos diretamente na fonte.
+            </p>
+          </aside>
         </div>
       </section>
 
@@ -461,23 +523,23 @@ function UpsellPage() {
           <div className="border-b border-border bg-surface-2 px-7 py-6 text-center sm:px-10">
             <SectionLabel>Condição desta etapa do pedido</SectionLabel>
             <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl">
-              Adicione o Curso Comandos Elétricos Expert
+              Adicione o Método Comandos Elétricos Expert
             </h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Como esta oferta faz parte da compra realizada há poucos instantes, existe uma condição
-              especial disponível somente nesta etapa do pedido.
+              Você já garantiu o livro. Nesta etapa, pode acrescentar o treinamento em vídeo por uma
+              condição diferente da oferta principal, sem precisar recomeçar sua jornada de compra.
             </p>
           </div>
 
           <div className="px-7 py-8 sm:px-10">
             <ul className="space-y-3 text-sm">
               {[
-                "Curso completo em vídeo com montagens reais",
-                "Exercícios práticos guiados aula por aula",
-                "Materiais e diagramas para download",
-                "Atualizações futuras incluídas",
+                "Método completo em vídeo, organizado em 8 etapas",
+                "Exercícios e aplicações para reforçar o conteúdo",
+                "Materiais de apoio e diagramas disponibilizados no treinamento",
+                "Conteúdo organizado da base ao diagnóstico de falhas",
                 "Certificado de conclusão",
-                "Suporte às suas dúvidas técnicas",
+                "Canal de suporte disponibilizado ao aluno",
               ].map((i) => (
                 <li key={i} className="flex gap-3">
                   <Check className="mt-0.5 size-4 shrink-0 text-success" />
@@ -524,10 +586,9 @@ function UpsellPage() {
           <div>
             <h2 className="text-xl font-bold">Risco zero para você</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Assista às aulas, faça as montagens e avalie com calma. Se sentir que o curso não
-              acrescentou à sua prática dentro do prazo de garantia, basta solicitar o reembolso e
-              devolvemos o valor integral. Ambiente de compra seguro e criptografado — o risco é
-              todo nosso.
+              Entre na área de membros, conheça o conteúdo e avalie o treinamento. Se decidir que não
+              é para você, utilize a garantia dentro do prazo e das condições informadas na compra.
+              Assim, sua decisão não precisa ser baseada apenas nesta página.
             </p>
           </div>
         </div>
@@ -556,11 +617,11 @@ function UpsellPage() {
       <section className="mx-auto mt-24 max-w-5xl px-5">
         <div className="surface-card p-8 text-center sm:p-12">
           <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl">
-            Já começou. Faz todo sentido concluir.
+            Você já começou pela base. Agora pode acrescentar a aplicação guiada.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground">
-            O livro abriu o caminho. O curso é o trecho que leva do conhecimento ao domínio
-            profissional.
+            Livro e método não competem entre si: um funciona como referência técnica; o outro organiza
+            a demonstração, a aplicação e o diagnóstico em uma sequência de estudo.
           </p>
 
           <div className="mt-10">
@@ -593,7 +654,7 @@ function UpsellPage() {
             href={CHECKOUT_URL}
             className="cta-primary flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-extrabold sm:text-base"
           >
-            SIM! Quero adicionar o curso ao meu pedido
+            SIM! Quero adicionar o método ao meu pedido
             <ArrowRight className="size-4" />
           </a>
         </div>
