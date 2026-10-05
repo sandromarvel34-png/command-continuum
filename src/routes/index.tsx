@@ -84,7 +84,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 const journey = [
   { icon: BookOpen, label: "Livro", note: "você já tem" },
   { icon: Lightbulb, label: "Conhecimento", note: "base formada" },
-  { icon: PlayCircle, label: "Curso", note: "próximo passo" },
+  { icon: PlayCircle, label: "Método", note: "próximo passo" },
   { icon: Wrench, label: "Aplicação", note: "na bancada" },
   { icon: BadgeCheck, label: "Confiança", note: "mais repertório" },
   { icon: GaugeCircle, label: "Domínio", note: "técnico" },
@@ -194,8 +194,8 @@ const TESTIMONIALS_CHANNEL_URL = "https://www.youtube.com/c/AcademiadoEletricist
 
 const faqs = [
   {
-    q: "O curso substitui o livro?",
-    a: "Não. O curso complementa o livro. O livro consolida a base conceitual — o que cada componente faz e por que o circuito funciona. O curso mostra a execução: montagem, sequência, ajustes e diagnóstico. Foram pensados para serem usados juntos.",
+    q: "O método substitui o livro?",
+    a: "Não. O método complementa o livro. O livro consolida a base conceitual — o que cada componente faz e por que o circuito funciona. O treinamento em vídeo aprofunda a aplicação, a sequência de funcionamento e o diagnóstico. Foram pensados para serem usados juntos.",
   },
   {
     q: "Posso assistir quando quiser?",
@@ -203,7 +203,7 @@ const faqs = [
   },
   {
     q: "Preciso ter experiência prévia?",
-    a: "Não. O curso começa pelos fundamentos da lógica de comandos e avança de forma progressiva. E como você já tem o livro, chega às aulas com uma base acima da média.",
+    a: "Não. O método começa pelos fundamentos da lógica de comandos e avança de forma progressiva. O livro funciona como apoio técnico durante essa jornada.",
   },
   {
     q: "Quanto tempo terei acesso?",
@@ -240,7 +240,7 @@ function UpsellPage() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Complete sua jornada com o Método Comandos Elétricos Expert ao mesmo pedido e avance da leitura para
+              Complete sua formação com o Método Comandos Elétricos Expert ao mesmo pedido e avance da leitura para
               aulas em vídeo, aplicações, diagramas, dispositivos, motores, inversores, projetos e
               diagnóstico de falhas.
             </p>
@@ -277,15 +277,15 @@ function UpsellPage() {
 
       {/* PRIMEIRO BLOCO */}
       <section className="mx-auto mt-24 max-w-4xl px-5 text-center">
-        <SectionLabel>Livro e curso cumprem papéis diferentes</SectionLabel>
+        <SectionLabel>Livro e método cumprem papéis diferentes</SectionLabel>
         <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl">
           O livro organiza o conhecimento. O método mostra como esse conhecimento se conecta à aplicação.
         </h2>
         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-          A teoria responde <em>o que</em> acontece. A bancada exige que você saiba <em>em que ordem</em>,{" "}
-          <em>com qual componente</em> e <em>o que fazer quando não funciona de primeira</em>. O Curso
-          Comandos Elétricos Expert foi criado justamente para diminuir essa distância — no menor
-          tempo possível, agora que sua base já está formada.
+          Você acabou de garantir uma referência técnica para estudar conceitos, ligações e diagramas.
+          O próximo passo é acompanhar esses mesmos fundamentos em uma sequência guiada, relacionando
+          <em> lógica</em>, <em>componentes</em>, <em>aplicação</em>, <em>medição</em> e <em>diagnóstico</em>.
+          É exatamente esse o papel do Método Comandos Elétricos Expert.
         </p>
       </section>
 
@@ -358,7 +358,7 @@ function UpsellPage() {
         <div className="text-center">
           <SectionLabel>Feitos para funcionar juntos</SectionLabel>
           <h2 className="mt-6 text-3xl font-bold sm:text-4xl">
-            O livro explica. O curso demonstra.
+            O livro explica. O método demonstra.
           </h2>
         </div>
 
@@ -391,7 +391,7 @@ function UpsellPage() {
         </div>
 
         <div className="mt-10 rounded-3xl border border-border bg-surface-2 p-7 text-center">
-          <h3 className="text-xl font-bold">Por que este curso existe</h3>
+          <h3 className="text-xl font-bold">Por que o método existe</h3>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Conhecer o símbolo, o componente e o diagrama é essencial. Mas a aplicação fica mais clara
             quando você acompanha a sequência de funcionamento, observa as relações entre os elementos
@@ -440,9 +440,9 @@ function UpsellPage() {
               organizar primeiro o raciocínio técnico e depois avançar para a aplicação.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              O livro que você tem em mãos nasceu desse método. O curso é a versão em bancada dele —
-              a aula prática que sempre acompanhou a teoria, agora disponível para você assistir
-              quantas vezes precisar.
+              O livro que você tem em mãos reúne a base técnica. O método organiza a continuação em
+              vídeo, conectando explicação, aplicação e diagnóstico para você revisar durante o período
+              de acesso da sua oferta.
             </p>
             <dl className="mt-8 grid grid-cols-3 gap-4">
               {[
@@ -550,7 +550,7 @@ function UpsellPage() {
 
             <div className="mt-9 rounded-2xl border border-primary/40 bg-primary/8 p-7 text-center">
               <p className="text-sm text-muted-foreground">
-                Valor normal do curso:{" "}
+                Valor normal do treinamento:{" "}
                 <span className="font-semibold text-foreground line-through decoration-destructive/70">
                   R$ 497,00
                 </span>
