@@ -5,8 +5,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  --color-cta: var(--cta);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
   --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Sora", ui-sans-serif, system-ui, sans-serif;
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-brand: var(--brand);
@@ -76,6 +79,9 @@
 :root {
   color-scheme: light;
   --radius: 1rem;
+  --cta: oklch(0.72 0.18 55);
+  --navy: oklch(0.26 0.055 255);
+  --navy-2: oklch(0.32 0.07 255);
   --background: oklch(0.985 0.004 255);
   --foreground: oklch(0.22 0.035 255);
   --surface: oklch(1 0 0);
@@ -168,6 +174,13 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
   }
 }
 
@@ -189,9 +202,9 @@
 }
 
 @utility cta-primary {
-  background-image: var(--gradient-brand);
-  color: var(--brand-foreground);
-  box-shadow: var(--shadow-brand);
+  background: var(--cta);
+  color: var(--navy);
+  box-shadow: 0 16px 34px -18px color-mix(in oklab, var(--cta) 65%, transparent);
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 .cta-primary:hover {
@@ -203,4 +216,18 @@
   html {
     scroll-behavior: smooth;
   }
+}
+
+
+@utility technical-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, white 7%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, white 7%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@utility navy-panel {
+  background:
+    radial-gradient(60% 70% at 80% 10%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 70%),
+    var(--navy);
 }
