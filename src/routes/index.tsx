@@ -19,6 +19,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import logoExpert from "@/assets/logo-comandos-expert.png";
 import professor from "@/assets/professor.jpg";
 
 export const Route = createFileRoute("/")({
@@ -74,22 +75,14 @@ function CtaSecondary() {
 
 function CourseLogo({ className = "" }: { className?: string }) {
   return (
-    <div className={`select-none ${className}`} aria-label="Curso Comandos Elétricos Expert v5.0">
-      <div className="flex items-end justify-center gap-5">
-        <span className="text-2xl font-extrabold italic tracking-tight text-primary sm:text-3xl">Curso</span>
-        <div className="flex items-center gap-1.5">
-          <svg viewBox="0 0 44 44" className="size-10 sm:size-12" aria-hidden="true">
-            <path d="M8 5h22L18 16h18L7 28h18L13 39" fill="none" stroke="#f28a00" strokeWidth="4" strokeLinecap="square" strokeLinejoin="miter" />
-          </svg>
-          <span className="text-3xl font-black tracking-[-0.08em] text-primary sm:text-4xl">AE</span>
-        </div>
-      </div>
-      <p className="mt-2 text-center text-[clamp(1.45rem,4vw,3.35rem)] font-black leading-none tracking-[-0.045em] text-foreground">
-        COMANDOS ELÉTRICOS
-      </p>
-      <p className="mt-1 text-center text-[clamp(2.4rem,7vw,5.9rem)] font-semibold italic leading-none tracking-[-0.055em]" style={{ color: "#f28a00" }}>
-        Expert<span className="ml-1 text-[0.48em]">v5.0®</span>
-      </p>
+    <div className={`flex justify-center ${className}`}>
+      <img
+        src={logoExpert}
+        alt="Curso Comandos Elétricos Expert v5.0"
+        width={500}
+        height={154}
+        className="block h-auto w-full max-w-[500px] object-contain"
+      />
     </div>
   );
 }
