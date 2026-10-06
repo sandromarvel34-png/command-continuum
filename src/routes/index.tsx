@@ -178,19 +178,14 @@ const videoTestimonials = [
   {
     name: "Bras Junior",
     title: "Depoimento de aluno sobre o Comandos Elétricos Expert",
-    embedUrl: "https://www.youtube-nocookie.com/embed/XFL2DMTHFvQ",
+    embedUrl: "https://www.youtube-nocookie.com/embed/XFL2DMTHFvQ?rel=0&playsinline=1",
+  },
+  {
+    name: "Gilberto Oliveira",
+    title: "Depoimento de aluno da Academia do Eletricista",
+    embedUrl: "https://www.youtube-nocookie.com/embed/pCKulBnfJCQ?rel=0&playsinline=1",
   },
 ];
-
-const additionalVideoProofs = [
-  "Aluno Roberto",
-  "Francisco Orestes",
-  "Fabiano Ferreira",
-  "Gilberto Oliveira",
-  "Daniel Paixão",
-];
-
-const TESTIMONIALS_CHANNEL_URL = "https://www.youtube.com/c/AcademiadoEletricista/videos";
 
 const faqs = [
   {
@@ -226,7 +221,7 @@ function UpsellPage() {
 
       {/* HERO */}
       <section className="relative mx-auto max-w-6xl px-5 pt-14 sm:pt-20">
-        <div className="flex items-center justify-center gap-2 rounded-full border border-success/30 bg-success/10 px-4 py-2 text-sm font-medium text-success sm:w-fit sm:mx-auto">
+        <div className="flex items-center justify-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm font-medium text-primary sm:w-fit sm:mx-auto">
           <Check className="size-4" />
           Pagamento aprovado · Pedido confirmado
         </div>
@@ -276,7 +271,7 @@ function UpsellPage() {
       </section>
 
       {/* PRIMEIRO BLOCO */}
-      <section className="mx-auto mt-24 max-w-4xl px-5 text-center">
+      <section className="mx-auto mt-20 max-w-5xl rounded-3xl bg-surface-2 px-6 py-14 text-center sm:px-10">
         <SectionLabel>Livro e método cumprem papéis diferentes</SectionLabel>
         <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl">
           O livro organiza o conhecimento. O método mostra como esse conhecimento se conecta à aplicação.
@@ -327,7 +322,7 @@ function UpsellPage() {
       </section>
 
       {/* CONTEÚDO DO MÉTODO */}
-      <section className="mx-auto mt-24 max-w-6xl px-5">
+      <section className="mx-auto mt-24 max-w-6xl rounded-3xl bg-surface-2 px-5 py-16 sm:px-8">
         <div className="max-w-2xl">
           <SectionLabel>O caminho completo</SectionLabel>
           <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl">
@@ -461,66 +456,57 @@ function UpsellPage() {
       </section>
 
       {/* PROVA SOCIAL */}
-      <section className="mx-auto mt-24 max-w-6xl px-5">
-        <div className="max-w-2xl">
-          <SectionLabel>Provas sociais reais</SectionLabel>
+      <section className="mx-auto mt-24 max-w-6xl rounded-3xl bg-surface-2 px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <SectionLabel>Provas sociais em vídeo</SectionLabel>
           <h2 className="mt-6 text-3xl font-bold sm:text-4xl">
-            Antes de decidir, ouça quem já estudou com a Academia do Eletricista
+            Assista aos depoimentos sem sair desta página
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Aqui não usamos depoimentos escritos criados para a página. A prova vem de relatos em vídeo
-            publicados no canal oficial da Academia do Eletricista.
+            Os relatos abaixo foram publicados pela Academia do Eletricista e ficam incorporados
+            aqui para você assistir antes de decidir, sem abrir outra página ou interromper sua compra.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {videoTestimonials.map((video) => (
             <article key={video.embedUrl} className="surface-card overflow-hidden">
-              <div className="aspect-video bg-black">
+              <div className="aspect-video bg-surface-2">
                 <iframe
                   src={video.embedUrl}
                   title={video.title}
                   loading="lazy"
                   className="h-full w-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  sandbox="allow-scripts allow-same-origin allow-presentation"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
               </div>
-              <div className="p-5">
-                <p className="text-sm font-semibold">{video.name}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{video.title}</p>
+              <div className="border-t border-border p-5">
+                <div className="flex items-center gap-3">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <PlayCircle className="size-5" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold">{video.name}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{video.title}</p>
+                  </div>
+                </div>
               </div>
             </article>
           ))}
-
-          <aside className="surface-card p-6">
-            <p className="text-sm font-semibold">Mais depoimentos publicados no canal oficial</p>
-            <div className="mt-5 grid gap-3">
-              {additionalVideoProofs.map((name) => (
-                <a
-                  key={name}
-                  href={TESTIMONIALS_CHANNEL_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 rounded-xl border border-border bg-surface-2 p-4 text-sm font-medium transition-colors hover:border-primary/50"
-                >
-                  <PlayCircle className="size-5 shrink-0 text-primary" />
-                  <span>{name}</span>
-                </a>
-              ))}
-            </div>
-            <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-              Os links abrem o canal oficial para você conferir os relatos diretamente na fonte.
-            </p>
-          </aside>
         </div>
+
+        <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-relaxed text-muted-foreground">
+          Os players estão incorporados à página. Não há botão ou chamada levando o comprador para o canal do YouTube.
+        </p>
       </section>
 
       {/* OFERTA */}
       <section id="oferta" className="mx-auto mt-24 max-w-3xl scroll-mt-16 px-5">
-        <div className="surface-card overflow-hidden">
-          <div className="border-b border-border bg-surface-2 px-7 py-6 text-center sm:px-10">
+        <div className="surface-card overflow-hidden border-primary/25">
+          <div className="border-b border-primary/15 bg-primary/5 px-7 py-7 text-center sm:px-10">
             <SectionLabel>Condição desta etapa do pedido</SectionLabel>
             <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl">
               Adicione o Método Comandos Elétricos Expert
@@ -542,16 +528,16 @@ function UpsellPage() {
                 "Canal de suporte disponibilizado ao aluno",
               ].map((i) => (
                 <li key={i} className="flex gap-3">
-                  <Check className="mt-0.5 size-4 shrink-0 text-success" />
+                  <Check className="mt-0.5 size-4 shrink-0 text-primary" />
                   {i}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-9 rounded-2xl border border-primary/40 bg-primary/8 p-7 text-center">
+            <div className="mt-9 rounded-2xl border border-primary/25 bg-primary/5 p-7 text-center">
               <p className="text-sm text-muted-foreground">
                 Valor normal do treinamento:{" "}
-                <span className="font-semibold text-foreground line-through decoration-destructive/70">
+                <span className="font-semibold text-foreground line-through decoration-muted-foreground/45">
                   R$ 497,00
                 </span>
               </p>
@@ -642,7 +628,7 @@ function UpsellPage() {
       </section>
 
       {/* STICKY CTA */}
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/90 px-4 py-3 backdrop-blur-md">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-white/95 px-4 py-3 shadow-[0_-10px_30px_-24px_rgba(15,23,42,0.35)] backdrop-blur-md">
         <div className="mx-auto flex max-w-4xl items-center gap-4">
           <div className="hidden shrink-0 sm:block">
             <p className="text-xs text-muted-foreground">Adicionar ao pedido</p>
