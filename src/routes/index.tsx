@@ -460,11 +460,10 @@ function UpsellPage() {
         <div className="mx-auto max-w-3xl text-center">
           <SectionLabel>Provas sociais em vídeo</SectionLabel>
           <h2 className="mt-6 text-3xl font-bold sm:text-4xl">
-            Assista aos depoimentos sem sair desta página
+            Veja o que os alunos dizem sobre o Método
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Os relatos abaixo foram publicados pela Academia do Eletricista e ficam incorporados
-            aqui para você assistir antes de decidir, sem abrir outra página ou interromper sua compra.
+            Depoimentos reais de alunos da Academia do Eletricista sobre a experiência com o treinamento.
           </p>
         </div>
 
@@ -498,9 +497,6 @@ function UpsellPage() {
           ))}
         </div>
 
-        <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-relaxed text-muted-foreground">
-          Os players estão incorporados à página. Não há botão ou chamada levando o comprador para o canal do YouTube.
-        </p>
       </section>
 
       {/* OFERTA */}
