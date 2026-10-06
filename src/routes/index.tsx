@@ -6,15 +6,11 @@ import {
   BookOpenCheck,
   Check,
   CircuitBoard,
-  Clock3,
   FileBadge2,
   GraduationCap,
-  MonitorPlay,
   PlayCircle,
   ShieldCheck,
   Users,
-  Wrench,
-  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoExpert from "@/assets/logo-comandos-expert.png";
@@ -85,11 +81,11 @@ const bonuses = [
 const faqs = [
   {
     q: "Quanto tempo terei acesso ao Método?",
-    a: "O acesso desta oferta é de 36 meses.",
+    a: "O período de acesso é o informado na oferta desta página.",
   },
   {
     q: "O treinamento possui certificado?",
-    a: "Sim. O Método possui certificado de conclusão com carga horária de 100 horas, conforme os critérios de conclusão do treinamento.",
+    a: "Sim. O Método possui certificado de conclusão, disponibilizado conforme os critérios de conclusão do treinamento.",
   },
   {
     q: "Preciso já trabalhar com comandos elétricos?",
@@ -106,7 +102,7 @@ function SectionLabel({ children, dark = false }: { children: React.ReactNode; d
     <span
       className={
         dark
-          ? "inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white/75"
+          ? "inline-flex rounded-full border border-white/[0.15] bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white/[0.75]"
           : "inline-flex rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary"
       }
     >
@@ -158,7 +154,7 @@ function ProductMockup() {
   return (
     <div className="relative mx-auto w-full max-w-[560px]">
       <div className="absolute -inset-8 rounded-full bg-primary/20 blur-3xl" aria-hidden="true" />
-      <div className="relative rounded-[28px] border border-white/15 bg-[#09182e] p-3 shadow-2xl">
+      <div className="relative rounded-[28px] border border-white/[0.15] bg-[#09182e] p-3 shadow-2xl">
         <div className="overflow-hidden rounded-[20px] border border-white/10 bg-white">
           <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-3">
             <span className="size-2 rounded-full bg-slate-300" />
@@ -175,7 +171,7 @@ function ProductMockup() {
                     className={
                       index === 2
                         ? "rounded-lg bg-white/15 px-3 py-2 text-[11px] font-semibold text-white"
-                        : "rounded-lg px-3 py-2 text-[11px] font-medium text-white/55"
+                        : "rounded-lg px-3 py-2 text-[11px] font-medium text-white/[0.55]"
                     }
                   >
                     {item}
@@ -212,7 +208,7 @@ function ProductMockup() {
           </span>
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary">Certificação</p>
-            <p className="font-display text-xl font-extrabold leading-none text-slate-900">100 horas</p>
+            <p className="font-display text-xl font-extrabold leading-none text-slate-900">Certificação</p>
           </div>
         </div>
       </div>
@@ -269,12 +265,12 @@ function UpsellPage() {
                 <span className="block text-[#63b3ff]">da leitura do diagrama ao diagnóstico de falhas.</span>
               </h1>
 
-              <p className="mt-6 max-w-2xl text-[18px] leading-relaxed text-white/78">
+              <p className="mt-6 max-w-2xl text-[18px] leading-relaxed text-white/[0.78]">
                 Acrescente ao seu pedido uma formação em vídeo que organiza componentes, motores,
                 chaves de partida, inversores, projetos e diagnóstico em uma sequência guiada.
               </p>
 
-              <div className="mt-7 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-4 border-y border-white/15 py-5 sm:grid-cols-4">
+              <div className="mt-7 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-4 border-y border-white/[0.15] py-5 sm:grid-cols-4">
                 <div>
                   <p className="font-display text-3xl font-extrabold text-white">100h</p>
                   <p className="text-[13px] text-white/60">certificação</p>
@@ -294,18 +290,18 @@ function UpsellPage() {
               </div>
 
               <div className="mt-8 max-w-xl">
-                <div className="rounded-3xl border border-white/15 bg-white/8 p-5">
+                <div className="rounded-3xl border border-white/[0.15] bg-white/[0.08] p-5">
                   <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/60">
                     Condição especial desta etapa
                   </p>
                   <p className="mt-2 font-display text-5xl font-extrabold leading-none text-white">R$ 197</p>
-                  <p className="mt-2 text-[15px] text-white/65">
+                  <p className="mt-2 text-[15px] text-white/[0.65]">
                     disponível após a compra do livro
                   </p>
                 </div>
                 <div className="mt-4">
                   <BuyButton />
-                  <div className="mt-4 [&_a]:text-white/55">
+                  <div className="mt-4 [&_a]:text-white/[0.55]">
                     <DeclineLink />
                   </div>
                 </div>
@@ -527,7 +523,7 @@ function UpsellPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-white/15 bg-white/8 p-7 sm:p-10">
+          <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-white/[0.15] bg-white/[0.08] p-7 sm:p-10">
             <div className="grid gap-3 sm:grid-cols-2">
               {[
                 "Formação completa em comandos elétricos",
@@ -537,14 +533,14 @@ function UpsellPage() {
                 "Eletrotécnica Aplicada",
                 "Programas Simuladores de Circuitos",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-3 rounded-xl bg-white/8 px-4 py-3 text-[16px] text-white/90">
+                <div key={item} className="flex items-start gap-3 rounded-xl bg-white/[0.08] px-4 py-3 text-[16px] text-white/90">
                   <Check className="mt-1 size-4 shrink-0 text-[#63b3ff]" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 border-t border-white/15 pt-8 text-center">
+            <div className="mt-8 border-t border-white/[0.15] pt-8 text-center">
               <p className="text-[16px] text-white/60">
                 Valor normal <span className="line-through">R$ 497,00</span>
               </p>
@@ -554,7 +550,7 @@ function UpsellPage() {
 
             <div className="mx-auto mt-7 max-w-xl">
               <BuyButton />
-              <div className="mt-4 [&_a]:text-white/55">
+              <div className="mt-4 [&_a]:text-white/[0.55]">
                 <DeclineLink />
               </div>
             </div>
