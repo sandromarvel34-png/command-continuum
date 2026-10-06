@@ -19,7 +19,7 @@ import {
   Zap,
 } from "lucide-react";
 import logoExpert from "@/assets/logo-comandos-expert.png";
-import mockupDevices from "@/assets/mockup-devices.jpg";
+import professor from "@/assets/professor.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -298,17 +298,6 @@ function UpsellPage() {
           </div>
         </div>
 
-        <div className="mx-auto mt-12 max-w-5xl">
-          <div className="surface-card overflow-hidden p-2">
-            <img
-              src={mockupDevices}
-              alt="Método Comandos Elétricos Expert disponível em computador, tablet e celular"
-              width={1600}
-              height={1008}
-              className="w-full rounded-xl"
-            />
-          </div>
-        </div>
       </section>
 
       {/* PROVA RÁPIDA */}
@@ -465,41 +454,43 @@ function UpsellPage() {
 
       {/* AUTORIDADE */}
       <section className="mx-auto mt-24 max-w-6xl px-5">
-        <div className="surface-card grid items-center gap-8 overflow-hidden p-7 sm:p-10 lg:grid-cols-[.8fr_1.2fr]">
-          <div className="rounded-3xl bg-surface-2 p-7">
+        <div className="surface-card grid items-stretch overflow-hidden lg:grid-cols-[.78fr_1.22fr]">
+          <div className="bg-surface-2">
             <img
-              src={logoExpert}
-              alt="Logo Comandos Elétricos Expert"
-              width={1062}
-              height={327}
-              className="mx-auto h-auto w-full max-w-[420px]"
+              src={professor}
+              alt="Sandro Zander, engenheiro eletricista, professor e criador do Método Comandos Elétricos Expert"
+              loading="lazy"
+              width={450}
+              height={576}
+              className="h-full min-h-[420px] w-full object-cover object-top"
             />
-            <div className="mt-7 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl border border-border bg-surface p-4 text-center">
-                <p className="text-2xl font-extrabold text-primary">26+ anos</p>
-                <p className="mt-1 text-xs text-muted-foreground">ensinando eletricidade industrial</p>
-              </div>
-              <div className="rounded-2xl border border-border bg-surface p-4 text-center">
-                <p className="text-2xl font-extrabold text-primary">+15 mil</p>
-                <p className="mt-1 text-xs text-muted-foreground">alunos formados ao longo da carreira</p>
-              </div>
-            </div>
           </div>
 
-          <div>
+          <div className="p-7 sm:p-10">
             <SectionLabel>Quem criou o Método</SectionLabel>
             <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl">
-              Formação conduzida por quem ensina eletricidade industrial há mais de 26 anos
+              Sandro Zander: mais de 26 anos ensinando eletricidade industrial
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Sandro Zander é engenheiro eletricista, autor do Livro Comandos Elétricos, fundador da
-              Academia do Eletricista e criador do Método Comandos Elétricos Expert.
+              Engenheiro eletricista, autor do Livro Comandos Elétricos, fundador da Academia do Eletricista
+              e criador do Método Comandos Elétricos Expert.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Sua experiência reúne atuação profissional na indústria e décadas em sala de aula, incluindo
-              SENAI e FAETEC. O método foi estruturado para transformar essa experiência em uma sequência
-              didática que parte dos fundamentos e avança até aplicações, projetos e diagnóstico.
+              SENAI e FAETEC. O Método organiza essa experiência em uma sequência que parte dos fundamentos
+              e avança até aplicações, projetos e diagnóstico de falhas.
             </p>
+
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              <div className="rounded-2xl border border-border bg-surface-2 p-5 text-center">
+                <p className="text-2xl font-extrabold text-primary">26+ anos</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">ensinando eletricidade industrial</p>
+              </div>
+              <div className="rounded-2xl border border-border bg-surface-2 p-5 text-center">
+                <p className="text-2xl font-extrabold text-primary">+15 mil</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">alunos formados ao longo da carreira</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
