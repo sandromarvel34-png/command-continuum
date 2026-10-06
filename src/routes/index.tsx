@@ -75,7 +75,7 @@ function CtaSecondary() {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-2 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
       {children}
     </span>
   );
@@ -628,7 +628,7 @@ function UpsellPage() {
       </section>
 
       {/* STICKY CTA */}
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-white/95 px-4 py-3 shadow-[0_-10px_30px_-24px_rgba(15,23,42,0.35)] backdrop-blur-md">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-4 py-3 backdrop-blur-md">
         <div className="mx-auto flex max-w-4xl items-center gap-4">
           <div className="hidden shrink-0 sm:block">
             <p className="text-xs text-muted-foreground">Adicionar ao pedido</p>
