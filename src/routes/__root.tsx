@@ -78,15 +78,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Pedido confirmado — Complete sua formação em Comandos Elétricos" },
-      { name: "description", content: "Você já garantiu o livro Comandos Elétricos. Agora adicione o Curso Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real." },
-      { name: "author", content: "Lovable" },
+      { name: "description", content: "Você já garantiu o livro Comandos Elétricos. Agora adicione o Método Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real." },
+      { name: "author", content: "Sandro Zander" },
       { property: "og:title", content: "Pedido confirmado — Complete sua formação em Comandos Elétricos" },
-      { property: "og:description", content: "Você já garantiu o livro Comandos Elétricos. Agora adicione o Curso Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real." },
+      { property: "og:description", content: "Você já garantiu o livro Comandos Elétricos. Agora adicione o Método Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      
       { name: "twitter:title", content: "Pedido confirmado — Complete sua formação em Comandos Elétricos" },
-      { name: "twitter:description", content: "Você já garantiu o livro Comandos Elétricos. Agora adicione o Curso Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real." },
+      { name: "twitter:description", content: "Você já garantiu o livro Comandos Elétricos. Agora adicione o Método Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fa118c0e-333c-4cbc-b63c-b8e041c4f395/id-preview-a78c7dc9--88c1d178-2421-49d8-8146-9c85b17befe1.lovable.app-1785969383375.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fa118c0e-333c-4cbc-b63c-b8e041c4f395/id-preview-a78c7dc9--88c1d178-2421-49d8-8146-9c85b17befe1.lovable.app-1785969383375.png" },
     ],
@@ -112,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
