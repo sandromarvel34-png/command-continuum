@@ -29,13 +29,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Oferta especial do Método Comandos Elétricos Expert: formação online em comandos elétricos, 100 horas de certificação e 2 anos de acesso.",
+          "Oferta especial do Método Comandos Elétricos Expert: formação online em comandos elétricos, 100 horas de certificação.",
       },
       { property: "og:title", content: "Método Comandos Elétricos Expert" },
       {
         property: "og:description",
         content:
-          "Da base ao diagnóstico de falhas: formação completa em comandos elétricos com 100 horas de certificação e 2 anos de acesso.",
+          "Da base ao diagnóstico de falhas: formação completa em comandos elétricos com 100 horas de certificação.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -104,9 +104,9 @@ const proofStats = [
   },
   {
     icon: Clock3,
-    value: "2 anos",
-    label: "de acesso",
-    note: "Tempo para estudar e revisar o conteúdo",
+    value: "Acesso",
+    label: "à formação",
+    note: "Período conforme as condições da oferta",
   },
   {
     icon: Layers3,
@@ -237,7 +237,7 @@ const videoTestimonials = [
 const faqs = [
   {
     q: "Quanto tempo terei acesso ao Método?",
-    a: "O acesso informado para o treinamento é de 2 anos. Nesse período você pode estudar no seu ritmo e rever as aulas.",
+    a: "O período de acesso será informado nas condições da oferta.",
   },
   {
     q: "Qual é a carga horária do certificado?",
@@ -290,7 +290,7 @@ function UpsellPage() {
               </p>
 
               <div className="mt-7 grid gap-3 sm:grid-cols-3">
-                {["100h de certificação", "2 anos de acesso", "3 bônus técnicos"].map((item) => (
+                {["100h de certificação", "Acesso conforme a oferta", "3 bônus técnicos"].map((item) => (
                   <div key={item} className="rounded-2xl border border-border bg-surface px-4 py-3 text-center text-sm font-semibold">
                     {item}
                   </div>
@@ -318,7 +318,7 @@ function UpsellPage() {
                   {[
                     "Método completo em 8 módulos",
                     "Certificação de 100 horas",
-                    "2 anos de acesso",
+                    "Acesso conforme a oferta",
                     "3 bônus técnicos incluídos",
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3 rounded-xl bg-surface-2 px-4 py-3 text-sm">
@@ -446,7 +446,7 @@ function UpsellPage() {
                 { icon: PlayCircle, title: "Aulas em vídeo", text: "Conteúdo organizado por módulos para acompanhar a explicação e a aplicação." },
                 { icon: CircuitBoard, title: "Diagramas e aplicações", text: "Exemplos e circuitos para relacionar lógica, componentes e funcionamento." },
                 { icon: FileText, title: "Materiais de apoio", text: "Arquivos complementares para acompanhar o estudo e revisar os conteúdos." },
-                { icon: RefreshCw, title: "2 anos para estudar e revisar", text: "Tempo de acesso para avançar no seu ritmo e retornar aos módulos durante o período informado." },
+                { icon: RefreshCw, title: "Acesso para estudar e revisar", text: "Tempo de acesso para avançar no seu ritmo e retornar aos módulos durante o período informado." },
                 { icon: LifeBuoy, title: "Canais de atendimento", text: "A Academia do Eletricista mantém canais oficiais de atendimento ao aluno." },
                 { icon: GraduationCap, title: "Certificação", text: "Processo de certificação com carga horária oficial de 100 horas." },
               ].map(({ icon: Icon, title, text }) => (
@@ -616,7 +616,7 @@ function UpsellPage() {
               {[
                 "Método completo em 8 módulos",
                 "100 horas de certificação",
-                "2 anos de acesso",
+                "Acesso conforme a oferta",
                 "Canais oficiais de atendimento ao aluno",
                 "Bônus: Certificação em LIDE – Comandos Elétricos (40h)",
                 "Bônus: Eletrotécnica Aplicada em Comandos Elétricos",
