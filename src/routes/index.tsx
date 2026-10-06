@@ -10,6 +10,7 @@ import {
   FileText,
   Gift,
   GraduationCap,
+  Layers3,
   LifeBuoy,
   PlayCircle,
   RefreshCw,
@@ -28,13 +29,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Oferta especial do Método Comandos Elétricos Expert: formação online em comandos elétricos, 100 horas de certificação e 36 meses de acesso.",
+          "Oferta especial do Método Comandos Elétricos Expert: formação online em comandos elétricos, 100 horas de certificação e 2 anos de acesso.",
       },
       { property: "og:title", content: "Método Comandos Elétricos Expert" },
       {
         property: "og:description",
         content:
-          "Da base ao diagnóstico de falhas: formação completa em comandos elétricos com 100 horas de certificação e 36 meses de acesso.",
+          "Da base ao diagnóstico de falhas: formação completa em comandos elétricos com 100 horas de certificação e 2 anos de acesso.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -44,6 +45,7 @@ export const Route = createFileRoute("/")({
 });
 
 const CHECKOUT_URL = "#oferta";
+const DECLINE_URL = "https://huggy-happy-times.lovable.app/";
 
 function CtaPrimary({ className = "" }: { className?: string }) {
   return (
@@ -63,10 +65,10 @@ function CtaPrimary({ className = "" }: { className?: string }) {
 function CtaSecondary() {
   return (
     <a
-      href="#faq"
+      href={DECLINE_URL}
       className="block text-center text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
     >
-      Quero ver as dúvidas antes de decidir
+      NÃO — Quero apenas continuar
     </a>
   );
 }
@@ -83,26 +85,26 @@ const proofStats = [
   {
     icon: Award,
     value: "100h",
-    label: "carga horária oficial",
-    note: "Certificado de conclusão",
+    label: "de certificação",
+    note: "Carga horária do Comandos Elétricos Expert",
   },
   {
     icon: Clock3,
-    value: "36 meses",
+    value: "2 anos",
     label: "de acesso",
-    note: "Tempo para estudar e revisar",
+    note: "Tempo para estudar e revisar o conteúdo",
   },
   {
-    icon: Users,
-    value: "+15 mil",
-    label: "alunos formados",
-    note: "Ao longo da carreira do professor",
+    icon: Layers3,
+    value: "8 módulos",
+    label: "em sequência",
+    note: "Da base até projetos e diagnóstico",
   },
   {
-    icon: ShieldCheck,
-    value: "30 dias",
-    label: "de garantia",
-    note: "Para conhecer o treinamento",
+    icon: Gift,
+    value: "3 bônus",
+    label: "incluídos",
+    note: "Certificação LIDE, eletrotécnica e simuladores",
   },
 ];
 
@@ -221,31 +223,23 @@ const videoTestimonials = [
 const faqs = [
   {
     q: "Quanto tempo terei acesso ao Método?",
-    a: "O acesso desta oferta é de 36 meses. Nesse período você pode estudar no seu ritmo e rever as aulas sempre que precisar.",
+    a: "O acesso informado para o treinamento é de 2 anos. Nesse período você pode estudar no seu ritmo e rever as aulas.",
   },
   {
     q: "Qual é a carga horária do certificado?",
-    a: "O certificado do Comandos Elétricos Expert possui carga horária oficial de 100 horas e é disponibilizado após o processo de certificação previsto no treinamento.",
-  },
-  {
-    q: "O certificado é válido?",
-    a: "Sim. Trata-se de certificado de curso livre, emitido após a conclusão do processo de certificação e válido em todo o território nacional.",
+    a: "O certificado do Comandos Elétricos Expert possui carga horária de 100 horas e é disponibilizado conforme os critérios de conclusão do treinamento.",
   },
   {
     q: "O Método substitui o livro?",
-    a: "Não. O livro funciona como referência técnica de consulta. O Método acrescenta uma sequência de estudo em vídeo, aplicações e exercícios para aprofundar o conteúdo e conectar os assuntos à prática.",
+    a: "Não. O livro funciona como referência técnica de consulta. O Método acrescenta uma sequência de estudo em vídeo, aplicações e exercícios para aprofundar e conectar os assuntos à prática.",
   },
   {
     q: "Preciso ter experiência prévia?",
     a: "Não. O treinamento começa pela base e avança progressivamente até aplicações, projetos e diagnóstico de falhas.",
   },
   {
-    q: "Tenho garantia?",
-    a: "Sim. Esta oferta possui 30 dias de garantia para você acessar a plataforma, conhecer a metodologia e avaliar o treinamento.",
-  },
-  {
-    q: "Recebo os bônus junto com o curso?",
-    a: "Sim. Os bônus apresentados nesta página fazem parte desta oferta do Método Comandos Elétricos Expert.",
+    q: "Quais bônus estão incluídos?",
+    a: "Certificação em LIDE – Comandos Elétricos com 40 horas, Curso de Eletrotécnica Aplicada em Comandos Elétricos e Programas Simuladores de Circuitos.",
   },
 ];
 
@@ -257,44 +251,56 @@ function UpsellPage() {
       {/* HERO */}
       <section className="relative mx-auto max-w-6xl px-5 pt-10 sm:pt-14">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <img
-            src={logoExpert}
-            alt="Comandos Elétricos Expert 5.0"
-            width={1062}
-            height={327}
-            className="h-auto w-full max-w-[430px]"
-          />
+          <div className="w-full max-w-[560px] overflow-visible px-3 sm:px-0">
+            <img
+              src={logoExpert}
+              alt="Comandos Elétricos Expert 5.0"
+              width={1062}
+              height={327}
+              className="block h-auto w-full object-contain"
+            />
+          </div>
 
           <div className="mt-7 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm font-semibold text-primary">
             <BadgeCheck className="size-4" />
-            Oferta especial após a compra do livro
+            Pedido do livro confirmado · oferta complementar
           </div>
 
           <h1 className="mt-7 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Seu livro já está garantido.
+            Antes de finalizar seu pedido:
             <span className="mt-3 block brand-gradient-text">
-              Agora complete sua formação com o Método Comandos Elétricos Expert.
+              adicione o Método Comandos Elétricos Expert por R$ 197.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Uma formação estruturada da base ao diagnóstico de falhas para você estudar comandos elétricos
-            com sequência, aplicações, exercícios, materiais de apoio e certificação de 100 horas.
+            Você já garantiu o livro para consultar. Agora pode acrescentar a formação em vídeo que organiza
+            a aplicação dos comandos elétricos — da base aos motores, diagramas, inversores, projetos e diagnóstico de falhas.
           </p>
 
           <div className="mt-8 grid w-full max-w-3xl gap-3 sm:grid-cols-3">
-            {["100h de certificação", "36 meses de acesso", "30 dias de garantia"].map((item) => (
+            {["100h de certificação", "2 anos de acesso", "3 bônus incluídos"].map((item) => (
               <div key={item} className="rounded-2xl border border-border bg-surface px-4 py-3 text-sm font-semibold">
                 {item}
               </div>
             ))}
           </div>
 
-          <div className="mt-8 w-full max-w-xl space-y-4">
-            <CtaPrimary />
-            <p className="text-xs leading-relaxed text-muted-foreground">
-              Valor normal R$ 497,00 · Condição desta etapa: R$ 197,00
-            </p>
+          <div className="mt-8 w-full max-w-xl">
+            <div className="rounded-3xl border border-primary/25 bg-primary/5 p-6">
+              <p className="text-sm text-muted-foreground">
+                Valor normal <span className="line-through">R$ 497,00</span>
+              </p>
+              <div className="mt-1 flex items-end justify-center gap-3">
+                <span className="text-sm font-bold uppercase tracking-[0.14em] text-primary">agora</span>
+                <span className="text-5xl font-extrabold tracking-tight">R$ 197,00</span>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">condição exclusiva desta etapa do pedido</p>
+            </div>
+            <div className="mt-4 space-y-4">
+              <CtaPrimary />
+              <CtaSecondary />
+            </div>
           </div>
         </div>
 
@@ -320,7 +326,7 @@ function UpsellPage() {
       <section className="mx-auto mt-24 max-w-5xl px-5 text-center">
         <SectionLabel>Livro + Método</SectionLabel>
         <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl">
-          Você já garantiu a sua referência técnica. Agora pode acrescentar a sequência guiada de formação.
+          O livro é a referência. O Método é a sequência guiada para acompanhar a aplicação.
         </h2>
         <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground">
           O livro continua sendo seu material de consulta. O Método organiza o aprendizado em etapas,
@@ -408,8 +414,8 @@ function UpsellPage() {
                 { icon: PlayCircle, title: "Aulas em vídeo", text: "Conteúdo organizado por módulos para acompanhar a explicação e a aplicação." },
                 { icon: CircuitBoard, title: "Diagramas e aplicações", text: "Exemplos e circuitos para relacionar lógica, componentes e funcionamento." },
                 { icon: FileText, title: "Materiais de apoio", text: "Arquivos complementares para acompanhar o estudo e revisar os conteúdos." },
-                { icon: RefreshCw, title: "36 meses para revisar", text: "Tempo de acesso para estudar no seu ritmo e voltar às aulas quando precisar." },
-                { icon: LifeBuoy, title: "Suporte ao aluno", text: "Atendimento por WhatsApp e e-mail durante a jornada de formação." },
+                { icon: RefreshCw, title: "2 anos para estudar e revisar", text: "Tempo de acesso para avançar no seu ritmo e retornar aos módulos durante o período informado." },
+                { icon: LifeBuoy, title: "Canais de atendimento", text: "A Academia do Eletricista mantém canais oficiais de atendimento ao aluno." },
                 { icon: GraduationCap, title: "Certificação", text: "Processo de certificação com carga horária oficial de 100 horas." },
               ].map(({ icon: Icon, title, text }) => (
                 <article key={title} className="rounded-2xl border border-border bg-surface-2 p-5">
@@ -438,7 +444,7 @@ function UpsellPage() {
                 {[
                   "Curso livre com certificação",
                   "Carga horária oficial de 100h",
-                  "Certificado válido em todo o território nacional",
+                  "Certificado de conclusão com carga horária de 100h",
                   "Formação construída da base ao diagnóstico",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-xl border border-border px-4 py-3 text-sm">
@@ -487,8 +493,8 @@ function UpsellPage() {
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground">ensinando eletricidade industrial</p>
               </div>
               <div className="rounded-2xl border border-border bg-surface-2 p-5 text-center">
-                <p className="text-2xl font-extrabold text-primary">+15 mil</p>
-                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">alunos formados ao longo da carreira</p>
+                <p className="text-2xl font-extrabold text-primary">Centenas</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">de profissionais já passaram pelo Método</p>
               </div>
             </div>
           </div>
@@ -565,7 +571,7 @@ function UpsellPage() {
           <div className="border-b border-primary/15 bg-primary/5 px-7 py-8 text-center sm:px-10">
             <SectionLabel>Oferta especial desta etapa</SectionLabel>
             <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl">
-              Complete sua formação por uma condição exclusiva após a compra do livro
+              Adicione a formação completa ao pedido por R$ 197
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               Você já garantiu o livro. Agora pode adicionar o Método Comandos Elétricos Expert e os bônus
@@ -578,12 +584,12 @@ function UpsellPage() {
               {[
                 "Método completo em 8 módulos",
                 "100 horas de certificação",
-                "36 meses de acesso",
-                "Suporte por WhatsApp e e-mail",
+                "2 anos de acesso",
+                "Canais oficiais de atendimento ao aluno",
                 "Bônus: Certificação em LIDE – Comandos Elétricos (40h)",
                 "Bônus: Eletrotécnica Aplicada em Comandos Elétricos",
                 "Bônus: Programas Simuladores de Circuitos",
-                "30 dias de garantia",
+                "3 bônus técnicos incluídos",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm">
                   <Check className="mt-0.5 size-4 shrink-0 text-primary" />
@@ -616,22 +622,6 @@ function UpsellPage() {
         </div>
       </section>
 
-      {/* GARANTIA */}
-      <section className="mx-auto mt-16 max-w-4xl px-5">
-        <div className="surface-card grid gap-6 p-8 sm:grid-cols-[auto_1fr] sm:items-center sm:text-left">
-          <div className="mx-auto flex size-20 items-center justify-center rounded-full border border-primary/30 bg-primary/10 sm:mx-0">
-            <TimerReset className="size-9 text-primary" />
-          </div>
-          <div className="text-center sm:text-left">
-            <h2 className="text-2xl font-bold">30 dias para conhecer o treinamento</h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              A garantia desta oferta é de 30 dias. Você pode acessar a área de membros, conhecer a
-              metodologia e avaliar se o Método faz sentido para a sua formação.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section id="faq" className="mx-auto mt-24 max-w-3xl scroll-mt-16 px-5">
         <div className="text-center">
@@ -659,7 +649,7 @@ function UpsellPage() {
             Livro para consultar. Método para seguir uma formação completa e organizada.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Aproveite a condição desta etapa para adicionar o Comandos Elétricos Expert ao seu pedido.
+            Esta é a etapa do funil em que você decide se quer acrescentar o treinamento ao livro que já comprou.
           </p>
 
           <div className="mx-auto mt-8 max-w-xl space-y-4">
@@ -687,7 +677,7 @@ function UpsellPage() {
             href={CHECKOUT_URL}
             className="cta-primary flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-extrabold sm:text-base"
           >
-            Quero adicionar o Método por R$ 197
+            SIM — Adicionar o Método por R$ 197
             <ArrowRight className="size-4" />
           </a>
         </div>
