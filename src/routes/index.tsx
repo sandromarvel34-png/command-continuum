@@ -10,14 +10,12 @@ import {
   FileText,
   Gift,
   GraduationCap,
-  Layers3,
   LifeBuoy,
   PlayCircle,
   RefreshCw,
   ShieldCheck,
   TimerReset,
   Users,
-  Wrench,
   Zap,
 } from "lucide-react";
 import logoExpert from "@/assets/logo-comandos-expert.png";
