@@ -19,7 +19,6 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import logoExpert from "@/assets/logo-comandos-expert.png";
 import professor from "@/assets/professor.jpg";
 
 export const Route = createFileRoute("/")({
@@ -54,8 +53,8 @@ function CtaPrimary({ className = "" }: { className?: string }) {
       className={`cta-primary group inline-flex w-full items-center justify-center gap-3 rounded-2xl px-7 py-5 text-left text-base font-semibold leading-tight sm:text-lg ${className}`}
     >
       <span>
-        <span className="block text-xl font-extrabold sm:text-2xl">SIM! Quero adicionar o Método</span>
-        <span className="block text-sm font-medium opacity-85">por R$ 197,00 nesta etapa do pedido</span>
+        <span className="block text-xl font-extrabold sm:text-2xl">SIM! Quero completar minha formação</span>
+        <span className="block text-sm font-medium opacity-85">Adicionar o Método por R$ 197</span>
       </span>
       <ArrowRight className="hidden size-6 shrink-0 transition-transform group-hover:translate-x-1 sm:block" />
     </a>
@@ -70,6 +69,28 @@ function CtaSecondary() {
     >
       NÃO — Quero apenas continuar
     </a>
+  );
+}
+
+function CourseLogo({ className = "" }: { className?: string }) {
+  return (
+    <div className={`select-none ${className}`} aria-label="Curso Comandos Elétricos Expert v5.0">
+      <div className="flex items-end justify-center gap-5">
+        <span className="text-2xl font-extrabold italic tracking-tight text-primary sm:text-3xl">Curso</span>
+        <div className="flex items-center gap-1.5">
+          <svg viewBox="0 0 44 44" className="size-10 sm:size-12" aria-hidden="true">
+            <path d="M8 5h22L18 16h18L7 28h18L13 39" fill="none" stroke="#f28a00" strokeWidth="4" strokeLinecap="square" strokeLinejoin="miter" />
+          </svg>
+          <span className="text-3xl font-black tracking-[-0.08em] text-primary sm:text-4xl">AE</span>
+        </div>
+      </div>
+      <p className="mt-2 text-center text-[clamp(1.45rem,4vw,3.35rem)] font-black leading-none tracking-[-0.045em] text-foreground">
+        COMANDOS ELÉTRICOS
+      </p>
+      <p className="mt-1 text-center text-[clamp(2.4rem,7vw,5.9rem)] font-semibold italic leading-none tracking-[-0.055em]" style={{ color: "#f28a00" }}>
+        Expert<span className="ml-1 text-[0.48em]">v5.0®</span>
+      </p>
+    </div>
   );
 }
 
@@ -249,61 +270,79 @@ function UpsellPage() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[72vh] glow-top" aria-hidden="true" />
 
       {/* HERO */}
-      <section className="relative mx-auto max-w-6xl px-5 pt-10 sm:pt-14">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <div className="w-full max-w-[560px] overflow-visible px-3 sm:px-0">
-            <img
-              src={logoExpert}
-              alt="Comandos Elétricos Expert 5.0"
-              width={1062}
-              height={327}
-              className="block h-auto w-full object-contain"
-            />
+      <section className="relative mx-auto max-w-6xl px-5 pt-8 sm:pt-12">
+        <div className="mx-auto max-w-5xl">
+          <CourseLogo className="mx-auto max-w-[680px]" />
+
+          <div className="mt-8 flex items-center justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary">
+              <BadgeCheck className="size-4" />
+              Seu pedido do livro foi confirmado
+            </div>
           </div>
 
-          <div className="mt-7 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm font-semibold text-primary">
-            <BadgeCheck className="size-4" />
-            Pedido do livro confirmado · oferta complementar
-          </div>
+          <div className="mt-8 grid items-stretch gap-7 lg:grid-cols-[1.08fr_.92fr]">
+            <div className="flex flex-col justify-center">
+              <h1 className="text-4xl font-extrabold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.55rem]">
+                Antes de seguir:
+                <span className="mt-2 block brand-gradient-text">
+                  complete sua formação por R$ 197.
+                </span>
+              </h1>
 
-          <h1 className="mt-7 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Antes de finalizar seu pedido:
-            <span className="mt-3 block brand-gradient-text">
-              adicione o Método Comandos Elétricos Expert por R$ 197.
-            </span>
-          </h1>
-
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Você já garantiu o livro para consultar. Agora pode acrescentar a formação em vídeo que organiza
-            a aplicação dos comandos elétricos — da base aos motores, diagramas, inversores, projetos e diagnóstico de falhas.
-          </p>
-
-          <div className="mt-8 grid w-full max-w-3xl gap-3 sm:grid-cols-3">
-            {["100h de certificação", "2 anos de acesso", "3 bônus incluídos"].map((item) => (
-              <div key={item} className="rounded-2xl border border-border bg-surface px-4 py-3 text-sm font-semibold">
-                {item}
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 w-full max-w-xl">
-            <div className="rounded-3xl border border-primary/25 bg-primary/5 p-6">
-              <p className="text-sm text-muted-foreground">
-                Valor normal <span className="line-through">R$ 497,00</span>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                Você já garantiu o livro para consultar. Agora pode acrescentar o Método Comandos Elétricos Expert:
+                uma formação em vídeo que organiza o estudo da base até motores, diagramas, inversores,
+                projetos e diagnóstico de falhas.
               </p>
-              <div className="mt-1 flex items-end justify-center gap-3">
-                <span className="text-sm font-bold uppercase tracking-[0.14em] text-primary">agora</span>
-                <span className="text-5xl font-extrabold tracking-tight">R$ 197,00</span>
+
+              <div className="mt-7 grid gap-3 sm:grid-cols-3">
+                {["100h de certificação", "2 anos de acesso", "3 bônus técnicos"].map((item) => (
+                  <div key={item} className="rounded-2xl border border-border bg-surface px-4 py-3 text-center text-sm font-semibold">
+                    {item}
+                  </div>
+                ))}
               </div>
-              <p className="mt-2 text-xs text-muted-foreground">condição exclusiva desta etapa do pedido</p>
+
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                Livro e Método cumprem funções diferentes: o livro fica como referência técnica; o treinamento
+                conduz a aplicação em uma sequência de estudo.
+              </p>
             </div>
-            <div className="mt-4 space-y-4">
-              <CtaPrimary />
-              <CtaSecondary />
-            </div>
+
+            <aside className="surface-card overflow-hidden border-primary/25">
+              <div className="border-b border-primary/15 bg-primary/5 p-6 text-center">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Condição desta etapa</p>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  Valor normal <span className="line-through">R$ 497,00</span>
+                </p>
+                <p className="mt-1 text-6xl font-extrabold tracking-tight">R$ 197</p>
+                <p className="mt-2 text-xs text-muted-foreground">pagamento único</p>
+              </div>
+
+              <div className="p-6">
+                <div className="grid gap-3">
+                  {[
+                    "Método completo em 8 módulos",
+                    "Certificação de 100 horas",
+                    "2 anos de acesso",
+                    "3 bônus técnicos incluídos",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3 rounded-xl bg-surface-2 px-4 py-3 text-sm">
+                      <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 space-y-4">
+                  <CtaPrimary />
+                  <CtaSecondary />
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
-
       </section>
 
       {/* PROVA RÁPIDA */}
@@ -329,9 +368,9 @@ function UpsellPage() {
           O livro é a referência. O Método é a sequência guiada para acompanhar a aplicação.
         </h2>
         <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground">
-          O livro continua sendo seu material de consulta. O Método organiza o aprendizado em etapas,
-          mostra aplicações em vídeo e conduz o estudo dos fundamentos até projetos e diagnóstico de falhas.
-          Um material não substitui o outro: eles cumprem papéis diferentes na mesma formação.
+          O livro continua como sua referência técnica. O Método acrescenta aulas em vídeo, sequência de estudo,
+          aplicações, exercícios e diagnóstico. Você consulta no livro e acompanha a aplicação no treinamento —
+          sem transformar um produto em substituto do outro.
         </p>
       </section>
 
@@ -494,7 +533,7 @@ function UpsellPage() {
               </div>
               <div className="rounded-2xl border border-border bg-surface-2 p-5 text-center">
                 <p className="text-2xl font-extrabold text-primary">Centenas</p>
-                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">de profissionais já passaram pelo Método</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">de profissionais transformados pelo Método</p>
               </div>
             </div>
           </div>
@@ -528,9 +567,9 @@ function UpsellPage() {
       <section className="mx-auto mt-24 max-w-6xl px-5">
         <div className="mx-auto max-w-3xl text-center">
           <SectionLabel>Provas sociais reais</SectionLabel>
-          <h2 className="mt-6 text-3xl font-bold sm:text-4xl">Veja o que alunos dizem sobre a formação</h2>
+          <h2 className="mt-6 text-3xl font-bold sm:text-4xl">Quem já estudou conta como foi a experiência</h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Relatos em vídeo publicados pela Academia do Eletricista.
+            Depoimentos reais de alunos do ecossistema Academia do Eletricista.
           </p>
         </div>
 
@@ -646,10 +685,10 @@ function UpsellPage() {
         <div className="surface-card p-8 text-center sm:p-12">
           <Gift className="mx-auto size-8 text-primary" />
           <h2 className="mx-auto mt-6 max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl">
-            Livro para consultar. Método para seguir uma formação completa e organizada.
+            Você já deu o primeiro passo com o livro. Agora pode acrescentar a formação em vídeo.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Esta é a etapa do funil em que você decide se quer acrescentar o treinamento ao livro que já comprou.
+            Se fizer sentido para a sua formação, aproveite esta condição para adicionar o Método Comandos Elétricos Expert ao pedido.
           </p>
 
           <div className="mx-auto mt-8 max-w-xl space-y-4">
@@ -677,7 +716,7 @@ function UpsellPage() {
             href={CHECKOUT_URL}
             className="cta-primary flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-extrabold sm:text-base"
           >
-            SIM — Adicionar o Método por R$ 197
+            Completar minha formação por R$ 197
             <ArrowRight className="size-4" />
           </a>
         </div>
