@@ -186,22 +186,22 @@ const courseModules = [
 
 const bonuses = [
   {
-    icon: FileText,
+    icon: Award,
     eyebrow: "Bônus 01",
-    title: "Leitura e Interpretação de Diagramas",
-    text: "Treinamento complementar para aprofundar a leitura da lógica e da sequência de funcionamento dos circuitos.",
+    title: "Certificação em LIDE – Comandos Elétricos",
+    text: "Certificação complementar em LIDE – Comandos Elétricos com carga horária de 40 horas.",
   },
   {
-    icon: Zap,
+    icon: GraduationCap,
     eyebrow: "Bônus 02",
-    title: "Instalação e Parametrização de Inversores",
-    text: "Certificação complementar voltada à instalação, parametrização e aplicação de inversores de frequência.",
+    title: "Curso de Eletrotécnica Aplicada em Comandos Elétricos",
+    text: "Conteúdo complementar para reforçar fundamentos de eletrotécnica aplicados diretamente aos comandos elétricos.",
   },
   {
-    icon: BookOpen,
+    icon: CircuitBoard,
     eyebrow: "Bônus 03",
-    title: "Baú da Academia do Eletricista",
-    text: "Acervo de livros e apostilas em PDF sobre eletricidade, eletrônica, mecânica e automação para consulta durante os estudos.",
+    title: "Programas Simuladores de Circuitos",
+    text: "Programas para simular circuitos e apoiar o estudo, os testes e a compreensão do funcionamento dos comandos elétricos.",
   },
 ];
 
@@ -589,9 +589,9 @@ function UpsellPage() {
                 "100 horas de certificação",
                 "36 meses de acesso",
                 "Suporte por WhatsApp e e-mail",
-                "Bônus: Leitura de Diagramas",
-                "Bônus: Inversores de Frequência",
-                "Bônus: Baú da Academia",
+                "Bônus: Certificação em LIDE – Comandos Elétricos (40h)",
+                "Bônus: Eletrotécnica Aplicada em Comandos Elétricos",
+                "Bônus: Programas Simuladores de Circuitos",
                 "30 dias de garantia",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm">
