@@ -149,13 +149,13 @@ function SectionLabel({ children, dark = false }: { children: React.ReactNode; d
 
 function CourseLogo({ className = "" }: { className?: string }) {
   return (
-    <div className={`rounded-2xl bg-white px-5 py-4 shadow-sm ${className}`}>
+    <div className={`flex justify-center ${className}`}>
       <img
         src={logoExpert}
         alt="Curso Comandos Elétricos Expert v5.0"
-        width={500}
-        height={154}
-        className="mx-auto block h-auto w-full max-w-[430px] object-contain"
+        width={965}
+        height={326}
+        className="block h-auto w-full max-w-[560px] object-contain"
       />
     </div>
   );
