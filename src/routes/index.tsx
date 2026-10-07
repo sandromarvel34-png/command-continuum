@@ -576,54 +576,41 @@ function UpsellPage() {
           <div className="mx-auto max-w-3xl text-center">
             <SectionLabel>Conclusão e certificação</SectionLabel>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-              Formação que termina com uma conquista concreta
+              Uma formação com certificação e histórico real de alunos
             </h2>
             <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
-              Ao cumprir os critérios de conclusão do Método, o aluno pode solicitar o certificado da formação.
+              O Método reúne formação estruturada, certificação de conclusão e uma base consolidada de alunos.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-7 lg:grid-cols-[1.05fr_.95fr]">
-            <div className="relative overflow-hidden rounded-3xl border border-border bg-slate-50 p-7 sm:p-10">
-              <div className="absolute -right-16 -top-16 size-52 rounded-full bg-primary/10 blur-3xl" aria-hidden="true" />
-              <div className="relative mx-auto max-w-xl rounded-2xl border-8 border-white bg-white p-7 shadow-xl sm:p-10">
-                <div className="border border-slate-200 px-6 py-10 text-center sm:px-10">
-                  <Award className="mx-auto size-10 text-primary" />
-                  <p className="mt-5 text-xs font-bold uppercase tracking-[0.22em] text-primary">
-                    Academia do Eletricista
+          <div className="mt-12 grid gap-7 lg:grid-cols-2">
+            <article className="rounded-3xl border border-border bg-slate-50 p-8 sm:p-10">
+              <div className="flex items-start gap-5">
+                <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <Award className="size-8" />
+                </span>
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-[0.15em] text-primary">
+                    Certificação do Método
                   </p>
-                  <p className="mt-3 font-display text-4xl font-extrabold leading-none text-navy">
-                    Certificado de Conclusão
+                  <p className="mt-2 font-display text-5xl font-extrabold leading-none text-navy">
+                    100 horas
                   </p>
-                  <div className="mx-auto mt-6 h-px w-32 bg-slate-200" />
-                  <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
-                    Método Comandos Elétricos Expert
+                  <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">
+                    O certificado de conclusão é disponibilizado conforme os critérios de conclusão do treinamento.
                   </p>
-                  <p className="mt-2 font-display text-3xl font-extrabold text-foreground">100 horas</p>
                 </div>
               </div>
-              <p className="relative mt-5 text-center text-[14px] text-muted-foreground">
-                Representação visual da certificação. A imagem real do certificado será usada assim que o ativo da página oficial estiver acessível.
+            </article>
+
+            <article className="rounded-3xl bg-navy p-8 text-white sm:p-10">
+              <Users className="size-9 text-[#63b3ff]" />
+              <p className="mt-5 font-display text-5xl font-extrabold leading-none">16.843</p>
+              <p className="mt-2 text-[17px] text-white/70">alunos do Método Comandos Elétricos Expert</p>
+              <p className="mt-5 text-[16px] leading-relaxed text-white/65">
+                Esse número entra como prova quantitativa da formação, sem substituir os depoimentos em vídeo.
               </p>
-            </div>
-
-            <div className="flex flex-col justify-center">
-              <div className="rounded-3xl bg-navy p-7 text-white sm:p-9">
-                <Users className="size-8 text-[#63b3ff]" />
-                <p className="mt-5 font-display text-5xl font-extrabold leading-none">16.843</p>
-                <p className="mt-2 text-[17px] text-white/70">alunos formados no Método</p>
-              </div>
-
-              <div className="mt-5 rounded-3xl border border-border bg-slate-50 p-7">
-                <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary">Prova pública de certificação</p>
-                <p className="mt-3 text-[17px] leading-relaxed text-foreground">
-                  Há ex-alunos que registram publicamente a formação em Comandos Elétricos pela Academia do Eletricista em seus perfis profissionais.
-                </p>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-                  As fotos reais dos alunos recebendo seus certificados serão inseridas aqui somente com os ativos originais da Academia.
-                </p>
-              </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
