@@ -8,9 +8,12 @@ import {
   CircuitBoard,
   FileBadge2,
   GraduationCap,
+  MonitorPlay,
   PlayCircle,
   ShieldCheck,
   Users,
+  Wrench,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoExpert from "@/assets/logo-comandos-expert.png";
@@ -57,6 +60,39 @@ const methodLevels = [
     title: "Nível Expert",
     text: "Integre o conhecimento para analisar circuitos, desenvolver projetos e diagnosticar falhas.",
     modules: ["Projetos e Diagnóstico"],
+  },
+];
+
+const learnings = [
+  {
+    icon: CircuitBoard,
+    title: "Ler e interpretar diagramas",
+    text: "Entender a lógica dos circuitos de força e comando e acompanhar a sequência de funcionamento.",
+  },
+  {
+    icon: Wrench,
+    title: "Compreender e aplicar dispositivos",
+    text: "Relacionar contatores, relés, botoeiras, temporizadores, sinalização e proteções às funções que exercem no circuito.",
+  },
+  {
+    icon: Zap,
+    title: "Entender motores e transformadores",
+    text: "Estudar ligações, funcionamento e aplicações de motores e transformadores usados em comandos elétricos.",
+  },
+  {
+    icon: PlayCircle,
+    title: "Analisar chaves de partida",
+    text: "Acompanhar a lógica de partida direta, reversão, estrela-triângulo, Dahlander, sequenciais, intertravamentos e freio magnético.",
+  },
+  {
+    icon: MonitorPlay,
+    title: "Trabalhar com inversores de frequência",
+    text: "Compreender parametrização, rampas, torque e comandos aplicados aos inversores de frequência.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Estruturar projetos e diagnóstico",
+    text: "Integrar os conteúdos para analisar circuitos, desenvolver projetos e investigar falhas de forma organizada.",
   },
 ];
 
@@ -351,41 +387,86 @@ function UpsellPage() {
       {/* METODOLOGIA */}
       <section className="bg-slate-50">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-          <div className="max-w-3xl">
-            <SectionLabel>Metodologia + conteúdo</SectionLabel>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionLabel>Metodologia do curso</SectionLabel>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-              Uma trilha em 4 níveis, com 8 módulos conectados entre si
+              Do fundamento ao diagnóstico em uma progressão lógica
             </h2>
             <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
-              Cada etapa prepara a próxima para que os assuntos façam sentido dentro da lógica dos comandos elétricos.
+              O conteúdo não é apresentado como aulas isoladas. A metodologia organiza a formação em níveis,
+              fazendo cada etapa preparar o aluno para a próxima.
             </p>
           </div>
 
-          <div className="relative mt-12">
-            <div className="absolute bottom-6 left-[23px] top-6 hidden w-px bg-primary/25 md:block" aria-hidden="true" />
-            <div className="space-y-6">
-              {methodLevels.map((level) => (
-                <article key={level.number} className="relative grid gap-5 md:grid-cols-[48px_.72fr_1.28fr] md:items-start">
-                  <div className="relative z-10 flex size-12 items-center justify-center rounded-full bg-navy font-display text-xl font-extrabold text-white">
-                    {level.number}
+          <div className="relative mt-14">
+            <div
+              className="absolute left-6 right-6 top-6 hidden h-px bg-primary/25 lg:block"
+              aria-hidden="true"
+            />
+            <div className="grid gap-6 lg:grid-cols-4">
+              {methodLevels.map((level, index) => (
+                <article key={level.number} className="relative">
+                  <div className="relative z-10 flex items-center gap-4 lg:flex-col lg:items-start">
+                    <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-navy font-display text-xl font-extrabold text-white ring-8 ring-slate-50">
+                      {level.number}
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-[0.14em] text-primary">
+                      Nível {index + 1}
+                    </span>
                   </div>
-                  <div>
+
+                  <div className="mt-5 border-l-2 border-primary/20 pl-6 lg:border-l-0 lg:pl-0">
                     <h3 className="font-display text-3xl font-extrabold leading-none">{level.title}</h3>
                     <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">{level.text}</p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {level.modules.map((module) => (
-                      <span
-                        key={module}
-                        className="rounded-full border border-border bg-white px-4 py-2 text-[15px] font-semibold text-foreground shadow-sm"
-                      >
-                        {module}
-                      </span>
-                    ))}
+
+                    <div className="mt-5 space-y-2">
+                      {level.modules.map((module) => (
+                        <div
+                          key={module}
+                          className="flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-3 text-[15px] font-semibold shadow-sm"
+                        >
+                          <Check className="size-4 shrink-0 text-primary" />
+                          <span>{module}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </article>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* O QUE VAI APRENDER */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+          <div className="max-w-3xl">
+            <SectionLabel>O que você vai aprender</SectionLabel>
+            <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
+              Competências que conectam o diagrama à aplicação prática
+            </h2>
+            <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
+              Os módulos são o caminho. O resultado do estudo é conseguir compreender melhor os circuitos,
+              os equipamentos e a lógica usada nas principais aplicações de comandos elétricos.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+            {learnings.map(({ icon: Icon, title, text }, index) => (
+              <article key={title} className="relative border-t border-border pt-6">
+                <div className="flex items-start justify-between gap-5">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon className="size-6" />
+                  </span>
+                  <span className="font-display text-4xl font-extrabold text-slate-200">
+                    0{index + 1}
+                  </span>
+                </div>
+                <h3 className="mt-5 font-display text-2xl font-extrabold leading-none">{title}</h3>
+                <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">{text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -484,6 +565,64 @@ function UpsellPage() {
               <p className="mt-4 text-[17px] leading-relaxed text-white/70">
                 O período amplo de acesso permite avançar na sequência e retornar aos conteúdos ao longo da sua jornada.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CERTIFICAÇÃO + PROVA */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionLabel>Conclusão e certificação</SectionLabel>
+            <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
+              Formação que termina com uma conquista concreta
+            </h2>
+            <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
+              Ao cumprir os critérios de conclusão do Método, o aluno pode solicitar o certificado da formação.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-7 lg:grid-cols-[1.05fr_.95fr]">
+            <div className="relative overflow-hidden rounded-3xl border border-border bg-slate-50 p-7 sm:p-10">
+              <div className="absolute -right-16 -top-16 size-52 rounded-full bg-primary/10 blur-3xl" aria-hidden="true" />
+              <div className="relative mx-auto max-w-xl rounded-2xl border-8 border-white bg-white p-7 shadow-xl sm:p-10">
+                <div className="border border-slate-200 px-6 py-10 text-center sm:px-10">
+                  <Award className="mx-auto size-10 text-primary" />
+                  <p className="mt-5 text-xs font-bold uppercase tracking-[0.22em] text-primary">
+                    Academia do Eletricista
+                  </p>
+                  <p className="mt-3 font-display text-4xl font-extrabold leading-none text-navy">
+                    Certificado de Conclusão
+                  </p>
+                  <div className="mx-auto mt-6 h-px w-32 bg-slate-200" />
+                  <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
+                    Método Comandos Elétricos Expert
+                  </p>
+                  <p className="mt-2 font-display text-3xl font-extrabold text-foreground">100 horas</p>
+                </div>
+              </div>
+              <p className="relative mt-5 text-center text-[14px] text-muted-foreground">
+                Representação visual da certificação. A imagem real do certificado será usada assim que o ativo da página oficial estiver acessível.
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-center">
+              <div className="rounded-3xl bg-navy p-7 text-white sm:p-9">
+                <Users className="size-8 text-[#63b3ff]" />
+                <p className="mt-5 font-display text-5xl font-extrabold leading-none">16.843</p>
+                <p className="mt-2 text-[17px] text-white/70">alunos formados no Método</p>
+              </div>
+
+              <div className="mt-5 rounded-3xl border border-border bg-slate-50 p-7">
+                <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary">Prova pública de certificação</p>
+                <p className="mt-3 text-[17px] leading-relaxed text-foreground">
+                  Há ex-alunos que registram publicamente a formação em Comandos Elétricos pela Academia do Eletricista em seus perfis profissionais.
+                </p>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
+                  As fotos reais dos alunos recebendo seus certificados serão inseridas aqui somente com os ativos originais da Academia.
+                </p>
+              </div>
             </div>
           </div>
         </div>
