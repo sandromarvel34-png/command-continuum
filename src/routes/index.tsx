@@ -142,22 +142,22 @@ const testimonials = [
 const faqs = [
   {
     q: "O treinamento possui certificado?",
-    a: "Sim. O certificado de conclusão é disponibilizado conforme os critérios de conclusão do treinamento.",
+    a: "Sim. Ao concluir a formação, você recebe o certificado do Comandos Elétricos Expert. O modelo está apresentado nesta página.",
   },
   {
     q: "Preciso já trabalhar com comandos elétricos?",
     a: "Não. O conteúdo começa pelos fundamentos e avança até aplicações industriais, projetos e diagnóstico de falhas.",
   },
   {
-    q: "O Método substitui o livro?",
-    a: "O livro continua sendo sua referência de consulta. O Método acrescenta aulas em vídeo, exercícios e exemplos para acompanhar a aplicação.",
+    q: "Como usar o livro junto com as aulas?",
+    a: "Use o livro para consultar conceitos e diagramas enquanto acompanha as aulas. Depois, retome os exemplos e faça os exercícios para revisar o que aprendeu.",
   },
   {
     q: "Como acesso as aulas e por quanto tempo posso estudar?",
     a: "As aulas são gravadas e ficam na área de membros, com acesso pelo computador, tablet ou celular. Você recebe os dados de acesso por e-mail após a confirmação da compra e pode estudar e revisar por 36 meses.",
   },
   {
-    q: "E se eu decidir não continuar com o treinamento?",
+    q: "Como funciona a garantia?",
     a: "Você tem 30 dias a partir da compra para avaliar a formação. Nesse período, solicite o cancelamento por e-mail ou WhatsApp para receber o reembolso integral do valor pago pelo treinamento.",
   },
 ];
@@ -165,14 +165,14 @@ const faqs = [
 function BuyButton() {
   return (
     <Button asChild className="sales-buy">
-      <a href={CHECKOUT_URL}>Sim, quero adicionar o Método</a>
+      <a href={CHECKOUT_URL}>Sim, quero adicionar o curso</a>
     </Button>
   );
 }
 function DeclineLink() {
   return (
     <a href={DECLINE_URL} className="sales-decline">
-      Não, quero continuar sem o treinamento
+      Continuar sem adicionar o curso
     </a>
   );
 }
@@ -199,8 +199,8 @@ function UpsellPage() {
               <span className="sales-highlight">do diagrama ao diagnóstico de falhas.</span>
             </h1>
             <p className="sales-lead">
-              Aprenda a interpretar diagramas, desenvolver circuitos, montar painéis e investigar
-              falhas com aulas e exemplos de aplicação.
+              Com o Comandos Elétricos Expert, acompanhe a análise e a montagem dos circuitos em
+              vídeo. Depois, pratique com os exercícios da formação.
             </p>
             <dl className="sales-facts">
               <div>
@@ -232,8 +232,8 @@ function UpsellPage() {
             height={675}
           />
           <p>
-            Alunos reais. Formação aplicada.
-            <span>Veja os vídeos e os registros de conclusão abaixo.</span>
+            Conheça a experiência dos alunos.
+            <span>Relatos em vídeo e registros de conclusão do curso.</span>
           </p>
           <a href="#depoimentos">Ver os depoimentos</a>
         </div>
@@ -242,26 +242,26 @@ function UpsellPage() {
       <SalesSection tone="light">
         <SectionHeading
           label="Do estudo à aplicação"
-          title="Entenda o circuito. Acompanhe a prática."
-          description="O próximo passo é conectar o que você consulta no livro ao funcionamento dos comandos."
+          title="O que o curso acrescenta ao seu estudo."
+          description="O livro fica ao seu lado para consultar. Nas aulas, você acompanha o raciocínio e a execução dos comandos."
         />
         <div className="sales-comparison">
           <article>
             <BookOpenCheck aria-hidden="true" />
-            <h3>Com o livro</h3>
+            <h3>Consulte no livro</h3>
             <p>
-              Você consulta conceitos, componentes e diagramas quando precisa estudar ou revisar.
+              Reveja conceitos, confira componentes e consulte os diagramas durante seus estudos.
             </p>
-            <p className="sales-comparison-end">Uma referência técnica para ter por perto.</p>
+            <p className="sales-comparison-end">Tenha a referência sempre à mão.</p>
           </article>
           <article>
             <CircuitBoard aria-hidden="true" />
-            <h3>Com o livro + Método</h3>
+            <h3>Acompanhe nas aulas</h3>
             <p>
-              Você acrescenta aulas e exercícios para acompanhar a análise e a aplicação dos
-              circuitos, passo a passo.
+              Veja como o circuito é analisado e montado. Acompanhe a explicação do professor e
+              exercite o que aprendeu.
             </p>
-            <p className="sales-comparison-end">Uma formação para ligar os assuntos à prática.</p>
+            <p className="sales-comparison-end">Entenda o raciocínio por trás da execução.</p>
           </article>
         </div>
       </SalesSection>
@@ -269,7 +269,7 @@ function UpsellPage() {
       <SalesSection tone="muted">
         <SectionHeading
           label="Como você vai aprender"
-          title="Um método para entender, montar e diagnosticar."
+          title="Da função dos componentes à investigação das falhas."
           description="Quatro etapas conectam o funcionamento dos componentes à aplicação nos comandos elétricos."
         />
         <ol className="sales-method">
@@ -287,7 +287,7 @@ function UpsellPage() {
         <div className="sales-curriculum">
           <SectionHeading
             label="Programa do curso"
-            title="Veja os assuntos que você vai dominar na prática."
+            title="O conteúdo completo da sua formação."
             description="Abra cada grupo para consultar o conteúdo da formação."
           />
           <Accordion type="multiple" className="sales-curriculum-list">
@@ -318,10 +318,10 @@ function UpsellPage() {
         <div className="sales-certification">
           <div>
             <Eyebrow>Certificado da formação principal</Eyebrow>
-            <h2>Registre a conclusão do Comandos Elétricos Expert.</h2>
+            <h2>Certificado de conclusão do Comandos Elétricos Expert.</h2>
             <p>
-              Ao concluir a formação, você recebe o certificado do curso. Veja o modelo e clique
-              para ampliar.
+              Ao concluir o curso, receba o certificado que documenta sua formação. Clique na imagem
+              para ver o modelo em tamanho maior.
             </p>
           </div>
           <a
@@ -342,7 +342,10 @@ function UpsellPage() {
       </SalesSection>
 
       <SalesSection tone="dark">
-        <SectionHeading label="Bônus incluídos" title="Mais recursos para estudar e praticar." />
+        <SectionHeading
+          label="Bônus incluídos"
+          title="Amplie seus estudos com os bônus incluídos."
+        />
         <div className="sales-bonuses">
           <article>
             <div className="sales-bonus-visual">
@@ -356,12 +359,14 @@ function UpsellPage() {
                 />
               </a>
             </div>
-            <span className="sales-small-label">Bônus 01</span>
-            <h3>Certificação em LIDE</h3>
-            <p>
-              Certificação de 40 horas em Leitura e Interpretação de Diagramas de Comandos
-              Elétricos, recebida ao concluir a formação.
-            </p>
+            <div className="sales-bonus-copy">
+              <span className="sales-small-label">Bônus 01</span>
+              <h3>Certificação em LIDE</h3>
+              <p>
+                Documente seu aprendizado em Leitura e Interpretação de Diagramas de Comandos
+                Elétricos com a certificação complementar de 40 horas.
+              </p>
+            </div>
           </article>
           <article>
             <div className="sales-bonus-visual">
@@ -379,48 +384,40 @@ function UpsellPage() {
                 />
               </a>
             </div>
-            <span className="sales-small-label">Bônus 02</span>
-            <h3>Eletrotécnica Aplicada</h3>
-            <p>
-              Reforce os fundamentos com Lei de Ohm e associação de resistores. Inclui certificado
-              de 30 horas ao concluir o curso complementar.
-            </p>
+            <div className="sales-bonus-copy">
+              <span className="sales-small-label">Bônus 02</span>
+              <h3>Eletrotécnica Aplicada</h3>
+              <p>
+                Reforce os fundamentos com Lei de Ohm e associação de resistores. Inclui certificado
+                de 30 horas ao concluir o curso complementar.
+              </p>
+            </div>
           </article>
           <article>
             <div className="sales-bonus-visual sales-simulator-visual">
               <LibraryBig aria-hidden="true" />
+            </div>
+            <div className="sales-bonus-copy">
+              <span className="sales-small-label">Bônus 03</span>
+              <h3>Biblioteca técnica em PDF</h3>
               <p>
-                Consulte.
-                <br />
-                Baixe.
-                <br />
-                Estude.
+                Coleção de 100 apostilas e e-books sobre eletricidade, automação, eletrônica,
+                instalações e manutenção industrial para baixar e consultar.
               </p>
             </div>
-            <span className="sales-small-label">Bônus 03</span>
-            <h3>Biblioteca técnica em PDF</h3>
-            <p>
-              Coleção de 100 apostilas e e-books sobre eletricidade, automação, eletrônica,
-              instalações e manutenção industrial para baixar e consultar.
-            </p>
           </article>
           <article>
             <div className="sales-bonus-visual sales-simulator-visual">
               <CircuitBoard aria-hidden="true" />
+            </div>
+            <div className="sales-bonus-copy">
+              <span className="sales-small-label">Bônus 04</span>
+              <h3>Simuladores de circuitos</h3>
               <p>
-                Monte.
-                <br />
-                Simule.
-                <br />
-                Observe.
+                Pratique os exercícios e desenvolva seus próprios diagramas com os programas
+                simuladores. Inclui aulas práticas usando essas ferramentas.
               </p>
             </div>
-            <span className="sales-small-label">Bônus 04</span>
-            <h3>Simuladores de circuitos</h3>
-            <p>
-              Pratique os exercícios e desenvolva seus próprios diagramas com os programas
-              simuladores. Inclui aulas práticas usando essas ferramentas.
-            </p>
           </article>
         </div>
         <div className="sales-bonus-support">
@@ -435,7 +432,7 @@ function UpsellPage() {
         </div>
       </SalesSection>
 
-      <SalesSection tone="light" id="depoimentos">
+      <SalesSection tone="light" id="professor">
         <div className="sales-teacher">
           <img
             src={professor}
@@ -446,7 +443,7 @@ function UpsellPage() {
           />
           <div>
             <Eyebrow>Seu professor</Eyebrow>
-            <h2>Experiência de ensino que orienta cada etapa.</h2>
+            <h2>Aprenda com Sandro Zander.</h2>
             <p>
               Sandro Zander é engenheiro eletricista e professor há mais de 26 anos, autor do Livro
               Comandos Elétricos e fundador da Academia do Eletricista, com atuação em instituições
@@ -454,57 +451,59 @@ function UpsellPage() {
             </p>
           </div>
         </div>
-        <SectionHeading
-          label="Depoimentos de alunos"
-          title="Conheça a experiência de quem já estudou."
-          description="Assista aos relatos e veja os registros de alunos com seus certificados."
-        />
-        <div className="sales-videos">
-          {testimonials.map((video) => (
-            <article key={video.id}>
-              <div className="sales-video-frame">
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&playsinline=1`}
-                  title={`Depoimento de ${video.name}`}
+        <div id="depoimentos" className="sales-testimonials">
+          <SectionHeading
+            label="Depoimentos de alunos"
+            title="O que os alunos contam sobre o curso."
+            description="Assista aos relatos e veja os registros de alunos com seus certificados."
+          />
+          <div className="sales-videos">
+            {testimonials.map((video) => (
+              <article key={video.id}>
+                <div className="sales-video-frame">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&playsinline=1`}
+                    title={`Depoimento de ${video.name}`}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p>
+                  {video.name}
+                  <span>Aluno — depoimento em vídeo</span>
+                </p>
+              </article>
+            ))}
+          </div>
+          <div className="sales-gallery-label">
+            <Award aria-hidden="true" />
+            <p>Registros de conclusão enviados pelos alunos</p>
+          </div>
+          <div className="sales-photo-gallery">
+            {[1, 2, 3, 4, 5].map((n) => (
+              <a
+                key={n}
+                href={`/images/aluno-certificado-${n}.webp`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Ampliar registro de conclusão ${n}`}
+              >
+                <img
+                  src={`/images/aluno-certificado-${n}.webp`}
+                  alt={
+                    n <= 3
+                      ? "Aluno mostrando seu certificado de Comandos Elétricos Expert"
+                      : "Registro enviado por aluno com seus certificados de conclusão"
+                  }
+                  width={400}
+                  height={540}
                   loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
                 />
-              </div>
-              <p>
-                {video.name}
-                <span>Aluno — depoimento em vídeo</span>
-              </p>
-            </article>
-          ))}
-        </div>
-        <div className="sales-gallery-label">
-          <Award aria-hidden="true" />
-          <p>Registros de conclusão enviados pelos alunos</p>
-        </div>
-        <div className="sales-photo-gallery">
-          {[1, 2, 3, 4, 5].map((n) => (
-            <a
-              key={n}
-              href={`/images/aluno-certificado-${n}.webp`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Ampliar registro de conclusão ${n}`}
-            >
-              <img
-                src={`/images/aluno-certificado-${n}.webp`}
-                alt={
-                  n <= 3
-                    ? "Aluno mostrando seu certificado de Comandos Elétricos Expert"
-                    : "Registro enviado por aluno com seus certificados de conclusão"
-                }
-                width={400}
-                height={540}
-                loading="lazy"
-              />
-            </a>
-          ))}
+              </a>
+            ))}
+          </div>
         </div>
       </SalesSection>
 
@@ -513,16 +512,16 @@ function UpsellPage() {
           <div>
             <SectionHeading
               label="Condição especial pós-compra"
-              title="Dê o próximo passo na sua formação."
-              description="Como você adquiriu o livro, pode adicionar o Método nesta etapa do seu pedido."
+              title="Adicione o curso completo ao seu pedido."
+              description="Esta condição é oferecida a quem adquiriu o livro. Inclua o Comandos Elétricos Expert e acompanhe a aplicação nas aulas."
             />
             <ul className="sales-offer-list">
               {[
-                "Formação completa em comandos elétricos",
-                "Aulas, exercícios e aplicações",
-                "Certificado de conclusão",
-                "Todos os bônus apresentados",
-                "Acesso para estudar e revisar",
+                "Aulas gravadas para estudar no seu ritmo",
+                "Material didático e exercícios",
+                "Certificado da formação principal",
+                "Bônus incluídos na formação",
+                "Suporte direto pelo WhatsApp",
               ].map((item) => (
                 <li key={item}>
                   <Check aria-hidden="true" />
@@ -544,8 +543,9 @@ function UpsellPage() {
               <div>
                 <h3>30 dias de garantia</h3>
                 <p>
-                  Acesse a formação e avalie o Método. Se decidir não continuar nesse período,
-                  solicite o cancelamento conforme os termos da garantia.
+                  Assista às aulas e avalie a formação. Se decidir não continuar, peça o
+                  cancelamento por e-mail ou WhatsApp dentro desse prazo e receba o valor pago de
+                  volta.
                 </p>
               </div>
             </div>
@@ -554,7 +554,7 @@ function UpsellPage() {
       </SalesSection>
 
       <SalesSection tone="muted" id="faq" className="sales-faq">
-        <SectionHeading label="Dúvidas frequentes" title="Antes de continuar" />
+        <SectionHeading label="Dúvidas frequentes" title="Respostas sobre a formação." />
         <Accordion type="single" collapsible>
           {faqs.map((faq, index) => (
             <AccordionItem key={faq.q} value={`faq-${index}`}>

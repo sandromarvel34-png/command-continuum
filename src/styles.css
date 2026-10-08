@@ -1307,3 +1307,116 @@
 .sales-hero-decision {
   margin-inline: auto;
 }
+/* Oferta pós-compra: benefícios legíveis e recursos com peso secundário. */
+.sales-inline-price {
+  justify-content: center;
+}
+.sales-hero .sales-facts {
+  max-width: 540px;
+  margin-inline: auto;
+}
+.sales-bonuses {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 40px;
+}
+.sales-bonuses article,
+.sales-bonuses article:nth-child(-n + 2) {
+  grid-column: auto;
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  border-top: 1px solid #ffffff26;
+  padding-top: 24px;
+}
+.sales-bonuses .sales-bonus-visual {
+  aspect-ratio: auto;
+  min-height: 0;
+  height: 120px;
+  width: 140px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  justify-content: center;
+}
+.sales-bonuses .sales-bonus-visual img {
+  max-width: 140px;
+  max-height: 120px;
+}
+.sales-bonuses .sales-bonus-visual > svg {
+  width: 54px;
+  height: 54px;
+}
+.sales-bonus-copy .sales-small-label {
+  display: block;
+}
+.sales-bonus-copy h3 {
+  font-size: 28px;
+  line-height: 1.12;
+  margin-bottom: 12px;
+}
+.sales-bonus-copy p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #d3dfec;
+}
+.sales-faq button {
+  gap: 20px;
+}
+@media (max-width: 1023px) {
+  .sales-bonuses article,
+  .sales-bonuses article:nth-child(-n + 2) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 639px) {
+  .sales-hero h1 {
+    font-size: clamp(34px, 8vw, 44px);
+  }
+  .sales-header {
+    margin-bottom: 26px;
+  }
+  .sales-intro {
+    font-size: 21px;
+  }
+  .sales-bonuses {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .sales-bonuses article,
+  .sales-bonuses article:nth-child(-n + 2) {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 12px 20px;
+  }
+  .sales-bonuses .sales-bonus-visual {
+    grid-row: 1 / span 2;
+    width: 88px;
+    height: 84px;
+  }
+  .sales-bonuses .sales-bonus-visual img {
+    max-width: 88px;
+    max-height: 84px;
+  }
+  .sales-bonus-copy {
+    display: contents;
+  }
+  .sales-bonus-copy .sales-small-label {
+    grid-column: 2;
+    margin-bottom: 0;
+  }
+  .sales-bonus-copy h3 {
+    grid-column: 2;
+    margin: 0;
+    font-size: 27px;
+  }
+  .sales-bonus-copy p {
+    grid-column: 1 / -1;
+    margin-top: 6px;
+  }
+}
+
+.sales-testimonials {
+  scroll-margin-top: 24px;
+}

@@ -85,3 +85,13 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 
 - Certificado principal em bloco próprio ao final do programa, antes dos bônus, com imagem ampla e link para ampliação.
 - Certificados dos bônus compactos (260px desktop / 210px mobile), preservando a prioridade da formação principal.
+
+## Revisão de copy e composição da oferta pós-compra
+
+- Headline aprovada preservada. Texto de apoio apresenta o curso pelo nome e explica como estudar: observar a análise em vídeo e praticar nos exercícios.
+- CTA explicita o curso; recusa discreta e neutra, sem repetir uma formulação negativa.
+- Títulos de seção descrevem conteúdo e função, sem slogans genéricos.
+- Bônus compactos: imagem ou ícone ao lado da descrição no desktop; título ao lado do ativo e corpo em largura inteira no celular. Certificado principal continua maior e separado.
+- Preço inicial centralizado com o botão. Dados da formação limitados a 540px para manter unidade visual no hero.
+- Garantia explica solicitação por e-mail ou WhatsApp e devolução do valor pago, conforme a oferta original do criador.
+- Mantidos: quatro depoimentos, cinco fotos, sete grupos do programa, quatro bônus, cinco dúvidas, preço, links e rodapé. Não introduzir a pergunta excluída, livro como bônus, aulas ao vivo ou mockup genérico.
