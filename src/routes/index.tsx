@@ -4,7 +4,6 @@ import {
   BookOpenCheck,
   Check,
   CircuitBoard,
-  GraduationCap,
   LibraryBig,
   MessageCircle,
   ShieldCheck,
@@ -19,7 +18,6 @@ import {
 import { SalesSection, SectionHeading, Eyebrow } from "@/components/sales-layout";
 import logoExpert from "@/assets/logo-comandos-expert.png";
 import professor from "@/assets/professor.jpg";
-import devices from "@/assets/mockup-devices.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -217,45 +215,6 @@ function UpsellPage() {
               <DeclineLink />
             </div>
           </div>
-          <figure className="sales-product">
-            <div className="sales-product-screen">
-              <img
-                src={devices}
-                alt="Apresentação do curso Comandos Elétricos Expert em computador, tablet e celular"
-                width={1536}
-                height={1024}
-                fetchPriority="high"
-              />
-            </div>
-            <figcaption>
-              <GraduationCap aria-hidden="true" />
-              <span>
-                <strong>Método Comandos Elétricos Expert</strong>
-                <span>Aulas em vídeo, exercícios e aplicações</span>
-              </span>
-            </figcaption>
-            <div className="sales-product-certificate">
-              <a
-                href="/images/certificado-expert.webp"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ampliar modelo do certificado de conclusão"
-              >
-                <img
-                  src="/images/certificado-expert.webp"
-                  alt="Modelo do certificado de conclusão do Comandos Elétricos Expert"
-                  width={1100}
-                  height={778}
-                />
-              </a>
-              <p>
-                <Award aria-hidden="true" />
-                <span>
-                  Certificado de conclusão<span>Conhecimento e formação documentados.</span>
-                </span>
-              </p>
-            </div>
-          </figure>
         </div>
         <div className="sales-proof-strip">
           <img
@@ -347,6 +306,30 @@ function UpsellPage() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+        <div className="sales-certification">
+          <div>
+            <Eyebrow>Certificado da formação principal</Eyebrow>
+            <h2>Registre a conclusão do Comandos Elétricos Expert.</h2>
+            <p>
+              Ao concluir a formação, você recebe o certificado do curso. Veja o modelo e clique
+              para ampliar.
+            </p>
+          </div>
+          <a
+            href="/images/certificado-expert.webp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ampliar modelo do certificado principal do Comandos Elétricos Expert"
+          >
+            <img
+              src="/images/certificado-expert.webp"
+              alt="Modelo do certificado principal de conclusão do Comandos Elétricos Expert"
+              width={1100}
+              height={778}
+              loading="lazy"
+            />
+          </a>
         </div>
       </SalesSection>
 

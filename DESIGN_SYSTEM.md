@@ -55,7 +55,7 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 - Componentes compartilhados: `SalesSection`, `SectionHeading` e `Eyebrow` em src/components/sales-layout.tsx.
 - Todos os estilos da página usam o prefixo sales- e os tokens de src/styles.css. Nenhuma biblioteca adicionada.
 - Container: 1160px; margens mobile: 20px; seções: 80px desktop / 60px mobile.
-- Hero: duas colunas alinhadas pelo topo; logo de 220px desktop / 190px mobile; primeira decisão integrada ao texto.
+- Hero: uma coluna de texto com largura máxima de 820px e decisão de 460px; logo de 220px desktop / 190px mobile.
 - Comparação: colunas equivalentes, sem um terceiro bloco repetindo o benefício.
 - Metodologia: quatro etapas conectadas no desktop, duas no tablet e uma no celular. Sem cards para cada tópico.
 - Fundos: marinho > branco > cinza > marinho > branco > marinho > cinza > marinho.
@@ -64,11 +64,10 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 - FAQ reutiliza o Accordion existente. Compra reutiliza o Button existente, com no máximo dois CTAs.
 - Garantia mantida em 30 dias; termos e canal de solicitação não devem ser inventados.
 - Número 16.843 omitido da copy até comprovação da origem e do significado; credenciais do professor preservadas.
-- Imagem de dispositivos é o ativo já existente no projeto: apresentação ilustrativa, sem afirmar que é captura real.
-- Pendente: captura atual da plataforma e dos simuladores para substituir a apresentação ilustrativa.
+- Pendente: capturas reais da plataforma e dos simuladores para futura inclusão; mockup genérico removido.
 
 - Fontes locais em public/fonts, com licenças preservadas; @theme static mantém os tokens mesmo sem classes utilitárias.
-- Mobile: apresentação compacta do produto antes do texto de apoio; certificado e dispositivos dentro da primeira dobra.
+- Primeira dobra concentra promessa, texto de apoio, dados da formação e decisão; sem mockup genérico e sem certificado.
 
 ## Método e programa
 
@@ -81,3 +80,8 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 - Livro e aulas ao vivo (incluindo gravações desses encontros) excluídos da oferta pós-compra. Quatro bônus: LIDE, Eletrotécnica Aplicada, biblioteca técnica e simuladores.
 - Bônus em duas colunas no desktop e tablet; uma coluna no celular. Certificados reais preservados; biblioteca e simuladores usam representação gráfica com ícones Lucide.
 - Suporte pelo WhatsApp do professor em faixa própria, como recurso incluído; não numerar como bônus adicional.
+
+## Hierarquia dos certificados
+
+- Certificado principal em bloco próprio ao final do programa, antes dos bônus, com imagem ampla e link para ampliação.
+- Certificados dos bônus compactos (260px desktop / 210px mobile), preservando a prioridade da formação principal.

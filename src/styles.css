@@ -467,79 +467,7 @@
   line-height: 1;
   color: white;
 }
-.sales-product {
-  margin: 0;
-  padding-top: 8px;
-}
-.sales-product-screen {
-  border: 1px solid #ffffff26;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #0c0c0c;
-}
-.sales-product-screen img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3/2;
-  object-fit: cover;
-}
-.sales-product figcaption {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 0;
-}
-.sales-product figcaption > svg {
-  width: 26px;
-  height: 26px;
-  color: #8ecaff;
-  flex-shrink: 0;
-}
-.sales-product figcaption strong {
-  display: block;
-  font-size: 17px;
-  line-height: 1.4;
-}
-.sales-product figcaption span span {
-  display: block;
-  margin-top: 4px;
-  color: #c1cedd;
-  font-size: 15px;
-}
-.sales-product-certificate {
-  display: grid;
-  grid-template-columns: 44% 1fr;
-  align-items: center;
-  gap: 18px;
-  padding: 16px;
-  background: #ffffff0a;
-  border: 1px solid #ffffff26;
-  border-radius: 10px;
-}
-.sales-product-certificate img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.sales-product-certificate p {
-  display: flex;
-  align-items: start;
-  gap: 10px;
-  font-size: 17px;
-  line-height: 1.4;
-}
-.sales-product-certificate svg {
-  flex-shrink: 0;
-  width: 22px;
-  color: #8ecaff;
-}
-.sales-product-certificate p span span {
-  display: block;
-  font-size: 15px;
-  color: #c1cedd;
-  margin-top: 6px;
-}
+
 .sales-proof-strip {
   display: flex;
   align-items: center;
@@ -997,12 +925,7 @@
   .sales-facts {
     gap: 22px;
   }
-  .sales-product-certificate {
-    grid-template-columns: 1fr;
-  }
-  .sales-product-certificate > a {
-    display: none;
-  }
+
   .sales-method {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 36px;
@@ -1067,22 +990,7 @@
   .sales-hero h1 {
     grid-row: 1;
   }
-  .sales-product {
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 12px;
-    align-items: center;
-  }
-  .sales-product figcaption {
-    display: none;
-  }
-  .sales-product-certificate {
-    padding: 8px;
-  }
-  .sales-product-certificate p {
-    display: none;
-  }
+
   .sales-hero h1 {
     font-size: clamp(37px, 7.5vw, 46px);
     line-height: 1.06;
@@ -1101,21 +1009,7 @@
   .sales-facts > div {
     display: block;
   }
-  .sales-product {
-    padding-top: 0;
-  }
-  .sales-product-certificate {
-    grid-template-columns: 1fr;
-  }
-  .sales-product-certificate > a {
-    display: block;
-  }
-  .sales-product-certificate p {
-    font-size: 15px;
-  }
-  .sales-product-certificate p span span {
-    font-size: 15px;
-  }
+
   .sales-proof-strip {
     flex-wrap: wrap;
     gap: 12px;
@@ -1322,4 +1216,94 @@
     width: 44px;
     height: 44px;
   }
+}
+
+/* Hierarquia da formação: certificado principal antes dos bônus. */
+.sales-hero-grid {
+  display: block;
+  max-width: 820px;
+}
+.sales-hero-copy {
+  display: block;
+}
+.sales-hero-decision {
+  max-width: 460px;
+}
+.sales-certification {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid var(--border);
+}
+.sales-certification h2 {
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.sales-certification p:last-child {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+.sales-certification a {
+  display: block;
+}
+.sales-certification img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.sales-bonus-visual:not(.sales-simulator-visual) {
+  aspect-ratio: auto;
+  height: 190px;
+}
+.sales-bonus-visual img {
+  width: 100%;
+  max-width: 260px;
+  max-height: 170px;
+  object-fit: contain;
+  margin-inline: auto;
+}
+@media (max-width: 639px) {
+  .sales-hero-copy {
+    display: block;
+  }
+  .sales-facts {
+    margin-block: 22px;
+  }
+  .sales-lead {
+    margin-top: 20px !important;
+  }
+  .sales-certification {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+  .sales-certification h2 {
+    font-size: 36px;
+  }
+  .sales-bonus-visual:not(.sales-simulator-visual) {
+    height: 154px;
+  }
+  .sales-bonus-visual img {
+    max-width: 210px;
+    max-height: 130px;
+  }
+}
+.sales-hero-grid {
+  margin-inline: auto;
+  text-align: center;
+}
+.sales-hero-grid .sales-lead {
+  margin-inline: auto;
+}
+.sales-hero-grid .sales-facts {
+  justify-content: center;
+}
+.sales-hero-decision {
+  margin-inline: auto;
 }
