@@ -334,11 +334,11 @@ function UpsellPage() {
               </div>
             </div>
 
-            <VideoCard
-              name="Bras Junior"
-              title="Aluno do Comandos Elétricos Expert"
-              embedUrl="https://www.youtube-nocookie.com/embed/XFL2DMTHFvQ?rel=0&playsinline=1"
-            />
+            <div className="rounded-3xl border border-border bg-slate-50 p-7 sm:p-9">
+              <BookOpenCheck className="size-9 text-primary" />
+              <p className="mt-4 font-display text-3xl font-extrabold leading-tight text-navy">Você consulta no livro e acompanha a aplicação nas aulas.</p>
+              <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">Uma sequência organizada de estudo, exercícios e exemplos de circuitos para avançar com mais clareza.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -423,6 +423,33 @@ function UpsellPage() {
         </div>
       </section>
 
+      {/* DEPOIMENTOS REAIS */}
+      <section className="bg-slate-50" aria-labelledby="depoimentos-title">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+          <div className="max-w-3xl">
+            <SectionLabel>Depoimentos de alunos</SectionLabel>
+            <h2 id="depoimentos-title" className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
+              Veja os depoimentos de quem já participou da formação
+            </h2>
+            <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">
+              Assista aos relatos dos alunos sobre a experiência com o Comandos Elétricos Expert.
+            </p>
+          </div>
+          <div className="mt-9 grid gap-6 lg:grid-cols-2">
+            <VideoCard
+              name="Depoimento de aluno — vídeo 1"
+              title="Depoimento em vídeo"
+              embedUrl="https://www.youtube-nocookie.com/embed/K7wdTm5wug4?rel=0&playsinline=1"
+            />
+            <VideoCard
+              name="Depoimento de aluno — vídeo 2"
+              title="Depoimento em vídeo"
+              embedUrl="https://www.youtube-nocookie.com/embed/RBpx9aNAa2A?rel=0&playsinline=1"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* AUTORIDADE + PROVA */}
       <section className="bg-slate-50">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
@@ -456,13 +483,7 @@ function UpsellPage() {
                 </div>
               </div>
 
-              <div className="mt-8">
-                <VideoCard
-                  name="Gilberto Oliveira"
-                  title="Aluno da Academia do Eletricista"
-                  embedUrl="https://www.youtube-nocookie.com/embed/pCKulBnfJCQ?rel=0&playsinline=1"
-                />
-              </div>
+
             </div>
           </div>
 
