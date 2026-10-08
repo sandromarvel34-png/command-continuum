@@ -5,6 +5,8 @@ import {
   Check,
   CircuitBoard,
   GraduationCap,
+  LibraryBig,
+  MessageCircle,
   ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -349,10 +351,7 @@ function UpsellPage() {
       </SalesSection>
 
       <SalesSection tone="dark">
-        <SectionHeading
-          label="Incluídos na formação"
-          title="Mais recursos para estudar e praticar."
-        />
+        <SectionHeading label="Bônus incluídos" title="Mais recursos para estudar e praticar." />
         <div className="sales-bonuses">
           <article>
             <div className="sales-bonus-visual">
@@ -369,8 +368,8 @@ function UpsellPage() {
             <span className="sales-small-label">Bônus 01</span>
             <h3>Certificação em LIDE</h3>
             <p>
-              Leitura e Interpretação de Diagramas de Comandos Elétricos, com carga horária de 40
-              horas.
+              Certificação de 40 horas em Leitura e Interpretação de Diagramas de Comandos
+              Elétricos, recebida ao concluir a formação.
             </p>
           </article>
           <article>
@@ -392,8 +391,26 @@ function UpsellPage() {
             <span className="sales-small-label">Bônus 02</span>
             <h3>Eletrotécnica Aplicada</h3>
             <p>
-              Curso complementar para reforçar os fundamentos de eletrotécnica usados em comandos
-              elétricos.
+              Reforce os fundamentos com Lei de Ohm e associação de resistores. Inclui certificado
+              de 30 horas ao concluir o curso complementar.
+            </p>
+          </article>
+          <article>
+            <div className="sales-bonus-visual sales-simulator-visual">
+              <LibraryBig aria-hidden="true" />
+              <p>
+                Consulte.
+                <br />
+                Baixe.
+                <br />
+                Estude.
+              </p>
+            </div>
+            <span className="sales-small-label">Bônus 03</span>
+            <h3>Biblioteca técnica em PDF</h3>
+            <p>
+              Coleção de 100 apostilas e e-books sobre eletricidade, automação, eletrônica,
+              instalações e manutenção industrial para baixar e consultar.
             </p>
           </article>
           <article>
@@ -407,13 +424,23 @@ function UpsellPage() {
                 Observe.
               </p>
             </div>
-            <span className="sales-small-label">Bônus 03</span>
+            <span className="sales-small-label">Bônus 04</span>
             <h3>Simuladores de circuitos</h3>
             <p>
-              Programas para testar circuitos e visualizar o funcionamento dos comandos durante os
-              estudos.
+              Pratique os exercícios e desenvolva seus próprios diagramas com os programas
+              simuladores. Inclui aulas práticas usando essas ferramentas.
             </p>
           </article>
+        </div>
+        <div className="sales-bonus-support">
+          <MessageCircle aria-hidden="true" />
+          <div>
+            <h3>Suporte direto com o professor</h3>
+            <p>
+              Tire suas dúvidas pelo WhatsApp pessoal do professor Sandro, com atendimento
+              especializado e humanizado.
+            </p>
+          </div>
         </div>
       </SalesSection>
 

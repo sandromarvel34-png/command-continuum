@@ -75,3 +75,9 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 - Progressão real: Raio-X, IPO, MMDD e SIPAD; siglas com explicação, títulos alinhados e descrições sem promessas absolutas.
 - Programa em sete grupos expansíveis usando o Accordion existente; títulos de 17px, números alinhados e lista com ícones Lucide.
 - Método e programa compartilham a seção cinza para preservar o ritmo visual e manter a página de pós-compra compacta.
+
+## Bônus da oferta
+
+- Livro e aulas ao vivo (incluindo gravações desses encontros) excluídos da oferta pós-compra. Quatro bônus: LIDE, Eletrotécnica Aplicada, biblioteca técnica e simuladores.
+- Bônus em duas colunas no desktop e tablet; uma coluna no celular. Certificados reais preservados; biblioteca e simuladores usam representação gráfica com ícones Lucide.
+- Suporte pelo WhatsApp do professor em faixa própria, como recurso incluído; não numerar como bônus adicional.
