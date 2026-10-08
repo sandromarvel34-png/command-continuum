@@ -2,18 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
   Award,
-  BadgeCheck,
   BookOpenCheck,
   Check,
   CircuitBoard,
   FileBadge2,
   GraduationCap,
-  MonitorPlay,
   PlayCircle,
   ShieldCheck,
   Users,
-  Wrench,
-  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoExpert from "@/assets/logo-comandos-expert.png";
@@ -63,39 +59,6 @@ const methodLevels = [
   },
 ];
 
-const learnings = [
-  {
-    icon: CircuitBoard,
-    title: "Ler e interpretar diagramas",
-    text: "Entender a lógica dos circuitos de força e comando e acompanhar a sequência de funcionamento.",
-  },
-  {
-    icon: Wrench,
-    title: "Compreender e aplicar dispositivos",
-    text: "Relacionar contatores, relés, botoeiras, temporizadores, sinalização e proteções às funções que exercem no circuito.",
-  },
-  {
-    icon: Zap,
-    title: "Entender motores e transformadores",
-    text: "Estudar ligações, funcionamento e aplicações de motores e transformadores usados em comandos elétricos.",
-  },
-  {
-    icon: PlayCircle,
-    title: "Analisar chaves de partida",
-    text: "Acompanhar a lógica de partida direta, reversão, estrela-triângulo, Dahlander, sequenciais, intertravamentos e freio magnético.",
-  },
-  {
-    icon: MonitorPlay,
-    title: "Trabalhar com inversores de frequência",
-    text: "Compreender parametrização, rampas, torque e comandos aplicados aos inversores de frequência.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Estruturar projetos e diagnóstico",
-    text: "Integrar os conteúdos para analisar circuitos, desenvolver projetos e investigar falhas de forma organizada.",
-  },
-];
-
 const bonuses = [
   {
     icon: FileBadge2,
@@ -117,7 +80,7 @@ const bonuses = [
 const faqs = [
   {
     q: "Quanto tempo terei acesso ao Método?",
-    a: "O período de acesso é o informado na oferta desta página.",
+    a: "Você terá acesso ao Método por 36 meses, conforme a condição apresentada nesta oferta.",
   },
   {
     q: "O treinamento possui certificado?",
@@ -168,7 +131,7 @@ function BuyButton() {
       className="h-auto w-full rounded-2xl bg-cta px-6 py-5 text-base font-extrabold text-navy shadow-lg hover:bg-cta/90 sm:text-lg"
     >
       <a href={CHECKOUT_URL}>
-        SIM, QUERO ADICIONAR O MÉTODO
+        Sim, quero adicionar o Método
         <ArrowRight className="size-5" />
       </a>
     </Button>
@@ -297,19 +260,18 @@ function UpsellPage() {
               </div>
 
               <h1 className="mt-6 max-w-3xl font-display text-5xl font-extrabold leading-[0.98] tracking-tight text-white sm:text-6xl">
-                Aprenda a aplicar comandos elétricos passo a passo —
-                <span className="block text-[#63b3ff]">da leitura do diagrama ao diagnóstico de falhas.</span>
+                Você já garantiu o guia. Agora avance com uma formação prática e guiada.
+                <span className="block text-[#63b3ff]">Do diagrama ao diagnóstico de falhas.</span>
               </h1>
 
               <p className="mt-6 max-w-2xl text-[18px] leading-relaxed text-white/[0.78]">
-                Acrescente ao seu pedido uma formação em vídeo que organiza componentes, motores,
-                chaves de partida, inversores, projetos e diagnóstico em uma sequência guiada.
+                O livro é sua referência técnica de consulta. Com o Método Comandos Elétricos Expert, você acompanha aulas, exercícios e aplicações organizados para avançar dos fundamentos à análise de circuitos e falhas.
               </p>
 
               <div className="mt-7 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-4 border-y border-white/[0.15] py-5 sm:grid-cols-4">
                 <div>
                   <p className="font-display text-3xl font-extrabold text-white">100h</p>
-                  <p className="text-[13px] text-white/60">certificação</p>
+                  <p className="text-[13px] text-white/60">de formação</p>
                 </div>
                 <div>
                   <p className="font-display text-3xl font-extrabold text-white">36 meses</p>
@@ -330,7 +292,8 @@ function UpsellPage() {
                   <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/60">
                     Condição especial desta etapa
                   </p>
-                  <p className="mt-2 font-display text-5xl font-extrabold leading-none text-white">R$ 197</p>
+                  <p className="mt-3 text-[17px] text-white/70">Valor normal: <span className="line-through">R$ 497</span></p>
+                  <p className="mt-1 font-display text-5xl font-extrabold leading-none text-white">R$ 197</p>
                   <p className="mt-2 text-[15px] text-white/[0.65]">
                     disponível após a compra do livro
                   </p>
@@ -354,9 +317,9 @@ function UpsellPage() {
         <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
           <div className="grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr]">
             <div>
-              <SectionLabel>O que muda com o Método</SectionLabel>
+              <SectionLabel>Seu próximo passo após o livro</SectionLabel>
               <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-                Do estudo solto para uma sequência que conecta teoria, circuito e diagnóstico
+                O livro para consultar. O Método para acompanhar a aplicação, passo a passo.
               </h2>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
@@ -393,8 +356,7 @@ function UpsellPage() {
               Do fundamento ao diagnóstico em uma progressão lógica
             </h2>
             <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
-              O conteúdo não é apresentado como aulas isoladas. A metodologia organiza a formação em níveis,
-              fazendo cada etapa preparar o aluno para a próxima.
+              Aulas, exercícios e exemplos de circuitos organizados em uma sequência. Você estuda cada tema no momento em que ele prepara o próximo.
             </p>
           </div>
 
@@ -434,39 +396,6 @@ function UpsellPage() {
                 </article>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* O QUE VAI APRENDER */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-          <div className="max-w-3xl">
-            <SectionLabel>O que você vai aprender</SectionLabel>
-            <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-              Competências que conectam o diagrama à aplicação prática
-            </h2>
-            <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
-              Os módulos são o caminho. O resultado do estudo é conseguir compreender melhor os circuitos,
-              os equipamentos e a lógica usada nas principais aplicações de comandos elétricos.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
-            {learnings.map(({ icon: Icon, title, text }, index) => (
-              <article key={title} className="relative border-t border-border pt-6">
-                <div className="flex items-start justify-between gap-5">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <Icon className="size-6" />
-                  </span>
-                  <span className="font-display text-4xl font-extrabold text-slate-200">
-                    0{index + 1}
-                  </span>
-                </div>
-                <h3 className="mt-5 font-display text-2xl font-extrabold leading-none">{title}</h3>
-                <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">{text}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -566,51 +495,6 @@ function UpsellPage() {
                 O período amplo de acesso permite avançar na sequência e retornar aos conteúdos ao longo da sua jornada.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CERTIFICAÇÃO + PROVA */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionLabel>Conclusão e certificação</SectionLabel>
-            <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-              Uma formação com certificação e histórico real de alunos
-            </h2>
-            <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
-              O Método reúne formação estruturada, certificação de conclusão e uma base consolidada de alunos.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-7 lg:grid-cols-2">
-            <article className="rounded-3xl border border-border bg-slate-50 p-8 sm:p-10">
-              <div className="flex items-start gap-5">
-                <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <Award className="size-8" />
-                </span>
-                <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.15em] text-primary">
-                    Certificação do Método
-                  </p>
-                  <p className="mt-2 font-display text-5xl font-extrabold leading-none text-navy">
-                    100 horas
-                  </p>
-                  <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">
-                    O certificado de conclusão é disponibilizado conforme os critérios de conclusão do treinamento.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article className="rounded-3xl bg-navy p-8 text-white sm:p-10">
-              <Users className="size-9 text-[#63b3ff]" />
-              <p className="mt-5 font-display text-5xl font-extrabold leading-none">16.843</p>
-              <p className="mt-2 text-[17px] text-white/70">alunos do Método Comandos Elétricos Expert</p>
-              <p className="mt-5 text-[16px] leading-relaxed text-white/65">
-                Esse número entra como prova quantitativa da formação, sem substituir os depoimentos em vídeo.
-              </p>
-            </article>
           </div>
         </div>
       </section>
