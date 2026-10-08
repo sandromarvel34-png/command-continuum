@@ -242,7 +242,7 @@ function UpsellPage() {
       <SalesSection tone="light">
         <SectionHeading
           label="Do estudo à aplicação"
-          title="O que o curso acrescenta ao seu estudo."
+          title="Do estudo no livro à aplicação nas aulas"
           description="O livro fica ao seu lado para consultar. Nas aulas, você acompanha o raciocínio e a execução dos comandos."
         />
         <div className="sales-comparison">
@@ -269,7 +269,7 @@ function UpsellPage() {
       <SalesSection tone="muted">
         <SectionHeading
           label="Como você vai aprender"
-          title="Da função dos componentes à investigação das falhas."
+          title="Da função dos componentes à investigação das falhas"
           description="Quatro etapas conectam o funcionamento dos componentes à aplicação nos comandos elétricos."
         />
         <ol className="sales-method">
@@ -287,7 +287,7 @@ function UpsellPage() {
         <div className="sales-curriculum">
           <SectionHeading
             label="Programa do curso"
-            title="O conteúdo completo da sua formação."
+            title="O conteúdo completo da sua formação"
             description="Abra cada grupo para consultar o conteúdo da formação."
           />
           <Accordion type="multiple" className="sales-curriculum-list">
@@ -344,7 +344,7 @@ function UpsellPage() {
       <SalesSection tone="dark">
         <SectionHeading
           label="Bônus incluídos"
-          title="Amplie seus estudos com os bônus incluídos."
+          title="Amplie seus estudos com os bônus incluídos"
         />
         <div className="sales-bonuses">
           <article>
@@ -454,7 +454,7 @@ function UpsellPage() {
         <div id="depoimentos" className="sales-testimonials">
           <SectionHeading
             label="Depoimentos de alunos"
-            title="O que os alunos contam sobre o curso."
+            title="Depoimentos de quem já fez o curso"
             description="Assista aos relatos e veja os registros de alunos com seus certificados."
           />
           <div className="sales-videos">
@@ -512,7 +512,7 @@ function UpsellPage() {
           <div>
             <SectionHeading
               label="Condição especial pós-compra"
-              title="Adicione o curso completo ao seu pedido."
+              title="Adicione o curso completo ao seu pedido"
               description="Esta condição é oferecida a quem adquiriu o livro. Inclua o Comandos Elétricos Expert e acompanhe a aplicação nas aulas."
             />
             <ul className="sales-offer-list">
@@ -554,7 +554,7 @@ function UpsellPage() {
       </SalesSection>
 
       <SalesSection tone="muted" id="faq" className="sales-faq">
-        <SectionHeading label="Dúvidas frequentes" title="Respostas sobre a formação." />
+        <SectionHeading label="Dúvidas frequentes" title="Respostas sobre a formação" />
         <Accordion type="single" collapsible>
           {faqs.map((faq, index) => (
             <AccordionItem key={faq.q} value={`faq-${index}`}>
