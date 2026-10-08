@@ -114,7 +114,7 @@ function CourseLogo({ className = "" }: { className?: string }) {
         alt="Curso Comandos Elétricos Expert v5.0"
         width={965}
         height={326}
-        className="block h-auto w-full max-w-[560px] object-contain"
+        className="block h-auto w-full max-w-[260px] object-contain sm:max-w-[320px]"
       />
     </div>
   );
@@ -250,7 +250,7 @@ function UpsellPage() {
         <div className="mx-auto max-w-6xl px-5 py-14 sm:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_.98fr]">
             <div>
-              <CourseLogo className="max-w-[470px]" />
+              <CourseLogo className="max-w-[320px]" />
               <div className="mt-7">
                 <SectionLabel dark>Pedido do livro confirmado</SectionLabel>
               </div>
