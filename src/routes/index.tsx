@@ -152,6 +152,18 @@ const faqs = [
     q: "O Método substitui o livro?",
     a: "O livro continua sendo sua referência de consulta. O Método acrescenta aulas em vídeo, exercícios e exemplos para acompanhar a aplicação.",
   },
+  {
+    q: "Como acesso as aulas e por quanto tempo posso estudar?",
+    a: "As aulas são gravadas e ficam na área de membros, com acesso pelo computador, tablet ou celular. Você recebe os dados de acesso por e-mail após a confirmação da compra e pode estudar e revisar por 36 meses.",
+  },
+  {
+    q: "Esta oferta inclui outro livro ou aulas ao vivo?",
+    a: "Não. Você já adquiriu o livro. Esta oferta acrescenta a formação em vídeo e os bônus apresentados nesta página, sem outro exemplar do livro e sem aulas ao vivo ou gravações desses encontros.",
+  },
+  {
+    q: "E se eu decidir não continuar com o treinamento?",
+    a: "Você tem 30 dias a partir da compra para avaliar a formação. Nesse período, solicite o cancelamento por e-mail ou WhatsApp para receber o reembolso integral do valor pago pelo treinamento.",
+  },
 ];
 
 function BuyButton() {
@@ -514,7 +526,7 @@ function UpsellPage() {
                 "Aulas, exercícios e aplicações",
                 "Certificado de conclusão",
                 "Todos os bônus apresentados",
-                "36 meses para estudar e revisar",
+                "Acesso para estudar e revisar",
               ].map((item) => (
                 <li key={item}>
                   <Check aria-hidden="true" />
