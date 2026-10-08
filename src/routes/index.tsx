@@ -79,10 +79,6 @@ const bonuses = [
 
 const faqs = [
   {
-    q: "Quanto tempo terei acesso ao Método?",
-    a: "Você terá acesso ao Método por 36 meses, conforme a condição apresentada nesta oferta.",
-  },
-  {
     q: "O treinamento possui certificado?",
     a: "Sim. O Método possui certificado de conclusão, disponibilizado conforme os critérios de conclusão do treinamento.",
   },
