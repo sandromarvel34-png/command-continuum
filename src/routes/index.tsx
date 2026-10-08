@@ -157,10 +157,6 @@ const faqs = [
     a: "As aulas são gravadas e ficam na área de membros, com acesso pelo computador, tablet ou celular. Você recebe os dados de acesso por e-mail após a confirmação da compra e pode estudar e revisar por 36 meses.",
   },
   {
-    q: "Esta oferta inclui outro livro ou aulas ao vivo?",
-    a: "Não. Você já adquiriu o livro. Esta oferta acrescenta a formação em vídeo e os bônus apresentados nesta página, sem outro exemplar do livro e sem aulas ao vivo ou gravações desses encontros.",
-  },
-  {
     q: "E se eu decidir não continuar com o treinamento?",
     a: "Você tem 30 dias a partir da compra para avaliar a formação. Nesse período, solicite o cancelamento por e-mail ou WhatsApp para receber o reembolso integral do valor pago pelo treinamento.",
   },
