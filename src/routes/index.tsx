@@ -437,6 +437,16 @@ function UpsellPage() {
           </div>
           <div className="mt-9 grid gap-6 lg:grid-cols-2">
             <VideoCard
+              name="Bras Junior"
+              title="Aluno do Comandos Elétricos Expert"
+              embedUrl="https://www.youtube-nocookie.com/embed/XFL2DMTHFvQ?rel=0&playsinline=1"
+            />
+            <VideoCard
+              name="Gilberto Oliveira"
+              title="Aluno da Academia do Eletricista"
+              embedUrl="https://www.youtube-nocookie.com/embed/pCKulBnfJCQ?rel=0&playsinline=1"
+            />
+            <VideoCard
               name="Depoimento de aluno — vídeo 1"
               title="Depoimento em vídeo"
               embedUrl="https://www.youtube-nocookie.com/embed/K7wdTm5wug4?rel=0&playsinline=1"
