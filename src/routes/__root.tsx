@@ -17,16 +17,16 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Página não encontrada</h2>
+        <p className="mt-2 text-[17px] text-muted-foreground">
+          A página que você procura não está disponível.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-[17px] font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Voltar à página do curso
           </Link>
         </div>
       </div>
@@ -45,10 +45,10 @@ function ErrorComponent({ error, reset }: { error: unknown; reset: () => void })
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          Não foi possível carregar a página
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+        <p className="mt-2 text-[17px] text-muted-foreground">
+          Tente carregar novamente ou volte à página do curso.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -56,15 +56,15 @@ function ErrorComponent({ error, reset }: { error: unknown; reset: () => void })
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-[17px] font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            Tentar novamente
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-[17px] font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            Voltar à página do curso
           </a>
         </div>
       </div>
@@ -77,43 +77,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pedido confirmado — Complete sua formação em Comandos Elétricos" },
+      { title: "Comandos Elétricos Expert | Formação prática" },
       {
         name: "description",
         content:
-          "Você já garantiu o livro Comandos Elétricos. Agora adicione o Método Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real.",
+          "Aprenda a interpretar diagramas, montar circuitos e analisar falhas com o curso Comandos Elétricos Expert.",
       },
       { name: "author", content: "Sandro Zander" },
       {
         property: "og:title",
-        content: "Pedido confirmado — Complete sua formação em Comandos Elétricos",
+        content: "Comandos Elétricos Expert | Formação prática",
       },
       {
         property: "og:description",
         content:
-          "Você já garantiu o livro Comandos Elétricos. Agora adicione o Método Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real.",
+          "Aprenda a interpretar diagramas, montar circuitos e analisar falhas com o curso Comandos Elétricos Expert.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:card", content: "summary" },
 
       {
         name: "twitter:title",
-        content: "Pedido confirmado — Complete sua formação em Comandos Elétricos",
+        content: "Comandos Elétricos Expert | Formação prática",
       },
       {
         name: "twitter:description",
         content:
-          "Você já garantiu o livro Comandos Elétricos. Agora adicione o Método Comandos Elétricos Expert ao seu pedido e transforme teoria em prática real.",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fa118c0e-333c-4cbc-b63c-b8e041c4f395/id-preview-a78c7dc9--88c1d178-2421-49d8-8146-9c85b17befe1.lovable.app-1785969383375.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fa118c0e-333c-4cbc-b63c-b8e041c4f395/id-preview-a78c7dc9--88c1d178-2421-49d8-8146-9c85b17befe1.lovable.app-1785969383375.png",
+          "Aprenda a interpretar diagramas, montar circuitos e analisar falhas com o curso Comandos Elétricos Expert.",
       },
     ],
     links: [

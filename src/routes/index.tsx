@@ -16,6 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SalesSection, SectionHeading, Eyebrow } from "@/components/sales-layout";
+import { TestimonialVideo } from "@/components/testimonial-video";
 import logoExpert from "@/assets/logo-comandos-expert.png";
 import professor from "@/assets/professor.jpg";
 
@@ -199,8 +200,8 @@ function UpsellPage() {
               <span className="sales-highlight">do diagrama ao diagnóstico de falhas.</span>
             </h1>
             <p className="sales-lead">
-              Com o Comandos Elétricos Expert, acompanhe a análise e a montagem dos circuitos em
-              vídeo. Depois, pratique com os exercícios da formação.
+              Acompanhe a análise e a montagem dos circuitos em vídeo. Pratique com os exercícios do
+              Comandos Elétricos Expert.
             </p>
             <dl className="sales-facts">
               <div>
@@ -443,7 +444,7 @@ function UpsellPage() {
           />
           <div>
             <Eyebrow>Seu professor</Eyebrow>
-            <h2>Aprenda com Sandro Zander.</h2>
+            <h2>Aprenda com Sandro Zander</h2>
             <p>
               Sandro Zander é engenheiro eletricista e professor há mais de 26 anos, autor do Livro
               Comandos Elétricos e fundador da Academia do Eletricista, com atuação em instituições
@@ -459,22 +460,7 @@ function UpsellPage() {
           />
           <div className="sales-videos">
             {testimonials.map((video) => (
-              <article key={video.id}>
-                <div className="sales-video-frame">
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&playsinline=1`}
-                    title={`Depoimento de ${video.name}`}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </div>
-                <p>
-                  {video.name}
-                  <span>Aluno — depoimento em vídeo</span>
-                </p>
-              </article>
+              <TestimonialVideo key={video.id} name={video.name} id={video.id} />
             ))}
           </div>
           <div className="sales-gallery-label">

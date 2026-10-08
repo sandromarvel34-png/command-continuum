@@ -8,15 +8,15 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 
 ## Cores
 
-- Navy: #0B1F3A
-- Navy 2: #102B50
-- Blue brand: #0878C9
-- CTA orange: #F28A00
-- Background: #F7F9FC
-- Surface: #FFFFFF
-- Text: #14243A
-- Muted text: #536174
-- Border: #DCE3EB
+- Navy: `oklch(0.26 0.055 255)` (`--navy`)
+- Navy 2: `oklch(0.32 0.07 255)` (`--navy-2`)
+- Blue brand: `oklch(0.53 0.19 255)` (`--brand`)
+- CTA orange: `oklch(0.72 0.18 55)` (`--cta`)
+- Background: `oklch(0.985 0.004 255)` (`--background`)
+- Surface: `oklch(1 0 0)` (`--surface`)
+- Text: `oklch(0.22 0.035 255)` (`--foreground`)
+- Muted text: `oklch(0.49 0.025 255)` (`--muted-foreground`)
+- Border: `oklch(0.89 0.015 255)` (`--border`)
 
 ## Tipografia
 
@@ -29,7 +29,7 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 
 - Desktop: 72–96px entre seções
 - Mobile: 56–72px
-- Alternância: navy > branco > cinza > branco > navy > cinza
+- Alternância: navy > branco > cinza > navy > branco > navy > cinza > navy
 
 ## Componentes
 
@@ -95,3 +95,11 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 - Preço inicial centralizado com o botão. Dados da formação limitados a 540px para manter unidade visual no hero.
 - Garantia explica solicitação por e-mail ou WhatsApp e devolução do valor pago, conforme a oferta original do criador.
 - Mantidos: quatro depoimentos, cinco fotos, sete grupos do programa, quatro bônus, cinco dúvidas, preço, links e rodapé. Não introduzir a pergunta excluída, livro como bônus, aulas ao vivo ou mockup genérico.
+
+## Auditoria de apresentação e reprodução
+
+- CSS de vendas consolidado em definições base e breakpoints ordenados; nenhuma fonte ou biblioteca adicionada.
+- `TestimonialVideo`: prévia com miniatura real do YouTube, nome e botão acessível; fundo marinho e texto continuam visíveis se a imagem externa falhar. O player carrega somente após interação.
+- Os quatro vídeos preservam seus IDs, política de referência e opção de assistir diretamente no YouTube. Reprodução externa depende da disponibilidade do serviço; contagem de players não comprova reprodução.
+- Tablet estreito e celular usam certificado principal em largura total e bônus compactos em uma coluna.
+- Títulos de seção diretos e sem ponto final; erros de navegação em pt-BR; metadados sem prévia obsoleta.

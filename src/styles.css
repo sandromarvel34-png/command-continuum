@@ -267,7 +267,7 @@
     var(--navy);
 }
 
-/* Sales page components — shared rhythm, typography and layout. */
+/* Sales components: one base definition and ordered responsive rules. */
 .sales-page {
   --sales-width: 1160px;
   --sales-gap: 32px;
@@ -395,12 +395,6 @@
   width: 220px;
   height: auto;
 }
-.sales-hero-grid {
-  display: grid;
-  grid-template-columns: 1.17fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
 .sales-hero h1 {
   font-size: clamp(40px, 3.9vw, 52px);
   line-height: 1.04;
@@ -448,26 +442,12 @@
   color: #c1cedd;
   font-size: 15px;
 }
-.sales-hero-decision {
-  max-width: 560px;
-}
-.sales-inline-price {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  column-gap: 14px;
-  row-gap: 4px;
-  margin-bottom: 14px;
-  color: #c1cedd;
-  font-size: 15px;
-}
 .sales-inline-price strong {
   font-family: var(--font-display);
   font-size: 38px;
   line-height: 1;
   color: white;
 }
-
 .sales-proof-strip {
   display: flex;
   align-items: center;
@@ -644,11 +624,6 @@
   margin-top: 5px;
   color: var(--brand);
 }
-.sales-bonuses {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 30px;
-}
 .sales-bonuses article {
   grid-column: span 3;
   display: flex;
@@ -668,11 +643,6 @@
 .sales-bonus-visual a {
   display: block;
   width: 100%;
-}
-.sales-bonus-visual img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 .sales-small-label {
   font-size: 15px;
@@ -877,12 +847,6 @@
 .sales-faq .sales-container {
   max-width: 840px;
 }
-.sales-faq button {
-  font-family: var(--font-sans);
-  font-size: 17px;
-  line-height: 1.5;
-  padding-block: 22px;
-}
 .sales-faq [data-slot],
 .sales-faq [data-state] {
   font-size: 17px;
@@ -909,261 +873,9 @@
   line-height: 1.6;
   max-width: 900px;
 }
-@media (min-width: 1600px) {
-  .sales-hero h1 {
-    font-size: 52px;
-  }
-}
-@media (max-width: 1023px) {
-  .sales-hero-grid {
-    grid-template-columns: 1.15fr 1fr;
-    gap: 30px;
-  }
-  .sales-hero h1 {
-    font-size: 43px;
-  }
-  .sales-facts {
-    gap: 22px;
-  }
-
-  .sales-method {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 36px;
-  }
-  .sales-method > li::after {
-    display: none;
-  }
-  .sales-step-body > p {
-    min-height: 0;
-  }
-  .sales-step-body h3 {
-    min-height: 0;
-  }
-  .sales-photo-gallery {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .sales-offer-grid {
-    gap: 36px;
-    grid-template-columns: 1fr 1fr;
-  }
-  .sales-simulator-visual {
-    gap: 12px;
-    padding: 16px;
-  }
-  .sales-simulator-visual > svg {
-    width: 40px;
-    height: 40px;
-  }
-  .sales-simulator-visual > p {
-    font-size: 30px;
-  }
-}
-@media (max-width: 767px) {
-  .sales-container {
-    width: calc(100% - 40px);
-  }
-  .sales-section {
-    padding-block: 60px;
-  }
-  .sales-hero {
-    padding-block: 24px 0;
-  }
-  .sales-header {
-    flex-direction: column;
-    align-items: start;
-    gap: 18px;
-    margin-bottom: 26px;
-  }
-  .sales-logo {
-    width: 190px;
-  }
-  .sales-eyebrow {
-    font-size: 15px;
-  }
-  .sales-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .sales-hero-copy {
-    display: contents;
-  }
-  .sales-hero h1 {
-    grid-row: 1;
-  }
-
-  .sales-hero h1 {
-    font-size: clamp(37px, 7.5vw, 46px);
-    line-height: 1.06;
-  }
-  .sales-intro {
-    font-size: 23px;
-    margin-bottom: 14px;
-  }
-  .sales-lead {
-    margin-top: 0 !important;
-  }
-  .sales-facts {
-    margin-block: 0;
-    gap: 26px;
-  }
-  .sales-facts > div {
-    display: block;
-  }
-
-  .sales-proof-strip {
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 26px;
-  }
-  .sales-proof-strip > p {
-    flex: 1;
-  }
-  .sales-proof-strip > a {
-    margin-left: 68px;
-  }
-  .sales-section-heading {
-    margin-bottom: 28px;
-  }
-  .sales-section-heading h2 {
-    font-size: 36px;
-  }
-  .sales-comparison {
-    grid-template-columns: 1fr;
-  }
-  .sales-comparison article {
-    padding: 26px;
-  }
-  .sales-comparison article + article {
-    border-left: 0;
-    border-top: 1px solid var(--border);
-  }
-  .sales-method {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-  .sales-method > li {
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 18px;
-  }
-  .sales-step-body {
-    padding-top: 5px;
-  }
-  .sales-step-body h3 {
-    font-size: 28px;
-  }
-  .sales-step-body ul {
-    margin-top: 16px;
-    padding-top: 12px;
-  }
-  .sales-bonuses {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  .sales-bonus-visual {
-    aspect-ratio: 1.6;
-    margin-bottom: 18px;
-  }
-  .sales-simulator-visual {
-    gap: 28px;
-    padding: 30px;
-  }
-  .sales-simulator-visual > svg {
-    width: 70px;
-    height: 70px;
-  }
-  .sales-simulator-visual > p {
-    font-size: 40px;
-  }
-  .sales-teacher {
-    grid-template-columns: 100px 1fr;
-    gap: 20px;
-    align-items: start;
-    padding-bottom: 30px;
-    margin-bottom: 36px;
-  }
-  .sales-teacher img {
-    width: 100px;
-    height: 140px;
-  }
-  .sales-teacher h2 {
-    font-size: 30px;
-  }
-  .sales-teacher div > p:last-child {
-    grid-column: 1/-1;
-  }
-  .sales-teacher > div {
-    display: contents;
-  }
-  .sales-teacher img {
-    grid-row: 1 / span 2;
-  }
-  .sales-teacher .sales-eyebrow,
-  .sales-teacher h2 {
-    grid-column: 2;
-  }
-  .sales-videos {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-  .sales-photo-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-  .sales-photo-gallery img {
-    height: 240px;
-  }
-  .sales-photo-gallery a:last-child {
-    grid-column: 1/-1;
-    max-width: calc(50% - 6px);
-    width: 100%;
-    justify-self: center;
-  }
-  .sales-offer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .sales-offer-decision {
-    padding: 28px 0 0;
-    border-left: 0;
-    border-top: 1px solid #ffffff26;
-  }
-  .sales-guarantee {
-    margin-top: 24px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* Public presentation: keep editor badge out of the sales experience. */
 #lovable-badge {
   display: none !important;
 }
-
-@media (max-width: 1023px) {
-  .sales-step-body > .sales-method-name {
-    min-height: 0;
-  }
-}
-@media (max-width: 639px) {
-  .sales-curriculum {
-    margin-top: 44px;
-    padding-top: 40px;
-  }
-  .sales-curriculum-heading {
-    gap: 12px;
-  }
-  .sales-topic-list {
-    padding-left: 0;
-  }
-  .sales-curriculum-list button {
-    padding: 20px 0;
-  }
-}
-
 .sales-bonuses article:nth-child(-n + 2) {
   grid-column: span 3;
 }
@@ -1190,44 +902,8 @@
   font-size: 17px;
   max-width: 780px;
 }
-@media (max-width: 1023px) {
-  .sales-bonuses {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .sales-bonuses article,
-  .sales-bonuses article:nth-child(-n + 2) {
-    grid-column: auto;
-  }
-}
-@media (max-width: 639px) {
-  .sales-bonuses {
-    grid-template-columns: 1fr;
-  }
-  .sales-bonus-support {
-    gap: 14px;
-  }
-}
-@media (max-width: 639px) {
-  .sales-simulator-visual {
-    padding: 20px;
-    gap: 14px;
-  }
-  .sales-simulator-visual > svg {
-    width: 44px;
-    height: 44px;
-  }
-}
-
-/* Hierarquia da formação: certificado principal antes dos bônus. */
-.sales-hero-grid {
-  display: block;
-  max-width: 820px;
-}
 .sales-hero-copy {
   display: block;
-}
-.sales-hero-decision {
-  max-width: 460px;
 }
 .sales-certification {
   display: grid;
@@ -1261,40 +937,20 @@
   height: 190px;
 }
 .sales-bonus-visual img {
+  display: block;
   width: 100%;
+  height: auto;
   max-width: 260px;
   max-height: 170px;
   object-fit: contain;
   margin-inline: auto;
 }
-@media (max-width: 639px) {
-  .sales-hero-copy {
-    display: block;
-  }
-  .sales-facts {
-    margin-block: 22px;
-  }
-  .sales-lead {
-    margin-top: 20px !important;
-  }
-  .sales-certification {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    margin-top: 40px;
-    padding-top: 40px;
-  }
-  .sales-certification h2 {
-    font-size: 36px;
-  }
-  .sales-bonus-visual:not(.sales-simulator-visual) {
-    height: 154px;
-  }
-  .sales-bonus-visual img {
-    max-width: 210px;
-    max-height: 130px;
-  }
-}
 .sales-hero-grid {
+  display: block;
+  grid-template-columns: 1.17fr 1fr;
+  gap: 48px;
+  align-items: start;
+  max-width: 820px;
   margin-inline: auto;
   text-align: center;
 }
@@ -1305,10 +961,18 @@
   justify-content: center;
 }
 .sales-hero-decision {
+  max-width: 460px;
   margin-inline: auto;
 }
-/* Oferta pós-compra: benefícios legíveis e recursos com peso secundário. */
 .sales-inline-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 14px;
+  row-gap: 4px;
+  margin-bottom: 14px;
+  color: #c1cedd;
+  font-size: 15px;
   justify-content: center;
 }
 .sales-hero .sales-facts {
@@ -1316,6 +980,7 @@
   margin-inline: auto;
 }
 .sales-bonuses {
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 32px 40px;
 }
@@ -1362,24 +1027,250 @@
   color: #d3dfec;
 }
 .sales-faq button {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.5;
+  padding-block: 22px;
   gap: 20px;
 }
+.sales-testimonials {
+  scroll-margin-top: 24px;
+}
+
+.sales-page button:focus-visible {
+  outline: 3px solid var(--brand-soft);
+  outline-offset: 5px;
+}
+.sales-video-preview {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: var(--navy-2);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+.sales-video-play {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid #ffffff80;
+  background: #0b1f3abf;
+  border-radius: 50%;
+}
+.sales-video-play svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
+}
+.sales-video-preview:hover .sales-video-play {
+  background: var(--brand);
+}
+.sales-video-preview-name {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.sales-video-preview-action {
+  font-size: 15px;
+}
+.sales-video-external {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--brand);
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.sales-video-external svg {
+  width: 16px;
+  height: 16px;
+}
 @media (max-width: 1023px) {
+  .sales-hero h1 {
+    font-size: 43px;
+  }
+  .sales-facts {
+    gap: 22px;
+  }
+  .sales-method {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+  }
+  .sales-method > li::after {
+    display: none;
+  }
+  .sales-step-body > .sales-method-name {
+    min-height: 0;
+  }
+  .sales-photo-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .sales-offer-grid {
+    gap: 36px;
+    grid-template-columns: 1fr 1fr;
+  }
   .sales-bonuses article,
   .sales-bonuses article:nth-child(-n + 2) {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 }
-@media (max-width: 639px) {
-  .sales-hero h1 {
-    font-size: clamp(34px, 8vw, 44px);
+@media (max-width: 767px) {
+  .sales-container {
+    width: calc(100% - 40px);
+  }
+  .sales-section {
+    padding-block: 60px;
+  }
+  .sales-hero {
+    padding-block: 20px 0;
   }
   .sales-header {
-    margin-bottom: 26px;
+    flex-direction: column;
+    align-items: start;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .sales-logo {
+    width: 170px;
+  }
+  .sales-hero h1 {
+    font-size: clamp(34px, 8vw, 44px);
+    line-height: 1.06;
   }
   .sales-intro {
     font-size: 21px;
+    margin-bottom: 14px;
+  }
+  .sales-lead {
+    margin-top: 18px !important;
+  }
+  .sales-facts {
+    margin-block: 16px;
+    padding-block: 14px;
+    gap: 26px;
+  }
+  .sales-facts > div {
+    display: block;
+  }
+  .sales-proof-strip {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+  }
+  .sales-proof-strip > p {
+    flex: 1;
+  }
+  .sales-proof-strip > a {
+    margin-left: 68px;
+  }
+  .sales-section-heading {
+    margin-bottom: 28px;
+  }
+  .sales-section-heading h2 {
+    font-size: 36px;
+  }
+  .sales-comparison {
+    grid-template-columns: 1fr;
+  }
+  .sales-comparison article {
+    padding: 26px;
+  }
+  .sales-comparison article + article {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .sales-method {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .sales-method > li {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+  }
+  .sales-step-body {
+    padding-top: 5px;
+  }
+  .sales-step-body h3 {
+    font-size: 28px;
+  }
+  .sales-teacher {
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+    align-items: start;
+    padding-bottom: 30px;
+    margin-bottom: 36px;
+  }
+  .sales-teacher img {
+    width: 100px;
+    height: 140px;
+    grid-row: 1 / span 2;
+  }
+  .sales-teacher h2 {
+    font-size: 30px;
+  }
+  .sales-teacher > div {
+    display: contents;
+  }
+  .sales-teacher .sales-eyebrow,
+  .sales-teacher h2 {
+    grid-column: 2;
+  }
+  .sales-teacher div > p:last-child {
+    grid-column: 1/-1;
+  }
+  .sales-videos {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .sales-photo-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .sales-photo-gallery img {
+    height: 240px;
+  }
+  .sales-photo-gallery a:last-child {
+    grid-column: 1/-1;
+    max-width: calc(50% - 6px);
+    width: 100%;
+    justify-self: center;
+  }
+  .sales-offer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .sales-offer-decision {
+    padding: 28px 0 0;
+    border-left: 0;
+    border-top: 1px solid #ffffff26;
+  }
+  .sales-guarantee {
+    margin-top: 24px;
+  }
+  .sales-certification {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+  .sales-certification h2 {
+    font-size: 36px;
   }
   .sales-bonuses {
     grid-template-columns: 1fr;
@@ -1415,8 +1306,27 @@
     grid-column: 1 / -1;
     margin-top: 6px;
   }
+  .sales-bonus-support {
+    gap: 14px;
+  }
 }
-
-.sales-testimonials {
-  scroll-margin-top: 24px;
+@media (max-width: 639px) {
+  .sales-curriculum {
+    margin-top: 44px;
+    padding-top: 40px;
+  }
+  .sales-curriculum-heading {
+    gap: 12px;
+  }
+  .sales-topic-list {
+    padding-left: 0;
+  }
+  .sales-curriculum-list button {
+    padding: 20px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
