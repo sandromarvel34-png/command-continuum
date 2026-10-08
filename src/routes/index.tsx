@@ -1,19 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  ArrowRight,
   Award,
   BookOpenCheck,
   Check,
   CircuitBoard,
-  FileBadge2,
   GraduationCap,
-  PlayCircle,
   ShieldCheck,
-  Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { SalesSection, SectionHeading, Eyebrow } from "@/components/sales-layout";
 import logoExpert from "@/assets/logo-comandos-expert.png";
 import professor from "@/assets/professor.jpg";
+import devices from "@/assets/mockup-devices.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,588 +40,428 @@ const methodLevels = [
   {
     number: "01",
     title: "Fundamentos",
-    text: "Construa a base para compreender a lógica dos comandos sem depender de memorização.",
+    text: "Compreenda a lógica dos comandos, em vez de depender de memorização.",
     modules: ["A Base"],
   },
   {
     number: "02",
     title: "Equipamentos e componentes",
-    text: "Entenda como os principais elementos trabalham antes de partir para os circuitos.",
+    text: "Entenda a função de cada elemento e sua participação no circuito.",
     modules: ["Proteções Ativas", "Motores", "Transformadores", "Dispositivos"],
   },
   {
     number: "03",
     title: "Aplicação industrial",
-    text: "Conecte os componentes aos circuitos, partidas e acionamentos usados na prática.",
+    text: "Relacione os componentes às partidas e aos acionamentos usados na prática.",
     modules: ["Diagramas e Chaves de Partida", "Inversores de Frequência"],
   },
   {
     number: "04",
     title: "Nível Expert",
-    text: "Integre o conhecimento para analisar circuitos, desenvolver projetos e diagnosticar falhas.",
+    text: "Integre o que aprendeu para analisar circuitos e investigar falhas.",
     modules: ["Projetos e Diagnóstico"],
   },
 ];
 
-const bonuses = [
-  {
-    icon: FileBadge2,
-    title: "Certificação em LIDE – Comandos Elétricos",
-    text: "Certificação complementar em LIDE – Comandos Elétricos com carga horária de 40 horas.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Eletrotécnica Aplicada em Comandos Elétricos",
-    text: "Curso complementar para reforçar os fundamentos de eletrotécnica diretamente ligados aos comandos elétricos.",
-  },
-  {
-    icon: CircuitBoard,
-    title: "Programas Simuladores de Circuitos",
-    text: "Ferramentas para testar circuitos e visualizar o funcionamento dos comandos durante os estudos.",
-  },
+const testimonials = [
+  { name: "Bras Junior", id: "XFL2DMTHFvQ" },
+  { name: "Gilberto Oliveira", id: "pCKulBnfJCQ" },
+  { name: "Igor", id: "K7wdTm5wug4" },
+  { name: "Reinaldo", id: "RBpx9aNAa2A" },
 ];
 
 const faqs = [
   {
     q: "O treinamento possui certificado?",
-    a: "Sim. O Método possui certificado de conclusão, disponibilizado conforme os critérios de conclusão do treinamento.",
+    a: "Sim. O certificado de conclusão é disponibilizado conforme os critérios de conclusão do treinamento.",
   },
   {
     q: "Preciso já trabalhar com comandos elétricos?",
-    a: "Não. A sequência começa pelos fundamentos e avança progressivamente até aplicações, projetos e diagnóstico de falhas.",
+    a: "Não. O conteúdo começa pelos fundamentos e avança até aplicações industriais, projetos e diagnóstico de falhas.",
   },
   {
     q: "O Método substitui o livro?",
-    a: "Não. O livro funciona como referência técnica de consulta. O Método acrescenta uma sequência guiada em vídeo, aplicações e exercícios para aprofundar o estudo.",
+    a: "O livro continua sendo sua referência de consulta. O Método acrescenta aulas em vídeo, exercícios e exemplos para acompanhar a aplicação.",
   },
 ];
 
-function SectionLabel({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
-  return (
-    <span
-      className={
-        dark
-          ? "inline-flex rounded-full border border-white/[0.15] bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white/[0.75]"
-          : "inline-flex rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary"
-      }
-    >
-      {children}
-    </span>
-  );
-}
-
-function CourseLogo({ className = "" }: { className?: string }) {
-  return (
-    <div className={`flex justify-center ${className}`}>
-      <img
-        src={logoExpert}
-        alt="Curso Comandos Elétricos Expert v5.0"
-        width={965}
-        height={326}
-        className="block h-auto w-full max-w-[260px] object-contain sm:max-w-[320px]"
-      />
-    </div>
-  );
-}
-
 function BuyButton() {
   return (
-    <Button
-      asChild
-      className="h-auto w-full rounded-2xl bg-cta px-6 py-5 text-base font-extrabold text-navy shadow-lg hover:bg-cta/90 sm:text-lg"
-    >
-      <a href={CHECKOUT_URL}>
-        Sim, quero adicionar o Método
-        <ArrowRight className="size-5" />
-      </a>
+    <Button asChild className="sales-buy">
+      <a href={CHECKOUT_URL}>Sim, quero adicionar o Método</a>
     </Button>
   );
 }
-
 function DeclineLink() {
   return (
-    <a
-      href={DECLINE_URL}
-      className="block text-center text-[15px] text-muted-foreground underline-offset-4 hover:underline"
-    >
+    <a href={DECLINE_URL} className="sales-decline">
       Não, quero continuar sem o treinamento
     </a>
   );
 }
 
-function ProductMockup() {
-  return (
-    <div className="relative mx-auto w-full max-w-[560px]">
-      <div className="absolute -inset-8 rounded-full bg-primary/20 blur-3xl" aria-hidden="true" />
-      <div className="relative rounded-[28px] border border-white/[0.15] bg-[#09182e] p-3 shadow-2xl">
-        <div className="overflow-hidden rounded-[20px] border border-white/10 bg-white">
-          <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-3">
-            <span className="size-2 rounded-full bg-slate-300" />
-            <span className="size-2 rounded-full bg-slate-300" />
-            <span className="size-2 rounded-full bg-slate-300" />
-            <span className="ml-2 text-xs font-semibold text-slate-500">Área de membros</span>
-          </div>
-          <div className="grid min-h-[310px] grid-cols-[110px_1fr] sm:grid-cols-[145px_1fr]">
-            <div className="border-r border-slate-200 bg-[#0b1f3a] p-3">
-              <div className="space-y-2">
-                {["Base", "Motores", "Diagramas", "Inversores", "Diagnóstico"].map((item, index) => (
-                  <div
-                    key={item}
-                    className={
-                      index === 2
-                        ? "rounded-lg bg-white/15 px-3 py-2 text-[11px] font-semibold text-white"
-                        : "rounded-lg px-3 py-2 text-[11px] font-medium text-white/[0.55]"
-                    }
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="p-4 sm:p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">Trilha Expert</p>
-              <p className="mt-2 font-display text-2xl font-extrabold leading-none text-slate-900 sm:text-3xl">
-                Diagramas e Chaves de Partida
-              </p>
-              <div className="mt-4 flex aspect-video items-center justify-center rounded-xl bg-[#0b1f3a] technical-grid">
-                <span className="flex size-14 items-center justify-center rounded-full bg-cta text-navy shadow-lg">
-                  <PlayCircle className="size-7" />
-                </span>
-              </div>
-              <div className="mt-4 grid grid-cols-3 gap-2">
-                {["Aula", "Exercício", "Aplicação"].map((item) => (
-                  <div key={item} className="rounded-lg bg-slate-100 px-2 py-2 text-center text-[10px] font-semibold text-slate-600">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="relative -mt-5 ml-auto mr-3 w-[58%] rounded-2xl border border-slate-200 bg-white p-4 shadow-xl">
-        <div className="flex items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-            <Award className="size-5" />
-          </span>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary">Certificação</p>
-            <p className="font-display text-xl font-extrabold leading-none text-slate-900">Certificação</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function VideoCard({
-  name,
-  title,
-  embedUrl,
-}: {
-  name: string;
-  title: string;
-  embedUrl: string;
-}) {
-  return (
-    <article className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-      <div className="aspect-video bg-slate-100">
-        <iframe
-          src={embedUrl}
-          title={title}
-          loading="lazy"
-          className="h-full w-full"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          sandbox="allow-scripts allow-same-origin allow-presentation"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-      </div>
-      <div className="p-5">
-        <p className="font-semibold text-foreground">{name}</p>
-        <p className="mt-1 text-[15px] text-muted-foreground">{title}</p>
-      </div>
-    </article>
-  );
-}
-
 function UpsellPage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-background text-foreground">
-      {/* HERO */}
-      <section className="navy-panel technical-grid relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-5 py-14 sm:py-20">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_.98fr]">
-            <div>
-              <CourseLogo className="max-w-[320px]" />
-              <div className="mt-7">
-                <SectionLabel dark>Pedido do livro confirmado</SectionLabel>
-              </div>
-
-              <h1 className="mt-6 max-w-3xl font-display text-5xl font-extrabold leading-[0.98] tracking-tight text-white sm:text-6xl">
-                Você já garantiu o guia. Agora avance com uma formação prática e guiada.
-                <span className="block text-[#63b3ff]">Do diagrama ao diagnóstico de falhas.</span>
-              </h1>
-
-              <p className="mt-6 max-w-2xl text-[18px] leading-relaxed text-white/[0.78]">
-                O livro é sua referência técnica de consulta. Com o Método Comandos Elétricos Expert, você acompanha aulas, exercícios e aplicações organizados para avançar dos fundamentos à análise de circuitos e falhas.
-              </p>
-
-              <div className="mt-7 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-4 border-y border-white/[0.15] py-5 sm:grid-cols-4">
-                <div>
-                  <p className="font-display text-3xl font-extrabold text-white">100h</p>
-                  <p className="text-[13px] text-white/60">de formação</p>
-                </div>
-                <div>
-                  <p className="font-display text-3xl font-extrabold text-white">36 meses</p>
-                  <p className="text-[13px] text-white/60">de acesso</p>
-                </div>
-                <div>
-                  <p className="font-display text-3xl font-extrabold text-white">16.843</p>
-                  <p className="text-[13px] text-white/60">alunos</p>
-                </div>
-                <div>
-                  <p className="font-display text-3xl font-extrabold text-white">30 dias</p>
-                  <p className="text-[13px] text-white/60">de garantia</p>
-                </div>
-              </div>
-
-              <div className="mt-8 max-w-xl">
-                <div className="rounded-3xl border border-white/[0.15] bg-white/[0.08] p-5">
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/60">
-                    Condição especial desta etapa
-                  </p>
-                  <p className="mt-3 text-[17px] text-white/70">Valor normal: <span className="line-through">R$ 497</span></p>
-                  <p className="mt-1 font-display text-5xl font-extrabold leading-none text-white">R$ 197</p>
-                  <p className="mt-2 text-[15px] text-white/[0.65]">
-                    disponível após a compra do livro
-                  </p>
-                </div>
-                <div className="mt-4">
-                  <BuyButton />
-                  <div className="mt-4 [&_a]:text-white/[0.55]">
-                    <DeclineLink />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <ProductMockup />
-          </div>
+    <main className="sales-page">
+      <SalesSection tone="dark" className="sales-hero">
+        <div className="sales-header">
+          <img
+            src={logoExpert}
+            alt="Curso Comandos Elétricos Expert v5.0"
+            width={965}
+            height={326}
+            className="sales-logo"
+          />
+          <Eyebrow>Oferta para quem adquiriu o livro</Eyebrow>
         </div>
-      </section>
-
-      {/* TRANSFORMAÇÃO + PROVA */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-          <div className="grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr]">
-            <div>
-              <SectionLabel>Seu próximo passo após o livro</SectionLabel>
-              <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-                O livro para consultar. O Método para acompanhar a aplicação, passo a passo.
-              </h2>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                <div className="rounded-2xl border border-border bg-slate-50 p-5">
-                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-muted-foreground">Sem uma sequência</p>
-                  <p className="mt-2 text-[17px] leading-relaxed">
-                    Você estuda componentes, diagramas e partidas separadamente e precisa montar sozinho a relação entre os assuntos.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
-                  <p className="text-sm font-bold uppercase tracking-[0.14em] text-primary">Com o Método</p>
-                  <p className="mt-2 text-[17px] leading-relaxed">
-                    Você acompanha uma progressão que parte da base, passa pela aplicação industrial e chega a projetos e diagnóstico de falhas.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-3xl border border-border bg-slate-50 p-7 sm:p-9">
-              <BookOpenCheck className="size-9 text-primary" />
-              <p className="mt-4 font-display text-3xl font-extrabold leading-tight text-navy">Você consulta no livro e acompanha a aplicação nas aulas.</p>
-              <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">Uma sequência organizada de estudo, exercícios e exemplos de circuitos para avançar com mais clareza.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* METODOLOGIA */}
-      <section className="bg-slate-50">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionLabel>Metodologia do curso</SectionLabel>
-            <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-              Do fundamento ao diagnóstico em uma progressão lógica
-            </h2>
-            <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
-              Aulas, exercícios e exemplos de circuitos organizados em uma sequência. Você estuda cada tema no momento em que ele prepara o próximo.
+        <div className="sales-hero-grid">
+          <div className="sales-hero-copy">
+            <h1>
+              <span className="sales-intro">Você já garantiu o Livro.</span> Agora avance com uma
+              formação prática e passo a passo,{" "}
+              <span className="sales-highlight">do diagrama ao diagnóstico de falhas.</span>
+            </h1>
+            <p className="sales-lead">
+              Acompanhe aulas, exercícios e exemplos de circuitos para compreender os comandos
+              elétricos e aplicar o que você estuda.
             </p>
-          </div>
-
-          <div className="relative mt-14">
-            <div
-              className="absolute left-6 right-6 top-6 hidden h-px bg-primary/25 lg:block"
-              aria-hidden="true"
-            />
-            <div className="grid gap-6 lg:grid-cols-4">
-              {methodLevels.map((level, index) => (
-                <article key={level.number} className="relative">
-                  <div className="relative z-10 flex items-center gap-4 lg:flex-col lg:items-start">
-                    <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-navy font-display text-xl font-extrabold text-white ring-8 ring-slate-50">
-                      {level.number}
-                    </span>
-                    <span className="text-xs font-bold uppercase tracking-[0.14em] text-primary">
-                      Nível {index + 1}
-                    </span>
-                  </div>
-
-                  <div className="mt-5 border-l-2 border-primary/20 pl-6 lg:border-l-0 lg:pl-0">
-                    <h3 className="font-display text-3xl font-extrabold leading-none">{level.title}</h3>
-                    <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">{level.text}</p>
-
-                    <div className="mt-5 space-y-2">
-                      {level.modules.map((module) => (
-                        <div
-                          key={module}
-                          className="flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-3 text-[15px] font-semibold shadow-sm"
-                        >
-                          <Check className="size-4 shrink-0 text-primary" />
-                          <span>{module}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </article>
-              ))}
+            <dl className="sales-facts">
+              <div>
+                <dt>100h</dt>
+                <dd>de formação</dd>
+              </div>
+              <div>
+                <dt>36 meses</dt>
+                <dd>de acesso</dd>
+              </div>
+            </dl>
+            <div className="sales-hero-decision">
+              <div className="sales-inline-price">
+                <span>
+                  De <s>R$ 497</s> por
+                </span>
+                <strong>R$ 197</strong>
+              </div>
+              <BuyButton />
+              <DeclineLink />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* BÔNUS */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-          <div className="max-w-3xl">
-            <SectionLabel>Bônus</SectionLabel>
-            <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-              Continue a formação com três recursos complementares
-            </h2>
-          </div>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {bonuses.map(({ icon: Icon, title, text }, index) => (
-              <article key={title} className="border-t-4 border-primary bg-slate-50 p-7">
-                <div className="flex items-center justify-between">
-                  <span className="flex size-12 items-center justify-center rounded-xl bg-navy text-white">
-                    <Icon className="size-6" />
-                  </span>
-                  <span className="font-display text-4xl font-extrabold text-slate-200">0{index + 1}</span>
-                </div>
-                <h3 className="mt-6 font-display text-2xl font-extrabold leading-none">{title}</h3>
-                <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DEPOIMENTOS REAIS */}
-      <section className="bg-slate-50" aria-labelledby="depoimentos-title">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-          <div className="max-w-3xl">
-            <SectionLabel>Depoimentos de alunos</SectionLabel>
-            <h2 id="depoimentos-title" className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-              Veja os depoimentos de quem já participou da formação
-            </h2>
-            <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">
-              Assista aos relatos dos alunos sobre a experiência com o Comandos Elétricos Expert.
-            </p>
-          </div>
-          <div className="mt-9 grid gap-6 lg:grid-cols-2">
-            <VideoCard
-              name="Bras Junior"
-              title="Aluno do Comandos Elétricos Expert"
-              embedUrl="https://www.youtube-nocookie.com/embed/XFL2DMTHFvQ?rel=0&playsinline=1"
-            />
-            <VideoCard
-              name="Gilberto Oliveira"
-              title="Aluno da Academia do Eletricista"
-              embedUrl="https://www.youtube-nocookie.com/embed/pCKulBnfJCQ?rel=0&playsinline=1"
-            />
-            <VideoCard
-              name="Depoimento de aluno — vídeo 1"
-              title="Depoimento em vídeo"
-              embedUrl="https://www.youtube-nocookie.com/embed/K7wdTm5wug4?rel=0&playsinline=1"
-            />
-            <VideoCard
-              name="Depoimento de aluno — vídeo 2"
-              title="Depoimento em vídeo"
-              embedUrl="https://www.youtube-nocookie.com/embed/RBpx9aNAa2A?rel=0&playsinline=1"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* AUTORIDADE + PROVA */}
-      <section className="bg-slate-50">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-          <div className="grid gap-8 lg:grid-cols-[.78fr_1.22fr]">
-            <div className="overflow-hidden rounded-3xl bg-white shadow-sm">
+          <figure className="sales-product">
+            <div className="sales-product-screen">
               <img
-                src={professor}
-                alt="Sandro Zander, engenheiro eletricista e professor"
-                loading="lazy"
-                width={450}
-                height={576}
-                className="h-full min-h-[460px] w-full object-cover object-top"
+                src={devices}
+                alt="Apresentação do curso Comandos Elétricos Expert em computador, tablet e celular"
+                width={1536}
+                height={1024}
+                fetchPriority="high"
               />
             </div>
-
-            <div>
-              <SectionLabel>Autoridade + prova</SectionLabel>
-              <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-                Criado por quem ensina eletricidade industrial há mais de 26 anos
-              </h2>
-              <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
-                Sandro Zander é engenheiro eletricista, autor do Livro Comandos Elétricos, fundador da Academia do Eletricista
-                e criador do Método Comandos Elétricos Expert, com atuação em instituições como SENAI e FAETEC.
-              </p>
-
-              <div className="mt-7 flex items-center gap-5 border-y border-border py-5">
-                <Users className="size-8 text-primary" />
-                <div>
-                  <p className="font-display text-4xl font-extrabold leading-none">16.843 alunos</p>
-                  <p className="mt-1 text-[15px] text-muted-foreground">formados no Método</p>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-
-          <div className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
-            <div className="rounded-3xl border border-border bg-white p-7 sm:p-9">
-              <div className="flex items-start gap-5">
-                <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <Award className="size-7" />
+            <figcaption>
+              <GraduationCap aria-hidden="true" />
+              <span>
+                <strong>Método Comandos Elétricos Expert</strong>
+                <span>Aulas em vídeo, exercícios e aplicações</span>
+              </span>
+            </figcaption>
+            <div className="sales-product-certificate">
+              <a
+                href="/images/certificado-expert.webp"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ampliar modelo do certificado de conclusão"
+              >
+                <img
+                  src="/images/certificado-expert.webp"
+                  alt="Modelo do certificado de conclusão do Comandos Elétricos Expert"
+                  width={1100}
+                  height={778}
+                />
+              </a>
+              <p>
+                <Award aria-hidden="true" />
+                <span>
+                  Certificado de conclusão<span>Conhecimento e formação documentados.</span>
                 </span>
-                <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.15em] text-primary">Certificação</p>
-                  <h3 className="mt-2 font-display text-3xl font-extrabold leading-none">
-                    Certificado de conclusão com 100 horas
-                  </h3>
-                  <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">
-                    A certificação faz parte da formação e é disponibilizada conforme os critérios de conclusão do treinamento.
-                  </p>
-                </div>
+              </p>
+            </div>
+          </figure>
+        </div>
+        <div className="sales-proof-strip">
+          <img
+            src="/images/aluno-certificado-1.webp"
+            alt="Aluno exibindo seu certificado"
+            width={507}
+            height={675}
+          />
+          <p>
+            Alunos reais. Formação aplicada.
+            <span>Veja os vídeos e os registros de conclusão abaixo.</span>
+          </p>
+          <a href="#depoimentos">Ver os depoimentos</a>
+        </div>
+      </SalesSection>
+
+      <SalesSection tone="light">
+        <SectionHeading
+          label="Do estudo à aplicação"
+          title="Entenda o circuito. Acompanhe a prática."
+          description="O próximo passo é conectar o que você consulta no livro ao funcionamento dos comandos."
+        />
+        <div className="sales-comparison">
+          <article>
+            <BookOpenCheck aria-hidden="true" />
+            <h3>Com o livro</h3>
+            <p>
+              Você consulta conceitos, componentes e diagramas quando precisa estudar ou revisar.
+            </p>
+            <p className="sales-comparison-end">Uma referência técnica para ter por perto.</p>
+          </article>
+          <article>
+            <CircuitBoard aria-hidden="true" />
+            <h3>Com o livro + Método</h3>
+            <p>
+              Você acrescenta aulas e exercícios para acompanhar a análise e a aplicação dos
+              circuitos, passo a passo.
+            </p>
+            <p className="sales-comparison-end">Uma formação para ligar os assuntos à prática.</p>
+          </article>
+        </div>
+      </SalesSection>
+
+      <SalesSection tone="muted">
+        <SectionHeading
+          label="O que você vai estudar"
+          title="Uma trilha do fundamento ao diagnóstico."
+          description="Cada etapa prepara a seguinte: compreender, reconhecer os componentes, acompanhar aplicações e analisar falhas."
+        />
+        <ol className="sales-method">
+          {methodLevels.map((level) => (
+            <li key={level.number}>
+              <span className="sales-step-number">{level.number}</span>
+              <div className="sales-step-body">
+                <h3>{level.title}</h3>
+                <p>{level.text}</p>
+                <ul>
+                  {level.modules.map((module) => (
+                    <li key={module}>
+                      <Check aria-hidden="true" />
+                      {module}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            </li>
+          ))}
+        </ol>
+      </SalesSection>
 
-            <div className="rounded-3xl bg-navy p-7 text-white sm:p-9">
-              <BookOpenCheck className="size-8 text-[#63b3ff]" />
-              <p className="mt-6 font-display text-3xl font-extrabold leading-none">Formação para estudar e revisar</p>
-              <p className="mt-4 text-[17px] leading-relaxed text-white/70">
-                O período amplo de acesso permite avançar na sequência e retornar aos conteúdos ao longo da sua jornada.
+      <SalesSection tone="dark">
+        <SectionHeading
+          label="Incluídos na formação"
+          title="Mais recursos para estudar e praticar."
+        />
+        <div className="sales-bonuses">
+          <article>
+            <div className="sales-bonus-visual">
+              <a href="/images/certificado-lide.webp" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/certificado-lide.webp"
+                  alt="Modelo do certificado de Leitura e Interpretação de Diagramas de Comandos Elétricos"
+                  width={1100}
+                  height={778}
+                  loading="lazy"
+                />
+              </a>
+            </div>
+            <span className="sales-small-label">Bônus 01</span>
+            <h3>Certificação em LIDE</h3>
+            <p>
+              Leitura e Interpretação de Diagramas de Comandos Elétricos, com carga horária de 40
+              horas.
+            </p>
+          </article>
+          <article>
+            <div className="sales-bonus-visual">
+              <a
+                href="/images/certificado-eletrotecnica.webp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/images/certificado-eletrotecnica.webp"
+                  alt="Modelo do certificado de Eletrotécnica Aplicada em Comandos Elétricos"
+                  width={1100}
+                  height={778}
+                  loading="lazy"
+                />
+              </a>
+            </div>
+            <span className="sales-small-label">Bônus 02</span>
+            <h3>Eletrotécnica Aplicada</h3>
+            <p>
+              Curso complementar para reforçar os fundamentos de eletrotécnica usados em comandos
+              elétricos.
+            </p>
+          </article>
+          <article>
+            <div className="sales-bonus-visual sales-simulator-visual">
+              <CircuitBoard aria-hidden="true" />
+              <p>
+                Monte.
+                <br />
+                Simule.
+                <br />
+                Observe.
               </p>
             </div>
-          </div>
+            <span className="sales-small-label">Bônus 03</span>
+            <h3>Simuladores de circuitos</h3>
+            <p>
+              Programas para testar circuitos e visualizar o funcionamento dos comandos durante os
+              estudos.
+            </p>
+          </article>
         </div>
-      </section>
+      </SalesSection>
 
-      {/* GARANTIA */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-5 py-20 sm:py-24">
-          <div className="grid items-center gap-8 rounded-3xl border border-border bg-slate-50 p-8 sm:grid-cols-[auto_1fr] sm:p-10">
-            <div className="flex size-20 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <ShieldCheck className="size-10" />
-            </div>
-            <div>
-              <SectionLabel>Garantia</SectionLabel>
-              <h2 className="mt-4 font-display text-4xl font-extrabold leading-none">
-                Você tem 30 dias para conhecer o Método
-              </h2>
-              <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">
-                Acesse a área de membros, conheça a metodologia e avalie a formação. Se decidir não continuar dentro desse período,
-                basta solicitar o cancelamento conforme os termos da garantia.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* OFERTA */}
-      <section id="oferta" className="navy-panel technical-grid scroll-mt-8">
-        <div className="mx-auto max-w-5xl px-5 py-20 sm:py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionLabel dark>Condição especial pós-compra</SectionLabel>
-            <h2 className="mt-5 font-display text-5xl font-extrabold leading-none text-white">
-              Complete sua formação com o Método Comandos Elétricos Expert
-            </h2>
-            <p className="mt-5 text-[17px] leading-relaxed text-white/70">
-              Como você acabou de adquirir o livro, esta condição é disponibilizada nesta etapa do seu pedido.
+      <SalesSection tone="light" id="depoimentos">
+        <div className="sales-teacher">
+          <img
+            src={professor}
+            alt="Sandro Zander, engenheiro eletricista e professor"
+            width={450}
+            height={576}
+            loading="lazy"
+          />
+          <div>
+            <Eyebrow>Seu professor</Eyebrow>
+            <h2>Experiência de ensino que orienta cada etapa.</h2>
+            <p>
+              Sandro Zander é engenheiro eletricista e professor há mais de 26 anos, autor do Livro
+              Comandos Elétricos e fundador da Academia do Eletricista, com atuação em instituições
+              como SENAI e FAETEC.
             </p>
           </div>
+        </div>
+        <SectionHeading
+          label="Depoimentos de alunos"
+          title="Conheça a experiência de quem já estudou."
+          description="Assista aos relatos e veja os registros de alunos com seus certificados."
+        />
+        <div className="sales-videos">
+          {testimonials.map((video) => (
+            <article key={video.id}>
+              <div className="sales-video-frame">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&playsinline=1`}
+                  title={`Depoimento de ${video.name}`}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+              <p>
+                {video.name}
+                <span>Aluno — depoimento em vídeo</span>
+              </p>
+            </article>
+          ))}
+        </div>
+        <div className="sales-gallery-label">
+          <Award aria-hidden="true" />
+          <p>Registros de conclusão enviados pelos alunos</p>
+        </div>
+        <div className="sales-photo-gallery">
+          {[1, 2, 3, 4, 5].map((n) => (
+            <a
+              key={n}
+              href={`/images/aluno-certificado-${n}.webp`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ampliar registro de conclusão ${n}`}
+            >
+              <img
+                src={`/images/aluno-certificado-${n}.webp`}
+                alt={
+                  n <= 3
+                    ? "Aluno mostrando seu certificado de Comandos Elétricos Expert"
+                    : "Registro enviado por aluno com seus certificados de conclusão"
+                }
+                width={400}
+                height={540}
+                loading="lazy"
+              />
+            </a>
+          ))}
+        </div>
+      </SalesSection>
 
-          <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-white/[0.15] bg-white/[0.08] p-7 sm:p-10">
-            <div className="grid gap-3 sm:grid-cols-2">
+      <SalesSection tone="dark" id="oferta">
+        <div className="sales-offer-grid">
+          <div>
+            <SectionHeading
+              label="Condição especial pós-compra"
+              title="Dê o próximo passo na sua formação."
+              description="Como você adquiriu o livro, pode adicionar o Método nesta etapa do seu pedido."
+            />
+            <ul className="sales-offer-list">
               {[
                 "Formação completa em comandos elétricos",
-                "Certificação de conclusão",
-                "36 meses de acesso",
-                "Certificação em LIDE – 40h",
-                "Eletrotécnica Aplicada",
-                "Programas Simuladores de Circuitos",
+                "Aulas, exercícios e aplicações",
+                "Certificado de conclusão",
+                "Todos os bônus apresentados",
+                "36 meses para estudar e revisar",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-3 rounded-xl bg-white/[0.08] px-4 py-3 text-[16px] text-white/90">
-                  <Check className="mt-1 size-4 shrink-0 text-[#63b3ff]" />
-                  <span>{item}</span>
-                </div>
+                <li key={item}>
+                  <Check aria-hidden="true" />
+                  {item}
+                </li>
               ))}
-            </div>
-
-            <div className="mt-8 border-t border-white/[0.15] pt-8 text-center">
-              <p className="text-[16px] text-white/60">
-                Valor normal <span className="line-through">R$ 497,00</span>
-              </p>
-              <p className="mt-2 font-display text-6xl font-extrabold leading-none text-white">R$ 197,00</p>
-              <p className="mt-3 text-[15px] text-white/60">pagamento único nesta etapa do pedido</p>
-            </div>
-
-            <div className="mx-auto mt-7 max-w-xl">
-              <BuyButton />
-              <div className="mt-4 [&_a]:text-white/[0.55]">
-                <DeclineLink />
+            </ul>
+          </div>
+          <div className="sales-offer-decision">
+            <p className="sales-old-price">
+              Valor normal <s>R$ 497,00</s>
+            </p>
+            <p className="sales-price">R$ 197,00</p>
+            <p className="sales-payment">Pagamento único</p>
+            <BuyButton />
+            <DeclineLink />
+            <div className="sales-guarantee">
+              <ShieldCheck aria-hidden="true" />
+              <div>
+                <h3>30 dias de garantia</h3>
+                <p>
+                  Acesse a formação e avalie o Método. Se decidir não continuar nesse período,
+                  solicite o cancelamento conforme os termos da garantia.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </SalesSection>
 
-      {/* FAQ */}
-      <section id="faq" className="bg-slate-50">
-        <div className="mx-auto max-w-3xl px-5 py-20 sm:py-24">
-          <div className="text-center">
-            <SectionLabel>FAQ</SectionLabel>
-            <h2 className="mt-5 font-display text-4xl font-extrabold leading-none sm:text-5xl">
-              Dúvidas antes de continuar
-            </h2>
-          </div>
-
-          <div className="mt-10 space-y-3">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="group rounded-2xl border border-border bg-white p-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
-                  <span className="text-[17px]">{faq.q}</span>
-                  <span className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
-                </summary>
-                <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">{faq.a}</p>
-              </details>
-            ))}
-          </div>
+      <SalesSection tone="muted" id="faq" className="sales-faq">
+        <SectionHeading label="Dúvidas frequentes" title="Antes de continuar" />
+        <Accordion type="single" collapsible>
+          {faqs.map((faq, index) => (
+            <AccordionItem key={faq.q} value={`faq-${index}`}>
+              <AccordionTrigger>{faq.q}</AccordionTrigger>
+              <AccordionContent>{faq.a}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </SalesSection>
+      <footer className="sales-footer">
+        <div className="sales-container">
+          <p>Academia do Eletricista</p>
+          <p>
+            Copyright © 2026 Academia do Eletricista – Instituto Brasileiro de Qualificação
+            Profissional Ltda - ME – CNPJ: 10.984.548/0001-77
+          </p>
         </div>
-      </section>
+      </footer>
     </main>
   );
 }
