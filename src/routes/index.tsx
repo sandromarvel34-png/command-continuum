@@ -39,27 +39,96 @@ const DECLINE_URL = "https://huggy-happy-times.lovable.app/";
 const methodLevels = [
   {
     number: "01",
-    title: "Fundamentos",
-    text: "Compreenda a lógica dos comandos, em vez de depender de memorização.",
-    modules: ["A Base"],
+    title: "Raio-X",
+    name: "Dos dispositivos e das máquinas",
+    text: "Entenda como cada componente funciona e como testar, dimensionar, ajustar e instalar os elementos do circuito.",
   },
   {
     number: "02",
-    title: "Equipamentos e componentes",
-    text: "Entenda a função de cada elemento e sua participação no circuito.",
-    modules: ["Proteções Ativas", "Motores", "Transformadores", "Dispositivos"],
+    title: "IPO",
+    name: "Identificando os Padrões Ocultos dos Diagramas",
+    text: "Reconheça os padrões que se repetem nos comandos para interpretar a lógica e entender a construção dos circuitos.",
   },
   {
     number: "03",
-    title: "Aplicação industrial",
-    text: "Relacione os componentes às partidas e aos acionamentos usados na prática.",
-    modules: ["Diagramas e Chaves de Partida", "Inversores de Frequência"],
+    title: "MMDD",
+    name: "Mapa da Montagem e Desenvolvimento dos Diagramas",
+    text: "Desenvolva circuitos, adapte diagramas existentes e acompanhe a montagem a partir do funcionamento da máquina.",
   },
   {
     number: "04",
-    title: "Nível Expert",
-    text: "Integre o que aprendeu para analisar circuitos e investigar falhas.",
-    modules: ["Projetos e Diagnóstico"],
+    title: "SIPAD",
+    name: "Sistema Prático de Análise de Defeitos",
+    text: "Siga uma sequência de análise e testes para localizar a causa de falhas e orientar a correção nos comandos.",
+  },
+];
+
+const curriculum = [
+  {
+    title: "Dispositivos: funcionamento, instalação e dimensionamento",
+    topics: [
+      "Fusíveis, disjuntores magnéticos e disjuntores motor",
+      "Botoeiras simples e conjugadas; contatores principais e auxiliares",
+      "Relés de sobrecarga, relés de tempo e temporizadores",
+      "Relés de falta e sequência de fase; relés multifunção",
+      "Chaves fim de curso e limites; controladores de nível; retificadores",
+    ],
+  },
+  {
+    title: "Motores: funcionamento, ligação e polarização",
+    topics: [
+      "Motores universais, de repulsão e de campo distorcido",
+      "Motores monofásicos de fase auxiliar e polarização dos monofásicos",
+      "Motores trifásicos de seis e doze terminais e sua polarização",
+      "Motores de rotor bobinado e Dahlander",
+      "Motores de corrente contínua: série, shunt e compound",
+    ],
+  },
+  {
+    title: "Transformadores: funcionamento, instalação e testes",
+    topics: [
+      "Transformadores abaixadores, elevadores e isoladores",
+      "Transformadores de potencial (TP) e de corrente (TC)",
+      "Autotransformadores trifásicos",
+    ],
+  },
+  {
+    title: "Diagramas e partidas: leitura, interpretação e montagem",
+    topics: [
+      "Partida direta de motores trifásicos",
+      "Reversão de motores monofásicos; reversão trifásica semiautomática e automática",
+      "Estrela-triângulo automática para motores de seis e doze terminais; estrela-triângulo com reversão",
+      "Partida compensadora automática, com e sem reversão",
+      "Partida sequencial de motores trifásicos e sequência automatizada",
+      "Partida de motor de rotor bobinado com banco de resistores; partida Dahlander",
+      "Freio magnético; comando automático e manual de motobombas trifásicas",
+      "Outros diagramas trabalhados nas aulas",
+    ],
+  },
+  {
+    title: "Acionamentos eletrônicos: inversores e soft-starters",
+    topics: [
+      "Funcionamento do inversor de frequência e da soft-starter",
+      "Escolha entre controle escalar e controle vetorial sensorless",
+    ],
+  },
+  {
+    title: "Inversores de frequência: parâmetros e recursos",
+    topics: [
+      "Rampas de aceleração e desaceleração; rampa linear e rampa S",
+      "Multispeed e relação V/F ajustável",
+      "Frenagem por injeção de corrente contínua e frenagem reostática",
+      "Flying start e ciclo automático",
+    ],
+  },
+  {
+    title: "Aplicação prática: projetos, painéis e diagnóstico",
+    topics: [
+      "Leitura e interpretação integradas dos circuitos",
+      "Montagem de painéis de comando e dimensionamento dos dispositivos",
+      "Análise, testes e localização de defeitos",
+      "Desenvolvimento de diagramas a partir do funcionamento da máquina",
+    ],
   },
 ];
 
@@ -122,8 +191,8 @@ function UpsellPage() {
               <span className="sales-highlight">do diagrama ao diagnóstico de falhas.</span>
             </h1>
             <p className="sales-lead">
-              Acompanhe aulas, exercícios e exemplos de circuitos para compreender os comandos
-              elétricos e aplicar o que você estuda.
+              Aprenda a interpretar diagramas, desenvolver circuitos, montar painéis e investigar
+              falhas com aulas e exemplos de aplicação.
             </p>
             <dl className="sales-facts">
               <div>
@@ -230,9 +299,9 @@ function UpsellPage() {
 
       <SalesSection tone="muted">
         <SectionHeading
-          label="O que você vai estudar"
-          title="Uma trilha do fundamento ao diagnóstico."
-          description="Cada etapa prepara a seguinte: compreender, reconhecer os componentes, acompanhar aplicações e analisar falhas."
+          label="Como você vai aprender"
+          title="Um método para entender, montar e diagnosticar."
+          description="Quatro etapas conectam o funcionamento dos componentes à aplicação nos comandos elétricos."
         />
         <ol className="sales-method">
           {methodLevels.map((level) => (
@@ -240,19 +309,43 @@ function UpsellPage() {
               <span className="sales-step-number">{level.number}</span>
               <div className="sales-step-body">
                 <h3>{level.title}</h3>
+                <p className="sales-method-name">{level.name}</p>
                 <p>{level.text}</p>
-                <ul>
-                  {level.modules.map((module) => (
-                    <li key={module}>
-                      <Check aria-hidden="true" />
-                      {module}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </li>
           ))}
         </ol>
+        <div className="sales-curriculum">
+          <SectionHeading
+            label="Programa do curso"
+            title="Veja os assuntos que você vai dominar na prática."
+            description="Abra cada grupo para consultar o conteúdo da formação."
+          />
+          <Accordion type="multiple" className="sales-curriculum-list">
+            {curriculum.map((group, index) => (
+              <AccordionItem value={`programa-${index}`} key={group.title}>
+                <AccordionTrigger>
+                  <span className="sales-curriculum-heading">
+                    <span className="sales-curriculum-number" aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span>{group.title}</span>
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="sales-topic-list">
+                    {group.topics.map((topic) => (
+                      <li key={topic}>
+                        <Check aria-hidden="true" />
+                        <span>{topic}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </SalesSection>
 
       <SalesSection tone="dark">

@@ -653,35 +653,68 @@
   padding-top: 24px;
 }
 .sales-step-body h3 {
-  font-size: 28px;
-  line-height: 1.05;
-  min-height: 59px;
+  font-size: 34px;
+  line-height: 1.1;
 }
 .sales-step-body > p {
   color: var(--muted-foreground);
   margin-top: 14px;
-  min-height: 113px;
 }
-.sales-step-body ul {
-  list-style: none;
-  margin: 24px 0 0;
-  padding: 18px 0 0;
+.sales-step-body > .sales-method-name {
+  color: var(--foreground);
+  font-weight: 600;
+  min-height: 108px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+.sales-curriculum {
+  margin-top: 64px;
+  padding-top: 56px;
   border-top: 1px solid var(--border);
 }
-.sales-step-body ul li {
-  display: flex;
-  align-items: start;
-  gap: 8px;
-  margin-top: 8px;
-  font-size: 17px;
-  line-height: 1.45;
+.sales-curriculum-list {
+  border-top: 1px solid var(--border);
 }
-.sales-step-body ul svg {
-  width: 17px;
-  height: 17px;
-  margin-top: 4px;
+.sales-curriculum-list button {
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.5;
+  padding: 24px 0;
+  color: var(--foreground);
+}
+.sales-curriculum-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  text-align: left;
+}
+.sales-curriculum-number {
+  flex: 0 0 24px;
   color: var(--brand);
-  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+.sales-topic-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 12px 44px;
+  display: grid;
+  gap: 12px;
+}
+.sales-topic-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--foreground);
+}
+.sales-topic-list svg {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin-top: 5px;
+  color: var(--brand);
 }
 .sales-bonuses {
   display: grid;
@@ -1211,4 +1244,25 @@
 /* Public presentation: keep editor badge out of the sales experience. */
 #lovable-badge {
   display: none !important;
+}
+
+@media (max-width: 1023px) {
+  .sales-step-body > .sales-method-name {
+    min-height: 0;
+  }
+}
+@media (max-width: 639px) {
+  .sales-curriculum {
+    margin-top: 44px;
+    padding-top: 40px;
+  }
+  .sales-curriculum-heading {
+    gap: 12px;
+  }
+  .sales-topic-list {
+    padding-left: 0;
+  }
+  .sales-curriculum-list button {
+    padding: 20px 0;
+  }
 }

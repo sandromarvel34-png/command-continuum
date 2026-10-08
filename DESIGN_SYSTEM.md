@@ -69,3 +69,9 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 
 - Fontes locais em public/fonts, com licenças preservadas; @theme static mantém os tokens mesmo sem classes utilitárias.
 - Mobile: apresentação compacta do produto antes do texto de apoio; certificado e dispositivos dentro da primeira dobra.
+
+## Método e programa
+
+- Progressão real: Raio-X, IPO, MMDD e SIPAD; siglas com explicação, títulos alinhados e descrições sem promessas absolutas.
+- Programa em sete grupos expansíveis usando o Accordion existente; títulos de 17px, números alinhados e lista com ícones Lucide.
+- Método e programa compartilham a seção cinza para preservar o ritmo visual e manter a página de pós-compra compacta.
