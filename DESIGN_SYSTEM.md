@@ -94,7 +94,7 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 - Bônus compactos: imagem ou ícone ao lado da descrição no desktop; título ao lado do ativo e corpo em largura inteira no celular. Certificado principal continua maior e separado.
 - Preço inicial centralizado com o botão. Dados da formação limitados a 540px para manter unidade visual no hero.
 - Garantia explica solicitação por e-mail ou WhatsApp e devolução do valor pago, conforme a oferta original do criador.
-- Mantidos: quatro depoimentos, cinco fotos, sete grupos do programa, quatro bônus, cinco dúvidas, preço, links e rodapé. Não introduzir a pergunta excluída, livro como bônus, aulas ao vivo ou mockup genérico.
+- Mantidos: quatro depoimentos, cinco fotos, sete grupos do programa, quatro bônus, 11 dúvidas, preço, links e rodapé. Não introduzir a pergunta excluída, livro como bônus, aulas ao vivo ou mockup genérico.
 
 ## Auditoria de apresentação e reprodução
 
@@ -103,3 +103,12 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 - Os quatro vídeos preservam seus IDs e política de referência. Links externos “Assistir no YouTube” removidos por decisão do criador; reprodução acionada dentro da página. O player depende da disponibilidade do serviço; contagem de players não comprova reprodução.
 - Tablet estreito e celular usam certificado principal em largura total e bônus compactos em uma coluna.
 - Títulos de seção diretos e sem ponto final; erros de navegação em pt-BR; metadados sem prévia obsoleta.
+
+## FAQ ampliado — outubro de 2026
+
+- Nove perguntas solicitadas pelo criador: início, horários, MEC, certificado, público, prazo, inclusões, aprendizado e pré-requisitos.
+- Mantidas as dúvidas sobre estudo com o livro e garantia: total de 11 itens, sem duplicar perguntas de acesso ou certificado.
+- Respostas com listas reutilizam `sales-topic-list`, Check e Accordion; não há novo componente nem biblioteca.
+- Prazo: 3 anos, equivalente aos 36 meses da oferta. Carga horária principal aparece no hero e na resposta de certificado; não repetir no resumo de inclusões.
+- Curso livre de qualificação profissional sem alegação de reconhecimento pelo MEC, atendimento a “todas as exigências” ou aceitação universal do certificado. Referência: orientação oficial do MEC sobre cursos livres.
+- Garantia de satisfação com reembolso; não prometer aprendizado garantido, ganhos financeiros ou capacidade de resolver qualquer circuito ou defeito.
