@@ -100,6 +100,6 @@ Azul pertence à identidade do produto e laranja é reservado ao CTA de compra.
 
 - CSS de vendas consolidado em definições base e breakpoints ordenados; nenhuma fonte ou biblioteca adicionada.
 - `TestimonialVideo`: prévia com miniatura real do YouTube, nome e botão acessível; fundo marinho e texto continuam visíveis se a imagem externa falhar. O player carrega somente após interação.
-- Os quatro vídeos preservam seus IDs, política de referência e opção de assistir diretamente no YouTube. Reprodução externa depende da disponibilidade do serviço; contagem de players não comprova reprodução.
+- Os quatro vídeos preservam seus IDs e política de referência. Links externos “Assistir no YouTube” removidos por decisão do criador; reprodução acionada dentro da página. O player depende da disponibilidade do serviço; contagem de players não comprova reprodução.
 - Tablet estreito e celular usam certificado principal em largura total e bônus compactos em uma coluna.
 - Títulos de seção diretos e sem ponto final; erros de navegação em pt-BR; metadados sem prévia obsoleta.
