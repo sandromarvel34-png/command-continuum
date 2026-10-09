@@ -140,22 +140,64 @@ const testimonials = [
   { name: "Reinaldo", id: "RBpx9aNAa2A" },
 ];
 
-const faqs = [
+const faqs: { q: string; a: string; items?: string[] }[] = [
   {
-    q: "O treinamento possui certificado?",
-    a: "Sim. Ao concluir a formação, você recebe o certificado do Comandos Elétricos Expert. O modelo está apresentado nesta página.",
+    q: "Quando começam as aulas?",
+    a: "As aulas são liberadas imediatamente após a confirmação da matrícula. Você recebe por e-mail os dados de acesso ao nosso portal de ensino.",
   },
   {
-    q: "Preciso já trabalhar com comandos elétricos?",
-    a: "Não. O conteúdo começa pelos fundamentos e avança até aplicações industriais, projetos e diagnóstico de falhas.",
+    q: "Qual é o horário das aulas?",
+    a: "As aulas são gravadas e o curso é totalmente online. Você pode acessar as aulas, os materiais, as apostilas e os exercícios no horário que preferir, 24 horas por dia, 7 dias por semana.",
+  },
+  {
+    q: "O curso é reconhecido pelo MEC?",
+    a: "O Comandos Elétricos Expert é um curso livre de qualificação profissional. Essa modalidade não exige autorização ou reconhecimento do MEC. O certificado é emitido pelo Instituto Brasileiro de Qualificação Profissional Ltda. – ME, CNPJ 10.984.548/0001-77, razão social da Academia do Eletricista.",
+  },
+  {
+    q: "O curso oferece certificado?",
+    a: "Sim. Ao concluir o Comandos Elétricos Expert, você recebe o certificado da formação principal, com carga horária de 100 horas. O documento comprova a conclusão do curso livre de qualificação profissional.",
+  },
+  {
+    q: "Para quem esse curso é indicado?",
+    a: "Para eletricistas, técnicos e engenheiros que precisam aprofundar seus conhecimentos de comandos elétricos, além de estudantes da área. É indicado para quem quer aplicar esse conhecimento em instalações e manutenção, trabalhar com acionamentos de motores e ampliar os serviços técnicos que oferece.",
+  },
+  {
+    q: "Por quanto tempo terei acesso ao curso?",
+    a: "Você terá acesso ao curso e aos bônus por 3 anos. Durante esse período, poderá estudar no seu ritmo, rever as aulas e consultar os materiais quantas vezes quiser.",
+  },
+  {
+    q: "O que está incluso no curso?",
+    a: "A matrícula inclui:",
+    items: [
+      "Curso completo Comandos Elétricos Expert, com aulas gravadas, apostilas e exercícios",
+      "Biblioteca com mais de 100 livros e PDFs técnicos",
+      "Programas simuladores de circuitos e aulas práticas de uso",
+      "Certificação em Leitura e Interpretação de Diagramas de Comandos Elétricos (LIDE)",
+      "Curso de Eletrotécnica Aplicada",
+      "Certificado de conclusão da formação principal",
+      "Área de membros exclusiva, com acesso ao curso e aos bônus pelo prazo informado nesta oferta",
+      "Suporte especializado pelo WhatsApp pessoal do professor",
+      "Garantia de satisfação, com reembolso conforme os termos apresentados nesta página",
+    ],
+  },
+  {
+    q: "O que vou aprender no curso?",
+    a: "Você vai estudar e praticar como:",
+    items: [
+      "Ler e interpretar diagramas para entender o funcionamento dos circuitos",
+      "Montar circuitos e painéis de comando a partir dos diagramas",
+      "Desenvolver comandos a partir do funcionamento previsto para máquinas e motores",
+      "Fazer ligações, dimensionamentos e regulagens de dispositivos, motores e transformadores",
+      "Analisar circuitos, localizar causas de falhas e orientar a correção dos defeitos",
+    ],
+  },
+  {
+    q: "Quais são os pré-requisitos para fazer o curso?",
+    a: "O curso é aberto a profissionais e estudantes da área de eletricidade. A escolaridade mínima é a 5ª série do ensino fundamental, com leitura e escrita. Você precisa de acesso à internet e disposição para estudar e praticar comandos elétricos.",
   },
   {
     q: "Como usar o livro junto com as aulas?",
     a: "Use o livro para consultar conceitos e diagramas enquanto acompanha as aulas. Depois, retome os exemplos e faça os exercícios para revisar o que aprendeu.",
-  },
-  {
-    q: "Como acesso as aulas e por quanto tempo posso estudar?",
-    a: "As aulas são gravadas e ficam na área de membros, com acesso pelo computador, tablet ou celular. Você recebe os dados de acesso por e-mail após a confirmação da compra e pode estudar e revisar por 36 meses.",
   },
   {
     q: "Como funciona a garantia?",
@@ -402,8 +444,8 @@ function UpsellPage() {
               <span className="sales-small-label">Bônus 03</span>
               <h3>Biblioteca técnica em PDF</h3>
               <p>
-                Coleção de 100 apostilas e e-books sobre eletricidade, automação, eletrônica,
-                instalações e manutenção industrial para baixar e consultar.
+                Coleção com mais de 100 apostilas e e-books sobre eletricidade, automação,
+                eletrônica, instalações e manutenção industrial para baixar e consultar.
               </p>
             </div>
           </article>
@@ -545,7 +587,19 @@ function UpsellPage() {
           {faqs.map((faq, index) => (
             <AccordionItem key={faq.q} value={`faq-${index}`}>
               <AccordionTrigger>{faq.q}</AccordionTrigger>
-              <AccordionContent>{faq.a}</AccordionContent>
+              <AccordionContent>
+                <p>{faq.a}</p>
+                {faq.items && (
+                  <ul className="sales-topic-list mt-4 !p-0">
+                    {faq.items.map((item) => (
+                      <li key={item}>
+                        <Check aria-hidden="true" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
