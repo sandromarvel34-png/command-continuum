@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
 });
 
 const CHECKOUT_URL = "https://payfast.greenn.com.br/197425/offer/e34KPN";
-const DECLINE_URL = "https://huggy-happy-times.lovable.app/";
+const DECLINE_URL = "https://oto.dimensionador.comandoseletricosexpert.com.br/";
 
 const methodLevels = [
   {
