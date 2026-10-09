@@ -237,7 +237,7 @@ function UpsellPage() {
         <div className="sales-hero-grid">
           <div className="sales-hero-copy">
             <h1>
-              <span className="sales-intro">Você já garantiu o Livro.</span> Agora avance com uma
+              <span className="sales-intro">Parabéns, seu livro já está garantido!</span> Agora avance com uma
               formação prática e passo a passo,{" "}
               <span className="sales-highlight">do diagrama ao diagnóstico de falhas.</span>
             </h1>
