@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Play } from "lucide-react";
+import { Play } from "lucide-react";
 
 export function TestimonialVideo({ name, id }: { name: string; id: string }) {
   const [playing, setPlaying] = useState(false);
@@ -37,14 +37,6 @@ export function TestimonialVideo({ name, id }: { name: string; id: string }) {
         {name}
         <span>Aluno — depoimento em vídeo</span>
       </p>
-      <a
-        className="sales-video-external"
-        href={`https://www.youtube.com/watch?v=${id}`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Assistir no YouTube <ExternalLink aria-hidden="true" />
-      </a>
     </article>
   );
 }
